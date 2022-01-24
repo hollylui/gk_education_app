@@ -8,9 +8,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "file-loader": "^6.2.0",
+    "mongodb": "^4.3.1",
     "next": "12.0.8",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "sass": "^1.49.0",
+    "url-loader": "^4.1.1"
   },
   "devDependencies": {
     "eslint": "8.7.0",
