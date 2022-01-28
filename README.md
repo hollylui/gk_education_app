@@ -90,8 +90,9 @@ Such as: game_example > index.jsx
 - [Next.js Crash Course](https://youtu.be/mTz0GXj8NN0) - learn about Next.js in YouTube.
 - [Next.js code](https://github.com/bella-ent/tests-for-final-project) by Bella
 - [Next.js code](https://github.com/hollylui/Nextjs) by Holly
-- [Trial version](https://github.com/hollylui/game-draft-v2) by Holly
+- [app draft v2](https://github.com/hollylui/game-draft-v2) by Holly
 - [data strcutre](https://github.com/hollylui/data_structure) by Holly and Bella
+- [app draft v3](https://github.com/hollylui/game-draft-v3.git) by Holly
 
 ```
 
