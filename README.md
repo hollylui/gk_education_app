@@ -19,7 +19,7 @@ Enter a choose your own adventure type learning application 🏆 that uses a dat
 - Bella, Byulim Yang
 - Heather Fisher
 - Josh Zermeno
-- Holly, Tung Ching Lui 🇭🇰
+- Holly, Tung Ching Lui
 
 ---
 
