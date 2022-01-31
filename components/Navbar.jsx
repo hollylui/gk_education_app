@@ -50,7 +50,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <nav className={styles.container}>
       {/* background music */}
       <audio loop id="bgMusic">
         <source src={bgMusic} />
@@ -88,6 +88,6 @@ export default function Navbar() {
       <div className={styles.icon}>
         <Image src={menu} />
       </div>
-    </div>
+    </nav>
   );
 }
