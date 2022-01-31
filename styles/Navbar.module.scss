@@ -1,0 +1,16 @@
+.container {
+  background-color: #7fffd4;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+
+  .soundControl {
+    display: flex;
+    gap: 20px;
+  }
+
+  .icon {
+    width: 50px;
+  }
+}
