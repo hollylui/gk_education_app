@@ -1,16 +1,26 @@
 .container {
-  background-color: #7fffd4;
+  background-color: #c2f5ff;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 15px;
 
   .soundControl {
     display: flex;
-    gap: 20px;
+    gap: 50px;
   }
 
   .icon {
-    width: 50px;
+    width: 35px;
+  }
+
+  .music {
+    margin-left: 50px;
+  }
+
+  .menu {
+    width: 60px;
+    margin-right: 50px;
   }
 }

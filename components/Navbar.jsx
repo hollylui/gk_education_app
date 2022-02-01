@@ -64,11 +64,17 @@ export default function Navbar() {
       <div className={styles.soundControl}>
         {/* music button */}
         {music ? (
-          <div onClick={musicHandler} className={styles.icon}>
+          <div
+            onClick={musicHandler}
+            className={`${styles.icon} ${styles.music}`}
+          >
             <Image src={musicOn} alt="music on" />
           </div>
         ) : (
-          <div onClick={musicHandler} className={styles.icon}>
+          <div
+            onClick={musicHandler}
+            className={`${styles.icon} ${styles.music}`}
+          >
             <Image src={musicOff} alt="music off" />
           </div>
         )}
@@ -85,7 +91,7 @@ export default function Navbar() {
         )}
       </div>
 
-      <div className={styles.icon}>
+      <div className={styles.menu}>
         <Image src={menu} />
       </div>
     </nav>
