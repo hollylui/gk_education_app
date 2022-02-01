@@ -1,0 +1,89 @@
+.container {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 124, 1) 0%,
+    rgba(0, 255, 124, 1) 25%,
+    rgba(255, 205, 0, 1) 50%,
+    rgba(2, 175, 255, 1) 75%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  min-height: 1500px;
+
+  .content {
+    position: relative;
+    margin: auto;
+    padding: 50px 0;
+    width: 70%;
+    z-index: 100;
+  }
+
+  .cloudOne {
+    position: absolute;
+    top: 15%;
+    left: 30px;
+    width: 200px;
+    animation-name: cloud_leftToRight;
+    animation-duration: 120s;
+    animation-iteration-count: infinite;
+  }
+
+  .cloudTwo {
+    top: 75%;
+    right: 30px;
+    width: 200px;
+    position: absolute;
+    animation-name: cloud_rightToLeft;
+    animation-duration: 70s;
+    animation-iteration-count: infinite;
+    transform: scaleX(-1);
+    z-index: 0;
+  }
+
+  .cloudThree {
+    top: 100%;
+    right: 30px;
+    width: 200px;
+    position: absolute;
+    animation-name: cloud_leftToRight;
+    animation-duration: 150s;
+    animation-iteration-count: infinite;
+    transform: scaleX(-1);
+    z-index: 0;
+  }
+
+  .cloudFour {
+    top: 140%;
+    right: 30px;
+    width: 200px;
+    position: absolute;
+    animation-name: cloud_rightToLeft;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    transform: scaleX(-1);
+    z-index: 0;
+  }
+}
+
+@keyframes cloud_leftToRight {
+  0% {
+    left: 30px;
+  }
+  50% {
+    left: 700px;
+  }
+  100% {
+    left: 30px;
+  }
+}
+
+@keyframes cloud_rightToLeft {
+  0% {
+    right: 30px;
+  }
+  50% {
+    right: 1000px;
+  }
+  100% {
+    right: 30px;
+  }
+}

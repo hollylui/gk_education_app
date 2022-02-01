@@ -1,0 +1,31 @@
+.ready {
+  cursor: pointer;
+}
+
+.game {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:hover {
+    animation: blink-animation 2s infinite;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  p {
+    margin: 0;
+    font-size: 1.6rem;
+    width: 200px;
+    text-align: center;
+  }
+}
+
+@keyframes blink-animation {
+  to {
+    transform: rotateY(360deg);
+  }
+}

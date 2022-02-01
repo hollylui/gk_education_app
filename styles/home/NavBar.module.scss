@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+
+  background-color: #0086c1;
+  display: flex;
+  flex-direction: column;
+
+  .navbarOne {
+    background-color: #47a9aa;
+    height: 60px;
+  }
+
+  .navbarTwo {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 0;
+
+    .icon {
+      width: 100px;
+      margin: 0 40px;
+      display: flex;
+      position: relative;
+
+      a {
+        width: auto;
+        position: absolute;
+        left: -90px;
+        bottom: 0;
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+        margin: 0;
+        padding: 5px 50px 5px 10px;
+        border-radius: 30px;
+        background-color: #b0ffb0;
+
+        &:hover {
+          background-color: #ffd000;
+        }
+      }
+    }
+  }
+}

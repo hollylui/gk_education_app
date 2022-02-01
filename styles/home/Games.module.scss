@@ -1,0 +1,13 @@
+.gameSection {
+  h2 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    margin: 0;
+  }
+
+  .games {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+}
