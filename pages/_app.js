@@ -1,7 +1,15 @@
-import '../styles/globals.css'
+//! From Libaray
+import { useState } from "react";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import AgeContext from "../context/AgeContext";
+
+function ExampleApp({ Component, pageProps }) {
+  const [age, setAge] = useState(null);
+  return (
+    <AgeContext.Provider value={{ age, setAge }}>
+      <Component {...pageProps} />
+    </AgeContext.Provider>
+  );
 }
 
-export default MyApp
+export default ExampleApp;
