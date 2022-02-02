@@ -1,0 +1,14 @@
+.button {
+  border: none;
+  border-radius: 35px;
+  padding: 5px 30px;
+  font-size: 3rem;
+  background-color: yellow;
+  letter-spacing: 2px;
+  font-family: "Bangers", cursive;
+
+  &:hover {
+    background-color: #002fff;
+    color: white;
+  }
+}

@@ -1,0 +1,22 @@
+.container {
+  position: relative;
+  margin: 0;
+
+  .mainBackpack {
+    width: 400px;
+  }
+
+  .stick {
+    position: absolute;
+    width: 50px;
+    top: 35px;
+    left: 85px;
+  }
+
+  .smallRock {
+    position: absolute;
+    width: 30px;
+    top: 45px;
+    left: 155px;
+  }
+}

@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  gap: 10px;
+
+  .branch {
+    cursor: pointer;
+  }
+}

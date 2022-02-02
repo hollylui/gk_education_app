@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  gap: 20px;
+  background-color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+
+  .radio {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    display: grid;
+    grid-template-rows: auto 30px;
+    gap: 10px;
+    text-transform: uppercase;
+
+    .reading {
+      color: blue;
+    }
+
+    .logic {
+      color: rgb(255, 174, 0);
+    }
+  }
+}
