@@ -26,12 +26,11 @@ export default function Footer() {
   // back page handler
   const backHandler = () => {
     localStorage.setItem("_id", `${data[index - 1]._id}`);
-    if (index !== 1) setIndex(index - 1);
-    router.back();
+    setTimeout(() => {
+      setIndex(index - 1);
+    }, 500);
 
-    // setTimeout(() => {
-    //   if (index !== 1) setIndex(index - 1);
-    // }, 500);
+    router.back();
   };
 
   // next page handler
@@ -39,20 +38,22 @@ export default function Footer() {
     localStorage.setItem("_id", `${data[index + 1]._id}`);
     if (index === 2) localStorage.setItem("name", name);
     if (index == 3) localStorage.setItem("age", age);
-    if (index !== 14) setIndex(index + 1);
-    router.push(`/volcano/${data[index + 1]._id}`);
 
-    // setTimeout(() => {
-    //   if (index !== 14) setIndex(index + 1);
-    // }, 500);
+    setTimeout(() => {
+      setIndex(index + 1);
+    }, 500);
+
+    router.push(`/volcano/${data[index + 1]._id}`);
   };
 
   return (
     <div className={styles.container}>
       {/* back btn */}
-      <div className={styles.btn} onClick={backHandler}>
-        <Image src={backBtn} alt="go to previous page" />
-      </div>
+      {index !== 1 && (
+        <div className={styles.btn} onClick={backHandler}>
+          <Image src={backBtn} alt="go to previous page" />
+        </div>
+      )}
 
       {/* backpack section */}
       <div></div>
