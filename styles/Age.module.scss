@@ -1,7 +1,7 @@
 .container {
   width: 250px;
   padding: 10px 0;
-  background-color: green;
+  // background-color: green;
 
   display: flex;
   flex-direction: column;
@@ -10,10 +10,11 @@
   align-items: center;
 
   .btn {
+    font-family: "Bangers", cursive;
     border: none;
     width: 60px;
     height: 60px;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     border-radius: 50%;
     margin: 5px;
     cursor: pointer;

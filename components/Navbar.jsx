@@ -10,7 +10,7 @@ import musicOn from "../assets/images/volcano/music_on.png";
 import musicOff from "../assets/images/volcano/music_off.png";
 import soundOn from "../assets/images/volcano/sound_effects_on.png";
 import soundOff from "../assets/images/volcano/sound_effects_off.png";
-import menu from "../assets/images/volcano/menu.png";
+import menuImg from "../assets/images/volcano/menu_img.png";
 
 //! Audio
 import bgMusic from "../assets/audios/volcano/cumbia_city_an_jone.mp3";
@@ -63,36 +63,29 @@ export default function Navbar() {
 
       <div className={styles.soundControl}>
         {/* music button */}
-        {music ? (
-          <div
-            onClick={musicHandler}
-            className={`${styles.icon} ${styles.music}`}
-          >
+        <div
+          onClick={musicHandler}
+          className={`${styles.icon} ${styles.music}`}
+        >
+          {music ? (
             <Image src={musicOn} alt="music on" />
-          </div>
-        ) : (
-          <div
-            onClick={musicHandler}
-            className={`${styles.icon} ${styles.music}`}
-          >
+          ) : (
             <Image src={musicOff} alt="music off" />
-          </div>
-        )}
+          )}
+        </div>
 
         {/* sound or audio button */}
-        {sound ? (
-          <div onClick={soundHandler} className={styles.icon}>
+        <div onClick={soundHandler} className={styles.icon}>
+          {sound ? (
             <Image src={soundOn} alt="sound on" />
-          </div>
-        ) : (
-          <div onClick={soundHandler} className={styles.icon}>
+          ) : (
             <Image src={soundOff} alt="sound off" />
-          </div>
-        )}
+          )}
+        </div>
       </div>
 
       <div className={styles.menu}>
-        <Image src={menu} />
+        <Image src={menuImg} alt="menu" />
       </div>
     </nav>
   );

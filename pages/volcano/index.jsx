@@ -1,18 +1,50 @@
-//! From library
+//! From Library
+import { useEffect, useContext } from "react";
 
 //! From local
-import Navbar from "../../components/Navbar";
+import clientPromise from "../../lib/mongodb";
+import Landing from "../../components/Landing";
+import Layout from "../../components/Layout";
+import GameContext from "../../context/GameContext";
 
 //! Images
 
 //! Styles
+import styles from "../../styles/GameLanding.module.scss";
 
-// ----------------------------------------------------
+export default function GameLanding({ games }) {
+  const { setData } = useContext(GameContext);
 
-export default function Game() {
+  useEffect(() => {
+    setData(games);
+  });
+
   return (
-    <div>
-      <Navbar />
+    <div className={styles.container}>
+      {/* <Navbar /> */}
+      <Layout>
+        <Landing title={"volcano animal recuse"} />
+      </Layout>
     </div>
   );
+}
+
+// Fetch data ------------------------------------------------
+export async function getServerSideProps() {
+  try {
+    const client = await clientPromise;
+    const db = client.db("volcano");
+
+    const data = await db.collection("main").find({}).toArray();
+    const games = JSON.parse(JSON.stringify(data));
+
+    return {
+      props: { games },
+    };
+  } catch (e) {
+    console.error(e);
+    return {
+      props: { isConnected: false },
+    };
+  }
 }
