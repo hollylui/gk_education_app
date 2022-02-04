@@ -26,12 +26,14 @@ export default function Footer() {
   const nextGameId = gameIds[gameIds.indexOf(currGameId) + 1];
   const prevGameId = gameIds[gameIds.indexOf(currGameId) - 1];
   const index = gameIds.indexOf(currGameId);
-  console.log(index);
 
   // back page handler
   const backHandler = () => {
     localStorage.setItem("_id", prevGameId);
-    router.push(`/volcano/${prevGameId}`);
+
+    index === 1
+      ? router.push(`/volcano`)
+      : router.push(`/volcano/${prevGameId}`);
   };
 
   // next page handler
@@ -45,7 +47,7 @@ export default function Footer() {
   return (
     <div className={styles.container}>
       {/* back btn */}
-      {index !== 1 && index !== 13 && (
+      {index !== 13 && (
         <div className={styles.btn} onClick={backHandler}>
           <Image src={backBtn} alt="go to previous page" />
         </div>
