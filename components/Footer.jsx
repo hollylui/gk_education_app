@@ -40,8 +40,10 @@ export default function Footer() {
   // next page handler
   const nextHandler = () => {
     localStorage.setItem("_id", `${nextGameId}`);
-    if (index === 2) localStorage.setItem("name", name);
-    if (index == 3) localStorage.setItem("age", age);
+    if (gameIds[gameIds.indexOf(currentGameId)] === 2)
+      localStorage.setItem("name", name);
+    if (gameIds[gameIds.indexOf(currentGameId)] == 3)
+      localStorage.setItem("age", age);
 
     // setTimeout(() => {
     //   setIndex(index + 1);
