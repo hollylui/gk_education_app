@@ -18,38 +18,43 @@ import styles from "../styles/Footer.module.scss";
 export default function Footer() {
   const router = useRouter();
 
-  const { index, setIndex, data } = useContext(GameContext);
+  const { index, setIndex, data, currentGameId, gameIds } =
+    useContext(GameContext);
 
   const { name } = useContext(NameContext);
   const { age } = useContext(AgeContext);
 
+  //? nextGame Id
+  const nextGameId = gameIds[gameIds.indexOf(currentGameId) + 1];
+  //? previousGame Id
+  const previousGameId = gameIds[gameIds.indexOf(currentGameId) - 1];
   // back page handler
   const backHandler = () => {
-    localStorage.setItem("_id", `${data[index - 1]._id}`);
-    setTimeout(() => {
-      setIndex(index - 1);
-    }, 500);
+    localStorage.setItem("_id", `${previousGameId}`);
+    // setTimeout(() => {
+    //   setIndex(index - 1);
+    // }, 500);
 
-    router.back();
+    router.push(`/volcano/${previousGameId}`);
   };
 
   // next page handler
   const nextHandler = () => {
-    localStorage.setItem("_id", `${data[index + 1]._id}`);
+    localStorage.setItem("_id", `${previousGameId}`);
     if (index === 2) localStorage.setItem("name", name);
     if (index == 3) localStorage.setItem("age", age);
 
-    setTimeout(() => {
-      setIndex(index + 1);
-    }, 500);
+    // setTimeout(() => {
+    //   setIndex(index + 1);
+    // }, 500);
 
-    router.push(`/volcano/${data[index + 1]._id}`);
+    router.push(`/volcano/${nextGameId}`);
   };
 
   return (
     <div className={styles.container}>
       {/* back btn */}
-      {index !== 1 && (
+      {gameIds[currentGameId] !== 1 && (
         <div className={styles.btn} onClick={backHandler}>
           <Image src={backBtn} alt="go to previous page" />
         </div>
@@ -59,7 +64,7 @@ export default function Footer() {
       <div></div>
 
       {/* next btn */}
-      {index !== 12 && (
+      {gameIds[currentGameId] !== 12 && (
         <div className={styles.btn} onClick={nextHandler}>
           <Image src={nextBtn} alt="go to next page" />
         </div>

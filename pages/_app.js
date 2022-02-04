@@ -18,14 +18,26 @@ function ExampleApp({ Component, pageProps }) {
   const [name, setName] = useState("Hero");
   const [branch, setBranch] = useState(null);
   const [branchIndex, setBranchIndex] = useState(0);
-
+  const [gameIds, setGameIds] = useState("");
+  const [currentGameId, setCurrentGameId] = useState({});
   return (
     <BranchContext.Provider
       value={{ branch, setBranch, branchIndex, setBranchIndex }}
     >
       <NameContext.Provider value={{ name, setName }}>
         <MapContent.Provider value={{ expand, setExpand }}>
-          <GameContext.Provider value={{ index, setIndex, data, setData }}>
+          <GameContext.Provider
+            value={{
+              index,
+              setIndex,
+              data,
+              setData,
+              gameIds,
+              setGameIds,
+              currentGameId,
+              setCurrentGameId,
+            }}
+          >
             <AgeContext.Provider value={{ age, setAge }}>
               <Component {...pageProps} />
             </AgeContext.Provider>

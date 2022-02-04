@@ -1,5 +1,5 @@
 //! From Library
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 //! From local
 import Layout from "../../components/Layout";
@@ -17,9 +17,27 @@ import styles from "../../styles/id.module.scss";
 
 // --------------------------------------------
 
-export default function GameStart({ game }) {
+export default function GameStart({ game, ids }) {
   const { expand } = useContext(MapContent);
-  const { index } = useContext(GameContext);
+  const { index, setGameIds, gameIds, setCurrentGameId, currentGameId } =
+    useContext(GameContext);
+
+  useEffect(() => {
+    setCurrentGameId(game._id);
+    console.log(currentGameId);
+  }, [game]);
+
+  useEffect(() => {
+    setGameIds(ids);
+  }, []);
+
+  useEffect(() => {
+    console.log(gameIds);
+  }, [gameIds]);
+
+  useEffect(() => {
+    console.log(currentGameId);
+  }, [currentGameId]);
 
   return (
     <Layout>
@@ -27,12 +45,12 @@ export default function GameStart({ game }) {
         <div className={styles.contents}>
           {/* map section */}
 
-          {index !== 0 &&
-          index !== 1 &&
-          index !== 2 &&
-          index !== 3 &&
-          index !== 4 &&
-          index !== 5 ? (
+          {gameIds.indexOf(currentGameId) !== 0 &&
+          gameIds.indexOf(currentGameId) !== 1 &&
+          gameIds.indexOf(currentGameId) !== 2 &&
+          gameIds.indexOf(currentGameId) !== 3 &&
+          gameIds.indexOf(currentGameId) !== 4 &&
+          gameIds.indexOf(currentGameId) !== 5 ? (
             <div className={styles.map}>
               <Map />
             </div>
@@ -57,6 +75,11 @@ export default function GameStart({ game }) {
 
 //Fetch data ------------------------------------------
 export const getStaticProps = async (context) => {
+  const games = await (
+    await fetch(`http://localhost:3000/api/volcanos/`)
+  ).json();
+  const ids = games.map((game) => game._id);
+
   const data = await fetch(
     `http://localhost:3000/api/volcanos/${context.params.id}`
   );
@@ -64,7 +87,7 @@ export const getStaticProps = async (context) => {
   const game = await data.json();
 
   return {
-    props: { game },
+    props: { game, ids },
   };
 };
 
@@ -74,6 +97,7 @@ export const getStaticPaths = async () => {
 
   const ids = games.map((game) => game._id);
   const paths = ids.map((id) => ({ params: { id: id.toString() } }));
+
   return {
     paths,
     fallback: false,
