@@ -23,8 +23,10 @@ import ChooseBranch from "./ChooseBranch";
 // --------------------------------------------------
 
 export default function Content({ game }) {
-  const { index } = useContext(GameContext);
+  const { currGameId, gameIds } = useContext(GameContext);
   const { name } = useContext(NameContext);
+
+  const index = gameIds.indexOf(currGameId);
 
   return (
     <div className={styles.container}>

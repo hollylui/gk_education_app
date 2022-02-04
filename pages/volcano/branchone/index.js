@@ -39,7 +39,7 @@ export default function BranchOne({ branch1_1, branch1_2 }) {
             {expand ? (
               <LargeMap />
             ) : (
-              <BranchContent index={branchIndex} data={data} />
+              <BranchContent branchIndex={branchIndex} branchData={data} />
             )}
           </div>
         </div>

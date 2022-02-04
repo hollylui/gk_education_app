@@ -1,12 +1,13 @@
 //! From Libarary
 import Image from "next/image";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 //! From local
 import GameContext from "../context/GameContext";
 import NameContext from "../context/NameContext";
 import AgeContext from "../context/AgeContext";
+// import clientPromise from "../lib/mongodb";
 
 //! Images
 import nextBtn from "../assets/images/volcano/next.png";
@@ -18,38 +19,33 @@ import styles from "../styles/Footer.module.scss";
 export default function Footer() {
   const router = useRouter();
 
-  const { index, setIndex, data } = useContext(GameContext);
-
   const { name } = useContext(NameContext);
   const { age } = useContext(AgeContext);
+  const { currGameId, gameIds } = useContext(GameContext);
+
+  const nextGameId = gameIds[gameIds.indexOf(currGameId) + 1];
+  const prevGameId = gameIds[gameIds.indexOf(currGameId) - 1];
+  const index = gameIds.indexOf(currGameId);
+  console.log(index);
 
   // back page handler
   const backHandler = () => {
-    localStorage.setItem("_id", `${data[index - 1]._id}`);
-    setTimeout(() => {
-      setIndex(index - 1);
-    }, 500);
-
-    router.back();
+    localStorage.setItem("_id", prevGameId);
+    router.push(`/volcano/${prevGameId}`);
   };
 
   // next page handler
   const nextHandler = () => {
-    localStorage.setItem("_id", `${data[index + 1]._id}`);
+    localStorage.setItem("_id", nextGameId);
     if (index === 2) localStorage.setItem("name", name);
     if (index == 3) localStorage.setItem("age", age);
-
-    setTimeout(() => {
-      setIndex(index + 1);
-    }, 500);
-
-    router.push(`/volcano/${data[index + 1]._id}`);
+    router.push(`/volcano/${nextGameId}`);
   };
 
   return (
     <div className={styles.container}>
       {/* back btn */}
-      {index !== 1 && (
+      {index !== 1 && index !== 13 && (
         <div className={styles.btn} onClick={backHandler}>
           <Image src={backBtn} alt="go to previous page" />
         </div>

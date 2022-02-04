@@ -10,12 +10,12 @@ import styles from "../styles/Start.module.scss";
 
 // -------------------------------------------------------
 
-export default function Start() {
+export default function Start({ id }) {
   const router = useRouter();
-  const { index, data } = useContext(GameContext);
+  // const { index, data } = useContext(GameContext);
 
   const startHandler = () => {
-    router.push(`/volcano/${data[index]._id}`);
+    router.push(`/volcano/${id}`);
   };
 
   useEffect(() => {});

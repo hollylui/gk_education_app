@@ -1,5 +1,5 @@
 //! From Library
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 //! From local
 import Layout from "../../components/Layout";
@@ -17,28 +17,38 @@ import styles from "../../styles/id.module.scss";
 
 // --------------------------------------------
 
-export default function GameStart({ game }) {
+export default function GameStart({ game, ids }) {
   const { expand } = useContext(MapContent);
-  const { index } = useContext(GameContext);
+  const { currGameId, setCurrGameId, gameIds, setGameIds } =
+    useContext(GameContext);
+
+  useEffect(() => {
+    setCurrGameId(game._id);
+  }, [game]);
+
+  useEffect(() => {
+    setGameIds(ids);
+  }, []);
+
+  const index = gameIds.indexOf(currGameId);
 
   return (
     <Layout>
       <div className={styles.container}>
         <div className={styles.contents}>
           {/* map section */}
-
-          {index !== 0 &&
-          index !== 1 &&
-          index !== 2 &&
-          index !== 3 &&
-          index !== 4 &&
-          index !== 5 ? (
-            <div className={styles.map}>
+          <div className={styles.map}>
+            {index !== 0 &&
+            index !== 1 &&
+            index !== 2 &&
+            index !== 3 &&
+            index !== 4 &&
+            index !== 5 ? (
               <Map />
-            </div>
-          ) : (
-            <div className={styles.map}></div>
-          )}
+            ) : (
+              ""
+            )}
+          </div>
 
           {/* content section */}
           <div className={styles.content}>
@@ -55,16 +65,19 @@ export default function GameStart({ game }) {
   );
 }
 
-//Fetch data ------------------------------------------
+// Fetch data ------------------------------------------
 export const getStaticProps = async (context) => {
+  const allData = await fetch(`http://localhost:3000/api/volcanos/`);
+  const games = await allData.json();
+  const ids = games.map((game) => game._id);
+
   const data = await fetch(
     `http://localhost:3000/api/volcanos/${context.params.id}`
   );
-
   const game = await data.json();
 
   return {
-    props: { game },
+    props: { game, ids },
   };
 };
 

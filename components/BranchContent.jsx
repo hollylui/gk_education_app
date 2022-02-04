@@ -10,36 +10,36 @@ import monkey from "../assets/images/volcano/monkey.png";
 //! Styles
 import styles from "../styles/BranchContent.module.scss";
 
-export default function BranchContent({ index, data }) {
+export default function BranchContent({ branchIndex, branchData }) {
   return (
     <div className={styles.container}>
-      {index === 0 && (
+      {branchIndex === 0 && (
         <div className={styles.indexZero}>
           <Image src={crossingBridge} alt="crossing bridge" />
         </div>
       )}
 
-      {index === 2 && (
+      {branchIndex === 2 && (
         <div className={styles.indexTwo}>
           <Image src={monkeyInTree} alt="monkey in the tree" />
         </div>
       )}
 
-      {index === 3 && (
+      {branchIndex === 3 && (
         <div className={styles.indexTwo}>
           <Image src={scorionGuard} alt="Scorion" />
         </div>
       )}
 
-      {index !== 5 && (
-        <div className={styles.message}>{data[index].message}</div>
+      {branchIndex !== 5 && (
+        <div className={styles.message}>{branchData[branchIndex].message}</div>
       )}
 
-      {index === 5 && (
+      {branchIndex === 5 && (
         <>
           <div className={styles.message}>
-            Hurray! You have saved the {data[index].savedAnimal}, and rescued 1
-            of 5 animals.
+            Hurray! You have saved the {branchData[branchIndex].savedAnimal},
+            and rescued 1 of 5 animals.
           </div>
           <div className={styles.indexFive}>
             <Image src={monkey} alt="monkey" />
