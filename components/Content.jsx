@@ -33,7 +33,7 @@ export default function Content({ game }) {
           <p className={styles.message}>{game.message}</p>
         )}
 
-      {index === 3 && (
+      {gameIds[gameIds.indexOf(currentGameId)] === 3 && (
         <p className={styles.message}>{`${name}, ${game.message}`}</p>
       )}
 
