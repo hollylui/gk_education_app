@@ -23,7 +23,7 @@ export default function GameLanding({ games }) {
     <div className={styles.container}>
       {/* <Navbar /> */}
       <Layout>
-        <Landing title={"volcano animal recuse"} />
+        <Landing title={"volcano animal rescue"} />
       </Layout>
     </div>
   );
