@@ -53,7 +53,7 @@ export default function Footer() {
   return (
     <div className={styles.container}>
       {/* back btn */}
-      {gameIds[currentGameId] !== 1 && (
+      {gameIds[gameIds.indexOf(currentGameId)] !== 1 && (
         <div className={styles.btn} onClick={backHandler}>
           <Image src={backBtn} alt="go to previous page" />
         </div>
@@ -63,7 +63,7 @@ export default function Footer() {
       <div></div>
 
       {/* next btn */}
-      {gameIds[currentGameId] !== 12 && (
+      {gameIds[gameIds.indexOf(currentGameId)] !== 12 && (
         <div className={styles.btn} onClick={nextHandler}>
           <Image src={nextBtn} alt="go to next page" />
         </div>
