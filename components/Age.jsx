@@ -14,15 +14,16 @@ export default function Age() {
   const { age, setAge } = useContext(AgeContext);
 
   const ageHandler = (e) => {
+    e.preventDefault();
     setAge(e.target.value);
 
-    for (let button of buttons) {
-      if (button.innerText == e.target.value) {
-        button.classList.add(styles.active);
-      } else {
-        button.classList.remove(styles.active);
-      }
-    }
+    // for (let button of buttons) {
+    //   if (button.innerText == e.target.value) {
+    //     button.classList.add(styles.active);
+    //   } else {
+    //     button.classList.remove(styles.active);
+    //   }
+    // }
   };
 
   useEffect(() => {
