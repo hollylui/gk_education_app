@@ -23,14 +23,15 @@ import ChooseBranch from "./ChooseBranch";
 // --------------------------------------------------
 
 export default function Content({ game }) {
-  const { index, currentGameId, gameIds } = useContext(GameContext);
+  const { currentGameId, gameIds } = useContext(GameContext);
   const { name } = useContext(NameContext);
 
   return (
     <div className={styles.container}>
-      {index !== 3 && index !== 6 && (
-        <p className={styles.message}>{game.message}</p>
-      )}
+      {gameIds[gameIds.indexOf(currentGameId)] !== 3 &&
+        gameIds[gameIds.indexOf(currentGameId)] !== 6 && (
+          <p className={styles.message}>{game.message}</p>
+        )}
 
       {index === 3 && (
         <p className={styles.message}>{`${name}, ${game.message}`}</p>
@@ -46,7 +47,7 @@ export default function Content({ game }) {
       {gameIds.indexOf(currentGameId) === 12 && (
         <ChooseBranch leftBranch={"branch1_1"} rightBranch={"branch1_2"} />
       )}
-      {index === 13 && (
+      {gameIds[gameIds.indexOf(currentGameId)] === 13 && (
         <div className={styles.indexThirteen}>
           <Image src={cube} alt="cube" />
         </div>
