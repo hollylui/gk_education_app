@@ -1,0 +1,81 @@
+
+.button{
+    
+    background-color: #FD8154;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    font-size: 30px;
+    text-decoration: none;
+    padding:20px;
+    font-weight:900;
+    margin: 10px 6px;
+  
+    display: inline-block;
+}
+
+.button:focus{
+    text-align: center;
+    background-color: #00bbe0;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    font-size: 30px;
+   
+    padding:20px;
+    margin: 10px 6px;
+}
+
+
+
+.container{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #C2F5FF;
+   text-align: center;
+   padding-top: 200px;
+   margin: 0 auto;
+}
+
+.subcontainer{
+text-align: center;
+align-items: center;
+flex-direction: row;
+padding-top: 20px;
+padding-bottom: 30px;
+
+}
+
+.quizText{
+    font-size: xx-large;
+}
+
+.modalheader {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+
+  .modalbody {padding: 2px 16px;}
+
+  .modalfooter {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+
+  .modalcontent {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+
+  @keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+  }
