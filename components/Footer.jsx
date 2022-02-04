@@ -18,8 +18,7 @@ import styles from "../styles/Footer.module.scss";
 export default function Footer() {
   const router = useRouter();
 
-  const { index, setIndex, data, currentGameId, gameIds } =
-    useContext(GameContext);
+  const { index, data, currentGameId, gameIds } = useContext(GameContext);
 
   const { name } = useContext(NameContext);
   const { age } = useContext(AgeContext);
@@ -40,7 +39,7 @@ export default function Footer() {
 
   // next page handler
   const nextHandler = () => {
-    localStorage.setItem("_id", `${previousGameId}`);
+    localStorage.setItem("_id", `${nextGameId}`);
     if (index === 2) localStorage.setItem("name", name);
     if (index == 3) localStorage.setItem("age", age);
 
