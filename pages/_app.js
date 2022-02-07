@@ -9,6 +9,7 @@ import BranchContext from "../context/BranchContext";
 
 //! Styles
 import "../styles/globals.css";
+import BackpackProvider from "../context/BackpackProvider";
 
 function ExampleApp({ Component, pageProps }) {
   const [age, setAge] = useState(4);
@@ -39,7 +40,9 @@ function ExampleApp({ Component, pageProps }) {
             }}
           >
             <AgeContext.Provider value={{ age, setAge }}>
-              <Component {...pageProps} />
+              <BackpackProvider>
+                <Component {...pageProps} />
+              </BackpackProvider>
             </AgeContext.Provider>
           </GameContext.Provider>
         </MapContent.Provider>

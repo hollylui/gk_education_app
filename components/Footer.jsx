@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import GameContext from "../context/GameContext";
 import NameContext from "../context/NameContext";
 import AgeContext from "../context/AgeContext";
+import Backpack from "../components/Backpack";
 
 //! Images
 import nextBtn from "../assets/images/volcano/next.png";
@@ -61,8 +62,10 @@ export default function Footer() {
         </div>
       )}
 
-      {/* backpack section */}
-      <div></div>
+      {/* backpack section : Thank you Holly!*/}
+      <div>
+        <Backpack />
+      </div>
 
       {/* next btn */}
       {gameIds[gameIds.indexOf(currentGameId)] !== 12 && (
