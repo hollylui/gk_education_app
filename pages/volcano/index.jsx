@@ -1,29 +1,32 @@
 //! From Library
-import { useEffect, useContext } from "react";
+import { useEffect } from "react";
 
 //! From local
 import clientPromise from "../../lib/mongodb";
 import Landing from "../../components/Landing";
-import Layout from "../../components/Layout";
-import GameContext from "../../context/GameContext";
 
 //! Images
+
+//! audio
+import audio0 from "../../assets/audios/volcano/welcome_audio.mp3";
 
 //! Styles
 import styles from "../../styles/GameLanding.module.scss";
 
 export default function GameLanding({ games }) {
-  // const { setData } = useContext(GameContext);
-
-  // useEffect(() => {
-  //   setData(games);
-  // }, []);
+  useEffect(() => {
+    sessionStorage.removeItem("audioIndex");
+    const audio = document.getElementById("audio");
+    audio.volume = 0.5;
+    audio.play();
+  }, []);
 
   return (
     <div className={styles.container}>
-      <Layout>
-        <Landing games={games} />
-      </Layout>
+      <audio id="audio">
+        <source src={audio0} />
+      </audio>
+      <Landing games={games} />
     </div>
   );
 }

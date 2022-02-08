@@ -13,6 +13,7 @@ import backBtn from "../assets/images/volcano/back.png";
 
 //! Styles
 import styles from "../styles/BranchFooter.module.scss";
+import Backpack from "./Backpack";
 
 //---------------------------------------------
 
@@ -56,7 +57,10 @@ export default function BranchFooter() {
         </div>
       )}
 
-      <div></div>
+      <div>
+        <Backpack />
+      </div>
+
       <div className={styles.btn} onClick={nextHandler}>
         <Image src={nextBtn} alt="got to previosu page" />
       </div>
