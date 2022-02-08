@@ -9,7 +9,7 @@ import ReactModal from "react-modal";
 import Backpack from "../../components/Backpack";
 
 export default function Quizpage ({questions}){
-    const [modalIsOpen, setIsOpen] = useState(false);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
     const [isCorrect,setCorrect]=useState(false);
 ;    //user items is an empty array in default state
     const { userItems, setUserItems } = useContext(BackpackContext);
@@ -22,7 +22,7 @@ export default function Quizpage ({questions}){
          setCorrect(true);
        }
     function openModal(){
-        setIsOpen(true);
+        setModalIsOpen(true);
     }
 
      const handleClick= async (event) => {
@@ -37,7 +37,7 @@ export default function Quizpage ({questions}){
             makeCorrect();
             console.log("setting to correct")
             
-         } else {}
+         } 
 
          openModal();
  }
