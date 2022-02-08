@@ -23,7 +23,7 @@ export default function Footer() {
   const { name } = useContext(NameContext);
   const { age } = useContext(AgeContext);
   const { currGameId, gameIds } = useContext(GameContext);
-  const { audioIndex, setAudioIndex, music } = useContext(MusicContext);
+  const { audioIndex, setAudioIndex } = useContext(MusicContext);
 
   const nextGameId = gameIds[gameIds.indexOf(currGameId) + 1];
   const prevGameId = gameIds[gameIds.indexOf(currGameId) - 1];

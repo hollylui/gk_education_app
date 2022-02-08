@@ -26,14 +26,16 @@ import styles from "../styles/Navbar.module.scss";
 let bgMusicItem, audioItem;
 
 export default function Navbar() {
-  const { audioIndex, setAudioIndex } = useContext(MusicContext);
-  const [music, setMusic] = useState(true);
+  const { audioIndex, setAudioIndex, music, setMusic } =
+    useContext(MusicContext);
+  // const [music, setMusic] = useState(true);
   const [audio, setAudio] = useState(true);
 
   //   handler ------------------------------------------
   const musicHandler = () => {
     setMusic(!music);
-    music ? bgMusicItem.pause() : bgMusicItem.play();
+    sessionStorage.setItem("music", !music);
+    music == "true" ? bgMusicItem.play() : bgMusicItem.pause();
   };
 
   const soundHandler = () => {
@@ -45,12 +47,23 @@ export default function Navbar() {
   useEffect(() => {
     bgMusicItem = document.getElementById("bgMusic");
     bgMusicItem.volume = 0.01;
-    bgMusicItem.play();
+
+    const musicStatus = sessionStorage.getItem("music");
+
+    if (musicStatus == "true") {
+      setMusic(true);
+      bgMusicItem.play();
+    } else {
+      setMusic(false);
+      bgMusicItem.pause();
+    }
   }, []);
 
   useEffect(() => {
+    // get data from sessionStorate for reload
     const audioIndexNum = sessionStorage.getItem("audioIndex");
     setAudioIndex(audioIndexNum);
+
     audioItem = document.getElementById("audio");
     audioItem.volume = 1;
     audio ? audioItem.play() : audioItem.pause();
