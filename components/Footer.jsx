@@ -29,10 +29,7 @@ export default function Footer() {
   const prevGameId = gameIds[gameIds.indexOf(currGameId) - 1];
   const index = gameIds.indexOf(currGameId);
 
-  //? nextGame Id
-  //const nextGameId = gameIds[gameIds.indexOf(currentGameId) + 1];
-  //? previousGame Id
-  const previousGameId = gameIds[gameIds.indexOf(currentGameId) - 1];
+
   // back page handler
   const backHandler = () => {
 

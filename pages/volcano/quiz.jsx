@@ -3,7 +3,7 @@ import styles from "../../styles/quiz.module.scss";
 import Layout from "../../components/Layout";
 import Footer from "../../components/Footer";
 import Map from "../../components/Map";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import BackpackContext from "../../context/BackpackContext";
 import ReactModal from "react-modal";
 import Backpack from "../../components/Backpack";
@@ -11,7 +11,7 @@ import Backpack from "../../components/Backpack";
 export default function Quizpage ({questions}){
     const [modalIsOpen, setIsOpen] = useState(false);
     const [isCorrect,setCorrect]=useState(false);
-    //user items is an empty array in default state
+;    //user items is an empty array in default state
     const { userItems, setUserItems } = useContext(BackpackContext);
 
     function addItem() {
@@ -19,25 +19,27 @@ export default function Quizpage ({questions}){
     }
 
     function makeCorrect() {
-         setCorrect(!isCorrect);
+         setCorrect(true);
        }
     function openModal(){
         setIsOpen(true);
     }
 
-    function correct() {
-      return isCorrect ? "correctly, great job!" : "incorrectly, try again";
-    }
-
-
      const handleClick= async (event) => {
-         event.preventDefault();
-         openModal();
+
         
-         if (event.target.value===true){
+         let value = event.target.value; 
+
+         console.log(typeof value)
+        
+         if (value==="true"){
             addItem();
             makeCorrect();
+            console.log("setting to correct")
+            
          } else {}
+
+         openModal();
  }
 
  //pull random question from database
@@ -67,7 +69,7 @@ export default function Quizpage ({questions}){
 isOpen={modalIsOpen} 
 contentLabel={"Question Answer"} 
 className={styles.modalcontent}>
-<div> <p> You answered the question {correct()}</p>
+<div> <p> You answered the question {isCorrect ? "correctly, great job!" : "incorrectly, try again"}</p>
 </div>
 
 
