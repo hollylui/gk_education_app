@@ -19,7 +19,6 @@ export default function TypeOfQuestion() {
           id="math"
           value="math"
           className={styles.input}
-          checked="checked"
         />
       </div>
 

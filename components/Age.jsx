@@ -14,6 +14,7 @@ export default function Age() {
   const { age, setAge } = useContext(AgeContext);
 
   const ageHandler = (e) => {
+    e.preventDefault();
     setAge(e.target.value);
 
     for (let button of buttons) {

@@ -19,44 +19,36 @@ import styles from "../../styles/id.module.scss";
 
 export default function GameStart({ game, ids }) {
   const { expand } = useContext(MapContent);
-  const { index, setGameIds, gameIds, setCurrentGameId, currentGameId } =
+  const { currGameId, setCurrGameId, gameIds, setGameIds } =
     useContext(GameContext);
 
   useEffect(() => {
-    setCurrentGameId(game._id);
-    console.log(currentGameId);
+    setCurrGameId(game._id);
   }, [game]);
 
   useEffect(() => {
     setGameIds(ids);
   }, []);
 
-  useEffect(() => {
-    console.log(gameIds);
-  }, [gameIds]);
-
-  useEffect(() => {
-    console.log(currentGameId);
-  }, [currentGameId]);
+  const index = gameIds.indexOf(currGameId);
 
   return (
     <Layout>
       <div className={styles.container}>
         <div className={styles.contents}>
           {/* map section */}
-
-          {gameIds.indexOf(currentGameId) !== 0 &&
-          gameIds.indexOf(currentGameId) !== 1 &&
-          gameIds.indexOf(currentGameId) !== 2 &&
-          gameIds.indexOf(currentGameId) !== 3 &&
-          gameIds.indexOf(currentGameId) !== 4 &&
-          gameIds.indexOf(currentGameId) !== 5 ? (
-            <div className={styles.map}>
+          <div className={styles.map}>
+            {index !== 0 &&
+            index !== 1 &&
+            index !== 2 &&
+            index !== 3 &&
+            index !== 4 &&
+            index !== 5 ? (
               <Map />
-            </div>
-          ) : (
-            <div className={styles.map}></div>
-          )}
+            ) : (
+              ""
+            )}
+          </div>
 
           {/* content section */}
           <div className={styles.content}>
@@ -73,17 +65,15 @@ export default function GameStart({ game, ids }) {
   );
 }
 
-//Fetch data ------------------------------------------
+// Fetch data ------------------------------------------
 export const getStaticProps = async (context) => {
-  const games = await (
-    await fetch(`http://localhost:3000/api/volcanos/`)
-  ).json();
-  const ids = games.map((game) => game._id);
 
+  const allData = await fetch(`http://localhost:3000/api/volcanos/`);
+  const games = await allData.json();
+  const ids = games.map((game) => game._id);
   const data = await fetch(
     `http://localhost:3000/api/volcanos/${context.params.id}`
   );
-
   const game = await data.json();
 
   return {

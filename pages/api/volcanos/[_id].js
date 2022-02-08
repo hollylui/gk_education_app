@@ -2,7 +2,8 @@
 
 import clientPromise from "../../../lib/mongodb";
 
-export default async function handler({ query: { _id } }, res) {
+export default async function handler(req, res) {
+  const { _id } = req.query;
   const client = await clientPromise;
   const db = client.db("volcano");
   const data = await db.collection("main").find({}).toArray();

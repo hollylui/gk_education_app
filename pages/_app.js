@@ -1,6 +1,7 @@
 //! From Libaray
 import { useState } from "react";
 
+//! From local
 import AgeContext from "../context/AgeContext";
 import GameContext from "../context/GameContext";
 import MapContent from "../context/MapContent";
@@ -11,16 +12,25 @@ import BranchContext from "../context/BranchContext";
 import "../styles/globals.css";
 import BackpackProvider from "../context/BackpackProvider";
 
-function ExampleApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
+  //AgeContext
   const [age, setAge] = useState(4);
-  const [index, setIndex] = useState(1);
-  const [data, setData] = useState(null);
+
+  //MapContext
   const [expand, setExpand] = useState(false);
+
+  //NameContext
   const [name, setName] = useState("Hero");
+
+  //BranchContext
   const [branch, setBranch] = useState(null);
   const [branchIndex, setBranchIndex] = useState(0);
+
+  // GameContext
+  const [currGameId, setCurrGameId] = useState({});
   const [gameIds, setGameIds] = useState("");
-  const [currentGameId, setCurrentGameId] = useState({});
+
+
   return (
     <BranchContext.Provider
       value={{ branch, setBranch, branchIndex, setBranchIndex }}
@@ -29,14 +39,10 @@ function ExampleApp({ Component, pageProps }) {
         <MapContent.Provider value={{ expand, setExpand }}>
           <GameContext.Provider
             value={{
-              index,
-              setIndex,
-              data,
-              setData,
+              currGameId,
+              setCurrGameId,
               gameIds,
               setGameIds,
-              currentGameId,
-              setCurrentGameId,
             }}
           >
             <AgeContext.Provider value={{ age, setAge }}>
@@ -51,4 +57,4 @@ function ExampleApp({ Component, pageProps }) {
   );
 }
 
-export default ExampleApp;
+export default App;

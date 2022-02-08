@@ -13,17 +13,16 @@ import GameContext from "../../context/GameContext";
 import styles from "../../styles/GameLanding.module.scss";
 
 export default function GameLanding({ games }) {
-  const { setData } = useContext(GameContext);
+  // const { setData } = useContext(GameContext);
 
-  useEffect(() => {
-    setData(games);
-  });
+  // useEffect(() => {
+  //   setData(games);
+  // }, []);
 
   return (
     <div className={styles.container}>
-      {/* <Navbar /> */}
       <Layout>
-        <Landing title={"volcano animal recuse"} />
+        <Landing games={games} />
       </Layout>
     </div>
   );
