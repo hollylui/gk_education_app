@@ -3,29 +3,44 @@ import styles from "../../styles/quiz.module.scss";
 import Layout from "../../components/Layout";
 import Footer from "../../components/Footer";
 import Map from "../../components/Map";
-import { useState,  } from "react";
+import { useState, useContext } from "react";
+import BackpackContext from "../../context/BackpackContext";
 import ReactModal from "react-modal";
+import Backpack from "../../components/Backpack";
 
 export default function Quizpage ({questions}){
     const [modalIsOpen, setIsOpen] = useState(false);
-    const [userItems, setItems] =useState(0);
+    const [isCorrect,setCorrect]=useState(false);
+    //user items is an empty array in default state
+    const { userItems, setUserItems } = useContext(BackpackContext);
 
     function addItem() {
-        setItems(userItems=userItems++)
+        setUserItems(userItems.push("coconut"));
     }
+
+    function makeCorrect() {
+         setCorrect(!isCorrect);
+       }
     function openModal(){
         setIsOpen(true);
+    }
+
+    function correct() {
+      return isCorrect ? "correctly, great job!" : "incorrectly, try again";
     }
 
 
      const handleClick= async (event) => {
          event.preventDefault();
          openModal();
-         if (questions.answer.isCorrect===true){
+        
+         if (event.target.value===true){
             addItem();
-         }
+            makeCorrect();
+         } else {}
  }
 
+ //pull random question from database
     let randomQuestion= Math.floor(Math.random()*(questions.length))
      const question = questions[randomQuestion];
 
@@ -36,13 +51,13 @@ export default function Quizpage ({questions}){
 
      {/* Question box */}
         <div className={styles.container}>
-           <h3 className={styles.quizText}>{question.text}</h3>
+          <h3>{question.text}</h3>
 
            <div className={styles.subcontainer}> 
-           <button className={styles.button} onClick={handleClick} type="submit" value={question.answers.isCorrect}>{question.answers[0].text} </button>
-           <button className={styles.button} onClick={handleClick} type="submit" value={question.answers.isCorrect}>{question.answers[1].text}</button>
-           <button className={styles.button} onClick={handleClick} type="submit" value={question.answers.isCorrect}>{question.answers[2].text}</button>
-           <button className={styles.button} onClick={handleClick} type="submit" value={question.answers.isCorrect}>{question.answers[3].text}</button>
+           <button className={styles.button} onClick={handleClick} type="submit" value={question.answers[0].correctAnswer}>{question.answers[0].text} </button>
+           <button className={styles.button} onClick={handleClick} type="submit" value={question.answers[1].correctAnswer}>{question.answers[1].text}</button>
+           <button className={styles.button} onClick={handleClick} type="submit" value={question.answers[2].correctAnswer}>{question.answers[2].text}</button>
+           <button className={styles.button} onClick={handleClick} type="submit" value={question.answers[3].correctAnswer}>{question.answers[3].text}</button>
            </div>
        </div>  
 
@@ -50,8 +65,9 @@ export default function Quizpage ({questions}){
 
 <ReactModal
 isOpen={modalIsOpen} 
-contentLabel={"Question Answer"} >
-<div> <p> You answered the question</p>
+contentLabel={"Question Answer"} 
+className={styles.modalcontent}>
+<div> <p> You answered the question {correct()}</p>
 </div>
 
 
@@ -63,12 +79,13 @@ contentLabel={"Question Answer"} >
 
 
        <div className={styles.controller}>
-          <Footer />
+          {/* <Footer /> */}
         </div>
         <div className={styles.map}> 
         <Map/>
         </div>
         
+        <Backpack/>
        </Layout>
  
      
