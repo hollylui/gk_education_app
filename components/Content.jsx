@@ -23,6 +23,7 @@ import ChooseBranch from "./ChooseBranch";
 // --------------------------------------------------
 
 export default function Content({ game }) {
+
   const { currGameId, gameIds } = useContext(GameContext);
   const { name } = useContext(NameContext);
 

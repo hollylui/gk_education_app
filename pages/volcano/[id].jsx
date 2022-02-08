@@ -67,10 +67,10 @@ export default function GameStart({ game, ids }) {
 
 // Fetch data ------------------------------------------
 export const getStaticProps = async (context) => {
+
   const allData = await fetch(`http://localhost:3000/api/volcanos/`);
   const games = await allData.json();
   const ids = games.map((game) => game._id);
-
   const data = await fetch(
     `http://localhost:3000/api/volcanos/${context.params.id}`
   );
@@ -87,6 +87,7 @@ export const getStaticPaths = async () => {
 
   const ids = games.map((game) => game._id);
   const paths = ids.map((id) => ({ params: { id: id.toString() } }));
+
   return {
     paths,
     fallback: false,

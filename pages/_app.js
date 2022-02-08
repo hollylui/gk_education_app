@@ -10,6 +10,7 @@ import BranchContext from "../context/BranchContext";
 
 //! Styles
 import "../styles/globals.css";
+import BackpackProvider from "../context/BackpackProvider";
 
 function App({ Component, pageProps }) {
   //AgeContext
@@ -29,6 +30,7 @@ function App({ Component, pageProps }) {
   const [currGameId, setCurrGameId] = useState({});
   const [gameIds, setGameIds] = useState("");
 
+
   return (
     <BranchContext.Provider
       value={{ branch, setBranch, branchIndex, setBranchIndex }}
@@ -44,7 +46,9 @@ function App({ Component, pageProps }) {
             }}
           >
             <AgeContext.Provider value={{ age, setAge }}>
-              <Component {...pageProps} />
+              <BackpackProvider>
+                <Component {...pageProps} />
+              </BackpackProvider>
             </AgeContext.Provider>
           </GameContext.Provider>
         </MapContent.Provider>
