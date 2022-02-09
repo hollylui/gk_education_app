@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 
 //! From local
 import BranchContext from "../context/BranchContext";
+import MusicContext from "../context/MusicContext";
 
 //! Images
 
@@ -14,6 +15,7 @@ import styles from "../styles/ChooseBranch.module.scss";
 export default function ChooseBranch({ leftBranch, rightBranch }) {
   const router = useRouter();
   const { setBranch } = useContext(BranchContext);
+  const { stage, setStage } = useContext(MusicContext);
 
   const width = 200;
   const height = 200;
@@ -21,11 +23,13 @@ export default function ChooseBranch({ leftBranch, rightBranch }) {
   //callback function------------------------
   const leftBranchHandler = () => {
     setBranch(leftBranch);
+    setStage(leftBranch);
     router.push(`/volcano/branchone`);
   };
 
   const rightBranchHandler = () => {
     setBranch(rightBranch);
+    setStage(rightBranch);
     router.push(`/volcano/branchone`);
   };
 

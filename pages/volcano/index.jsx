@@ -9,7 +9,7 @@ import MusicContext from "../../context/MusicContext";
 //! Images
 
 //! audio
-import audio0 from "../../assets/audios/volcano/welcome_audio.mp3";
+import welcome from "../../assets/audios/volcano/welcome.mp3";
 
 //! Styles
 import styles from "../../styles/GameLanding.module.scss";
@@ -29,9 +29,7 @@ export default function GameLanding({ games }) {
 
   return (
     <div className={styles.container}>
-      <audio id="audio">
-        <source src={audio0} />
-      </audio>
+      <audio id="audio" source src={welcome} />
       <Landing games={games} />
     </div>
   );

@@ -35,10 +35,23 @@ function App({ Component, pageProps }) {
   const [audioIndex, setAudioIndex] = useState(0);
   const [music, setMusic] = useState(true);
   const [audio, setAudio] = useState(true);
+  const [stage, setStage] = useState("audio");
+  const [branchAudioIndex, setBranchAudioIndex] = useState(0);
 
   return (
     <MusicContext.Provider
-      value={{ audioIndex, setAudioIndex, music, setMusic, audio, setAudio }}
+      value={{
+        audioIndex,
+        setAudioIndex,
+        music,
+        setMusic,
+        audio,
+        setAudio,
+        stage,
+        setStage,
+        branchAudioIndex,
+        setBranchAudioIndex,
+      }}
     >
       <BranchContext.Provider
         value={{ branch, setBranch, branchIndex, setBranchIndex }}

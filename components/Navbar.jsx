@@ -5,6 +5,7 @@ import { useState, useContext, useEffect } from "react";
 
 //! From local
 import MusicContext from "../context/MusicContext";
+import BranchContext from "../context/BranchContext";
 
 //! Images
 import musicOn from "../assets/images/volcano/music_on.png";
@@ -17,18 +18,25 @@ import menuImg from "../assets/images/volcano/menu_img.png";
 //audio setup from Microsft Azure (Voice: Ana(Neural), Speaking speak = 0.72 and Pitch = 1.20)
 import bgMusic from "../assets/audios/volcano/cumbia_city_an_jone.mp3";
 import { audios } from "../assets/audios/volcano/audioList";
+import { branch1_1 } from "../assets/audios/volcano/branch1_1/branch1_1_list";
 
 //! Styles
 import styles from "../styles/Navbar.module.scss";
 
 // ----------------------------------------------------
 
-let bgMusicItem, audioItem;
+let bgMusicItem, audioItem, branchItem;
 
 export default function Navbar() {
-  const { audioIndex, setAudioIndex, music, setMusic } =
-    useContext(MusicContext);
-  // const [music, setMusic] = useState(true);
+  const {
+    audioIndex,
+    setAudioIndex,
+    music,
+    setMusic,
+    stage,
+    branchAudioIndex,
+  } = useContext(MusicContext);
+  const { branchIndex, setBranchIndex } = useContext(BranchContext);
   const [audio, setAudio] = useState(true);
 
   //   handler ------------------------------------------
@@ -61,13 +69,29 @@ export default function Navbar() {
 
   useEffect(() => {
     // get data from sessionStorate for reload
-    const audioIndexNum = sessionStorage.getItem("audioIndex");
-    setAudioIndex(audioIndexNum);
+    if (stage === "audio") {
+      const audioIndexNum = sessionStorage.getItem("audioIndex");
+      setAudioIndex(audioIndexNum);
+      console.log(audioIndex);
 
-    audioItem = document.getElementById("audio");
-    audioItem.volume = 1;
-    audio ? audioItem.play() : audioItem.pause();
+      audioItem = document.getElementById("audio");
+      audioItem.volume = 1;
+      audio
+        ? audioItem.play().catch((e) => {
+            console.log(e);
+          })
+        : audioItem.pause();
+    }
   }, [audioIndex]);
+
+  useEffect(() => {
+    // get data from sessionStorate for reload
+    if (stage === "branch1_1") {
+      branchItem = document.getElementById("branch");
+      branchItem.volume = 1;
+      audio ? branchItem.play() : branchItem.pause();
+    }
+  }, [branchAudioIndex]);
 
   return (
     <nav className={styles.container}>
@@ -77,7 +101,14 @@ export default function Navbar() {
       </audio>
 
       {/* audio */}
-      <audio id="audio" source src={audios[audioIndex]} />
+
+      {stage === "audio" && (
+        <audio id="audio" source src={audios[audioIndex]} />
+      )}
+
+      {stage === "branch1_1" && (
+        <audio id="branch" source src={branch1_1[branchAudioIndex]} />
+      )}
 
       <div className={styles.soundControl}>
         {/* music button */}

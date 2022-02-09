@@ -48,7 +48,7 @@ export default function Footer() {
 
   // next page handler
   const nextHandler = () => {
-    if (audioControl < 12) {
+    if (audioControl < 14) {
       setAudioIndex(audioControl + 1);
       sessionStorage.setItem("audioIndex", Number(audioIndex) + 1);
     }
