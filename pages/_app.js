@@ -7,6 +7,7 @@ import GameContext from "../context/GameContext";
 import MapContent from "../context/MapContent";
 import NameContext from "../context/NameContext";
 import BranchContext from "../context/BranchContext";
+import MusicContext from "../context/MusicContext";
 
 //! Styles
 import "../styles/globals.css";
@@ -30,30 +31,51 @@ function App({ Component, pageProps }) {
   const [currGameId, setCurrGameId] = useState({});
   const [gameIds, setGameIds] = useState("");
 
+  //MusicContext
+  const [audioIndex, setAudioIndex] = useState(0);
+  const [music, setMusic] = useState(true);
+  const [audio, setAudio] = useState(true);
+  const [stage, setStage] = useState("audio");
+  const [branchAudioIndex, setBranchAudioIndex] = useState(0);
 
   return (
-    <BranchContext.Provider
-      value={{ branch, setBranch, branchIndex, setBranchIndex }}
+    <MusicContext.Provider
+      value={{
+        audioIndex,
+        setAudioIndex,
+        music,
+        setMusic,
+        audio,
+        setAudio,
+        stage,
+        setStage,
+        branchAudioIndex,
+        setBranchAudioIndex,
+      }}
     >
-      <NameContext.Provider value={{ name, setName }}>
-        <MapContent.Provider value={{ expand, setExpand }}>
-          <GameContext.Provider
-            value={{
-              currGameId,
-              setCurrGameId,
-              gameIds,
-              setGameIds,
-            }}
-          >
-            <AgeContext.Provider value={{ age, setAge }}>
-              <BackpackProvider>
-                <Component {...pageProps} />
-              </BackpackProvider>
-            </AgeContext.Provider>
-          </GameContext.Provider>
-        </MapContent.Provider>
-      </NameContext.Provider>
-    </BranchContext.Provider>
+      <BranchContext.Provider
+        value={{ branch, setBranch, branchIndex, setBranchIndex }}
+      >
+        <NameContext.Provider value={{ name, setName }}>
+          <MapContent.Provider value={{ expand, setExpand }}>
+            <GameContext.Provider
+              value={{
+                currGameId,
+                setCurrGameId,
+                gameIds,
+                setGameIds,
+              }}
+            >
+              <AgeContext.Provider value={{ age, setAge }}>
+                <BackpackProvider>
+                  <Component {...pageProps} />
+                </BackpackProvider>
+              </AgeContext.Provider>
+            </GameContext.Provider>
+          </MapContent.Provider>
+        </NameContext.Provider>
+      </BranchContext.Provider>
+    </MusicContext.Provider>
   );
 }
 

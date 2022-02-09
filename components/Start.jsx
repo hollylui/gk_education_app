@@ -1,9 +1,8 @@
 //! From Libaray
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 
 //! From lcoal
-import GameContext from "../context/GameContext";
 
 //! Styles
 import styles from "../styles/Start.module.scss";

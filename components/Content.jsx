@@ -11,6 +11,8 @@ import TypeOfQuestion from "./TypeOfQuestion";
 import IndexSix from "./IndexSix";
 import IndexEight from "./IndexEight";
 import IndexNine from "./IndexNine";
+import BranchContext from "../context/BranchContext";
+import MusicContext from "../context/MusicContext";
 
 //! Image
 import cube from "../assets/images/volcano/rubiks_cube.png";
@@ -23,9 +25,10 @@ import ChooseBranch from "./ChooseBranch";
 // --------------------------------------------------
 
 export default function Content({ game }) {
-
   const { currGameId, gameIds } = useContext(GameContext);
   const { name } = useContext(NameContext);
+  const { branchIndex } = useContext(BranchContext);
+  const { setBranchAudioIndex } = useContext(MusicContext);
 
   const index = gameIds.indexOf(currGameId);
 
