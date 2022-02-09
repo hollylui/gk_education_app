@@ -36,7 +36,7 @@
    margin: 0 auto;
 }
 
-.subcontainer{
+.subContainer{
 text-align: center;
 align-items: center;
 flex-direction: row;
@@ -51,13 +51,13 @@ padding-bottom: 30px;
 
 
 
-  .modalcontent {
+  .modalContent {
    
-    background-color: red;
+    background-color: whitesmoke;
     margin: auto;
     border: 1px solid #888;
-    width: 80%;
-   height: 300px;
+    width: 60%;
+   height: 50%;
    padding-top: 200px;
   }
 
