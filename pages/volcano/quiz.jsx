@@ -7,7 +7,6 @@ import Backpack from "../../components/Backpack";
 import Quiz from "../../components/Quiz";
 
 import pageStyles from "../../styles/GameLanding.module.scss";
-import styles from "../../styles/Quiz.module.scss"
 
 export default function Quizpage ({questions}){
    return(  
@@ -31,7 +30,7 @@ export default function Quizpage ({questions}){
 export async function getServerSideProps() {
   try {
     const client = await clientPromise;
-    const db = client.db("kids-game");
+    const db = client.db("volcano");
 
 
     let data = await db.collection("questions").find({}).toArray();
