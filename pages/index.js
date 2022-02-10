@@ -1,9 +1,23 @@
 import Head from "next/head";
-
+import Image from "next/image";
 import { useEffect } from "react/cjs/react.production.min";
 import styles from "../styles/Home.module.scss";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+  const games = [
+    {
+      name: "volcano",
+      img: "/images/landing/volcanoImg.png",
+      link: "/volcano",
+    },
+    { name: "comingsoon", img: "/images/landing/comingsoon.png", link: "/" },
+    { name: "comingsoon", img: "/images/landing/comingsoon.png", link: "/" },
+    { name: "comingsoon", img: "/images/landing/comingsoon.png", link: "/" },
+    { name: "comingsoon", img: "/images/landing/comingsoon.png", link: "/" },
+    { name: "comingsoon", img: "/images/landing/comingsoon.png", link: "/" },
+  ];
   return (
     <div className={styles.container}>
       <Head>
@@ -14,9 +28,30 @@ export default function Home() {
         <link rel="icon" href="/children.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to GK Education App</h1>
-      </main>
+      <div className={styles.homeNav}>
+        <div className={styles.logo}>LOGO</div>
+        <ul className={styles.navlist}>
+          <li>ABOUT</li>
+          <li>CONTACT</li>
+        </ul>
+      </div>
+      {/* <h1 className={styles.title}>Welcome to GK Education App</h1> */}
+      <div className={styles.main}>
+        <div className={styles.title}>GK GAMES & MEDIA</div>
+        <span>EDUCATIONAL GAMES FOR CHILDREN</span>
+        <div className={styles.gameCon}>
+          {games.map((game, index) => (
+            <Image
+              key={index}
+              src={game.img}
+              onClick={() => router.push(game.link)}
+              width={200}
+              height={200}
+              className={styles.gameIcons}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
