@@ -41,16 +41,14 @@ export default function Home() {
         <span>EDUCATIONAL GAMES FOR CHILDREN</span>
         <div className={styles.gameCon}>
           {games.map((game, index) => (
-            <div className={styles.gameIcons}>
-              <Image
-                key={index}
-                src={game.img}
-                onClick={() => router.push(game.link)}
-                width={200}
-                height={200}
-                className={styles.gameIcons}
-              />
-            </div>
+            <Image
+              key={index}
+              src={game.img}
+              onClick={() => router.push(game.link)}
+              width={200}
+              height={200}
+              className={styles.gameIcons}
+            />
           ))}
         </div>
       </div>
