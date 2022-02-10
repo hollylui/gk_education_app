@@ -11,15 +11,15 @@
     position: absolute;
     width: 420px;
 
-    .bridge {
+    .sub_1 {
       position: absolute;
       top: -165px;
       z-index: -1;
     }
 
-    .cave {
+    .sub_2 {
       position: absolute;
-      top: -20px;
+      top: -60px;
       z-index: -1;
     }
   }
@@ -31,7 +31,7 @@
   }
 
   .indexTwo {
-    .monkey {
+    .sub_3 {
       position: absolute;
       top: -135px;
       z-index: -2;
@@ -46,14 +46,14 @@
     width: 600px;
     z-index: -1;
 
-    .turtle {
+    .sub_4 {
       position: absolute;
       left: 50%;
       width: 100px;
       z-index: -2;
     }
 
-    .river {
+    .sub_5 {
       position: absolute;
       top: 0;
       left: 20%;
@@ -63,7 +63,7 @@
   }
 
   .indexThree {
-    .rock {
+    .sub_7 {
       position: absolute;
       top: 80px;
       left: 0;
@@ -71,7 +71,7 @@
   }
 
   .indexFour {
-    .rock {
+    .sub_7 {
       position: absolute;
       top: 70px;
       left: 180px;
@@ -79,7 +79,7 @@
     }
   }
 
-  .scorion {
+  .sub_6 {
     position: absolute;
     top: -135px;
   }
@@ -89,8 +89,9 @@
     margin-top: 10px;
   }
 
-  .messageOne {
-    font-size: 2rem;
+  .messageOne,
+  .messageTwo {
+    font-size: 1.8rem;
     letter-spacing: 2px;
     padding: 10px 15px;
     border-radius: 20px;
@@ -99,11 +100,6 @@
 
   .messageTwo {
     position: absolute;
-    font-size: 2rem;
-    letter-spacing: 2px;
-    padding: 10px 15px;
     top: 0;
-    border-radius: 20px;
-    z-index: 10;
   }
 }

@@ -29,7 +29,6 @@ export default function Footer() {
   const prevGameId = gameIds[gameIds.indexOf(currGameId) - 1];
   const index = gameIds.indexOf(currGameId);
 
-
   // audios array start from 0
   const audioControl = gameIds.indexOf(currGameId) - 1;
 
@@ -80,7 +79,7 @@ export default function Footer() {
       )}
 
       {/* next btn */}
-      {index !== 12 ? (
+      {index !== 12 && index !== 14 && index !== 15 && index !== 16 ? (
         <div className={styles.btn} onClick={nextHandler}>
           <Image src={nextBtn} alt="go to next page" />
         </div>

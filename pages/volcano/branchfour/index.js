@@ -1,6 +1,5 @@
 //! From Library
 import { useContext } from "react";
-import Image from "next/image";
 
 //! From local
 import clientPromise from "../../../lib/mongodb";
@@ -17,12 +16,12 @@ import Map from "../../../components/Map";
 import styles from "../../../styles/branchone.module.scss";
 import BranchFooter from "../../../components/BranchFooter";
 
-export default function BranchOne({ branch2_1, branch2_2 }) {
+export default function BranchOne({ branch4_1, branch4_2 }) {
   let data;
   const { branch, branchIndex } = useContext(BranchContext);
   const { expand } = useContext(MapContent);
 
-  branch === "branch2_1" ? (data = branch2_1) : (data = branch2_2);
+  branch === "branch4_1" ? (data = branch4_1) : (data = branch4_2);
 
   return (
     <Layout>
@@ -59,12 +58,12 @@ export async function getServerSideProps(context) {
     const client = await clientPromise;
     const db = client.db("volcano");
 
-    const data1 = await db.collection("branch2_1").find({}).toArray();
-    const data2 = await db.collection("branch2_2").find({}).toArray();
-    const branch2_1 = JSON.parse(JSON.stringify(data1));
-    const branch2_2 = JSON.parse(JSON.stringify(data2));
+    const data1 = await db.collection("branch4_1").find({}).toArray();
+    const data2 = await db.collection("branch4_2").find({}).toArray();
+    const branch4_1 = JSON.parse(JSON.stringify(data1));
+    const branch4_2 = JSON.parse(JSON.stringify(data2));
     return {
-      props: { branch2_1, branch2_2 },
+      props: { branch4_1, branch4_2 },
     };
   } catch (e) {
     console.error(e);
