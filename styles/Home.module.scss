@@ -32,6 +32,13 @@ $yellow: #ffea47;
   box-shadow: 3px 4px 10px #333;
 }
 
+@mixin grid($wd, $row, $column, $gap) {
+  width: $wd;
+  display: grid;
+  grid-template: $row / $column;
+  grid-gap: $gap;
+}
+
 .container {
   height: 100vh;
   background-color: $lightblue;
@@ -68,6 +75,7 @@ $yellow: #ffea47;
     }
     .gameCon {
       width: 55%;
+      max-width: 50rem;
       height: 60vh;
       padding: 0 10rem;
       @include flex-just-al-wrap(space-evenly, center, wrap);
@@ -76,6 +84,8 @@ $yellow: #ffea47;
       .gameIcons {
         border-radius: 3rem;
         cursor: pointer;
+        width: 200px;
+        height: 200px;
       }
     }
   }
