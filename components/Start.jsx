@@ -17,12 +17,19 @@ export default function Start({ id }) {
     router.push(`/volcano/${id}`);
   };
 
+  const backToHomeHandler = () => {
+    router.push(`/`);
+  };
+
   useEffect(() => {});
 
   return (
     <>
       <button onClick={startHandler} className={styles.button}>
         Start
+      </button>
+      <button onClick={backToHomeHandler} className={styles.button}>
+        Back to Home
       </button>
     </>
   );

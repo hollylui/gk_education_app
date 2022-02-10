@@ -57,6 +57,10 @@ export default function Content({ game }) {
           <Image src={cube} alt="cube" />
         </div>
       )}
+
+      {index === 14 && (
+        <ChooseBranch leftBranch={"branch2_1"} rightBranch={"branch2_2"} />
+      )}
     </div>
   );
 }

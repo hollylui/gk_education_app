@@ -14,23 +14,31 @@ import styles from "../styles/ChooseBranch.module.scss";
 
 export default function ChooseBranch({ leftBranch, rightBranch }) {
   const router = useRouter();
-  const { setBranch } = useContext(BranchContext);
-  const { stage, setStage } = useContext(MusicContext);
+  const { setBranch, setBranchIndex, setLeftPath, setRightPath } =
+    useContext(BranchContext);
+  const { setStage } = useContext(MusicContext);
 
   const width = 200;
   const height = 200;
 
   //callback function------------------------
   const leftBranchHandler = () => {
+    setBranchIndex(0);
     setBranch(leftBranch);
     setStage(leftBranch);
-    router.push(`/volcano/branchone`);
+    setLeftPath(leftBranch);
+    leftBranch === "branch1_1" && router.push(`/volcano/branchone`);
+    leftBranch === "branch2_1" && router.push(`/volcano/branchtwo`);
   };
 
   const rightBranchHandler = () => {
+    setBranchIndex(0);
     setBranch(rightBranch);
     setStage(rightBranch);
-    router.push(`/volcano/branchone`);
+    setRightPath(rightBranch);
+
+    rightBranch === "branch1_2" && router.push(`/volcano/branchone`);
+    rightBranch === "branch2_2" && router.push(`/volcano/branchtwo`);
   };
 
   return (

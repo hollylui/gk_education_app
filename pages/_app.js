@@ -26,6 +26,8 @@ function App({ Component, pageProps }) {
   //BranchContext
   const [branch, setBranch] = useState(null);
   const [branchIndex, setBranchIndex] = useState(0);
+  const [leftPath, setLeftPath] = useState(null);
+  const [rightPath, setRightPath] = useState(null);
 
   // GameContext
   const [currGameId, setCurrGameId] = useState({});
@@ -54,7 +56,16 @@ function App({ Component, pageProps }) {
       }}
     >
       <BranchContext.Provider
-        value={{ branch, setBranch, branchIndex, setBranchIndex }}
+        value={{
+          branch,
+          setBranch,
+          branchIndex,
+          setBranchIndex,
+          leftPath,
+          setLeftPath,
+          rightPath,
+          setRightPath,
+        }}
       >
         <NameContext.Provider value={{ name, setName }}>
           <MapContent.Provider value={{ expand, setExpand }}>

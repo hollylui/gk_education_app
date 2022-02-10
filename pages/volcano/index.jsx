@@ -40,7 +40,6 @@ export async function getServerSideProps() {
   try {
     const client = await clientPromise;
     const db = client.db("volcano");
-
     const data = await db.collection("main").find({}).toArray();
     const games = JSON.parse(JSON.stringify(data));
 
