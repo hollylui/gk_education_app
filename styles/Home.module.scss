@@ -68,6 +68,7 @@ $yellow: #ffea47;
     }
     .gameCon {
       width: 55%;
+      max-width: 50rem;
       height: 60vh;
       padding: 0 10rem;
       @include flex-just-al-wrap(space-evenly, center, wrap);
