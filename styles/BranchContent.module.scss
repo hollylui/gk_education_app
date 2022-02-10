@@ -5,26 +5,105 @@
   align-items: center;
   height: 100%;
   text-align: center;
-
   position: relative;
 
   .indexZero {
+    position: absolute;
+    width: 420px;
+
+    .bridge {
+      position: absolute;
+      top: -165px;
+      z-index: -1;
+    }
+
+    .cave {
+      position: absolute;
+      top: -20px;
+      z-index: -1;
+    }
+  }
+
+  .indexOne {
+    position: absolute;
+    top: 0;
     width: 420px;
   }
 
   .indexTwo {
+    .monkey {
+      position: absolute;
+      top: -135px;
+      z-index: -2;
+    }
+  }
+
+  .indexTwo,
+  .indexThree,
+  .indexFour {
     position: absolute;
+    top: 40%;
     width: 600px;
     z-index: -1;
+
+    .turtle {
+      position: absolute;
+      left: 50%;
+      width: 100px;
+      z-index: -2;
+    }
+
+    .river {
+      position: absolute;
+      top: 0;
+      left: 20%;
+      width: 250px;
+      z-index: -3;
+    }
+  }
+
+  .indexThree {
+    .rock {
+      position: absolute;
+      top: 80px;
+      left: 0;
+    }
+  }
+
+  .indexFour {
+    .rock {
+      position: absolute;
+      top: 70px;
+      left: 180px;
+      width: 50px;
+    }
+  }
+
+  .scorion {
+    position: absolute;
+    top: -135px;
   }
 
   .indexFive {
     width: 180px;
+    margin-top: 10px;
   }
 
-  .message {
+  .messageOne {
     font-size: 2rem;
     letter-spacing: 2px;
-    padding: 0 40px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    z-index: 10;
+  }
+
+  .messageTwo {
+    position: absolute;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    padding: 10px 15px;
+    top: 0;
+    border-radius: 20px;
+    z-index: 10;
   }
 }

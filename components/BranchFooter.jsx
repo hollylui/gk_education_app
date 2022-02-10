@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 //! From local
 import BranchContext from "../context/BranchContext";
 import GameContext from "../context/GameContext";
+import MusicContext from "../context/MusicContext";
 
 //! Images
 import nextBtn from "../assets/images/volcano/next.png";
@@ -13,6 +14,7 @@ import backBtn from "../assets/images/volcano/back.png";
 
 //! Styles
 import styles from "../styles/BranchFooter.module.scss";
+import Backpack from "./Backpack";
 
 //---------------------------------------------
 
@@ -20,15 +22,24 @@ export default function BranchFooter() {
   const router = useRouter();
   const { branchIndex, setBranchIndex } = useContext(BranchContext);
   const { currGameId, gameIds } = useContext(GameContext);
+  const {
+    audioIndex,
+    setAudioIndex,
+    branchAudioIndex,
+    setBranchAudioIndex,
+    setStage,
+  } = useContext(MusicContext);
 
   const nextGameId = gameIds[gameIds.indexOf(currGameId) + 1];
   const prevGameId = gameIds[gameIds.indexOf(currGameId)];
 
   const backToCrossRoad = () => {
+    setBranchAudioIndex(0);
     if (branchIndex === 0) router.push(`/volcano/${prevGameId}`);
   };
 
   const backHandler = () => {
+    setBranchAudioIndex(branchAudioIndex - 1);
     if (branchIndex !== 0) {
       setBranchIndex(branchIndex - 1);
     }
@@ -36,8 +47,11 @@ export default function BranchFooter() {
 
   // next page handler
   const nextHandler = () => {
+    setBranchAudioIndex(branchAudioIndex + 1);
     if (branchIndex !== 5) setBranchIndex(branchIndex + 1);
     if (branchIndex === 5) {
+      setStage("audio");
+      sessionStorage.setItem("audioIndex", Number(audioIndex) + 1);
       router.push(`/volcano/${nextGameId}`);
     }
   };
@@ -56,7 +70,10 @@ export default function BranchFooter() {
         </div>
       )}
 
-      <div></div>
+      <div>
+        <Backpack />
+      </div>
+
       <div className={styles.btn} onClick={nextHandler}>
         <Image src={nextBtn} alt="got to previosu page" />
       </div>
