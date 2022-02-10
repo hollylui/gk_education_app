@@ -29,6 +29,7 @@ export default function Footer() {
   const prevGameId = gameIds[gameIds.indexOf(currGameId) - 1];
   const index = gameIds.indexOf(currGameId);
 
+
   // audios array start from 0
   const audioControl = gameIds.indexOf(currGameId) - 1;
 
