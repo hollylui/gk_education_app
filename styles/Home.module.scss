@@ -1,3 +1,86 @@
+//variables
+//fonts
+$font_xl: 4rem;
+$font_lg: 2.5rem;
+$font_md: 2rem;
+
+//colors
+$green: #35805a;
+$blue: #00bbe0;
+$orange: #fd8154;
+$lightblue: #c2f5ff;
+$yellow: #ffea47;
+
+//mixins
+@mixin flex-just-al-wrap($just, $align, $wrap) {
+  display: flex;
+  justify-content: $just;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin border-box($width, $height, $radius) {
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+  border: 1px solid #333;
+}
+
+@mixin border-shadow-box($padding, $radius) {
+  padding: $padding;
+  border-radius: $radius;
+  box-shadow: 3px 4px 10px #333;
+}
+
+.container {
+  height: 100vh;
+  background-color: $lightblue;
+  .homeNav {
+    font-size: $font_lg;
+    @include flex-just-al-wrap(space-between, center, no-wrap);
+    padding: 0rem 5rem;
+    background-color: $yellow;
+    // box-shadow: 1px 2px 5px #333;
+    .logo {
+      background-color: #fff;
+      @include border-box(6rem, 6rem, 2rem);
+      @include flex-just-al-wrap(center, center, no-wrap);
+    }
+    .navlist {
+      width: 23%;
+      list-style: none;
+      @include flex-just-al-wrap(space-between, center, no-wrap);
+    }
+  }
+  .main {
+    @include flex-just-al-wrap(space-evenly, center, wrap);
+    height: 84vh;
+    flex-direction: column;
+    background-color: $lightblue;
+    .title {
+      font-size: $font_xl;
+      background-color: $orange;
+      padding: 1rem 3rem;
+      @include border-shadow-box(0.5rem 4rem, 2rem);
+    }
+    span {
+      font-size: $font_md;
+    }
+    .gameCon {
+      width: 55%;
+      height: 60vh;
+      padding: 0 10rem;
+      @include flex-just-al-wrap(space-evenly, center, wrap);
+      @include border-shadow-box(1rem, 2rem);
+      background-color: $blue;
+      .gameIcons {
+        border-radius: 3rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
 // .container {
 //   padding: 0 2rem;
 // }
