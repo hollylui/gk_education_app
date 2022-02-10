@@ -32,13 +32,6 @@ $yellow: #ffea47;
   box-shadow: 3px 4px 10px #333;
 }
 
-@mixin grid($wd, $row, $column, $gap) {
-  width: $wd;
-  display: grid;
-  grid-template: $row / $column;
-  grid-gap: $gap;
-}
-
 .container {
   height: 100vh;
   background-color: $lightblue;
