@@ -13,8 +13,18 @@ export default function Quiz ({questions, item}){
 ;    //user items is an empty array in default state
     const { userItems, setUserItems } = useContext(BackpackContext);
 
+    
+    let items=["coconut", "fire", "leaf", "stone", "water"];
+
     function addItem() {
-        setUserItems(userItems.push((item)));
+        let backpackContentsHowMany=userItems.length();
+        let item=items[backpackContentsHowMany];
+            setUserItems(userItems.push(item))
+        ;
+    }
+
+    function addItem() {
+        setUserItems(userItems.push(item));
     }
 
     function makeCorrect() {

@@ -14,7 +14,7 @@ export default function Quizpage ({questions}){
         <div className={pageStyles.container}>
      <Layout>
 
-      <Quiz questions= {questions} item="coconut"/>
+      <Quiz questions= {questions}/>
 
           {/* <Footer /> */}
     
