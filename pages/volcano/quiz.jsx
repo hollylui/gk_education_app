@@ -9,29 +9,26 @@ import Quiz from "../../components/Quiz";
 
 import pageStyles from "../../styles/GameLanding.module.scss";
 
-export default function Quizpage ({questions}){
-   return(  
-        <div className={pageStyles.container}>
-     <Layout>
+export default function Quizpage({ questions }) {
+  return (
+    <div className={pageStyles.container}>
+      <Layout>
+        <Quiz questions={questions} item="coconut" />
 
-      <Quiz questions= {questions} item="coconut"/>
+        {/* <Footer /> */}
 
-          {/* <Footer /> */}
-    
-        <Map/>
-        
-        <Backpack/>
-       </Layout>
- 
-     
-     </div>
-     )}
+        <Map />
 
+        <Backpack />
+      </Layout>
+    </div>
+  );
+}
 
 export async function getServerSideProps() {
   try {
     const client = await clientPromise;
-    const db = client.db("kids-game");
+    const db = client.db("volcano");
 
     let data = await db.collection("questions").find({}).toArray();
     let questions = JSON.parse(JSON.stringify(data));
