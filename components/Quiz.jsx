@@ -14,7 +14,7 @@ export default function Quiz ({questions, item}){
     const { userItems, setUserItems } = useContext(BackpackContext);
 
     function addItem() {
-        setUserItems(userItems.push({item}));
+        setUserItems(userItems.push((item)));
     }
 
     function makeCorrect() {
@@ -68,7 +68,7 @@ export default function Quiz ({questions, item}){
 isOpen={modalIsOpen} 
 contentLabel={"Question Answer"} 
 className={styles.modalContent}>
-<div> <p> You answered the question {isCorrect ? "correctly, great job!" : "incorrectly, try again"}</p>
+<div> <p> You answered the question {isCorrect ? "correctly, great job!" : "incorrectly"}</p>
 </div>
 </ReactModal>
      
