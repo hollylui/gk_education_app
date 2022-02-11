@@ -11,8 +11,7 @@ import TypeOfQuestion from "./TypeOfQuestion";
 import IndexSix from "./IndexSix";
 import IndexEight from "./IndexEight";
 import IndexNine from "./IndexNine";
-// import BranchContext from "../context/BranchContext";
-// import MusicContext from "../context/MusicContext";
+import IndexEighteen from "./IndexEighteen";
 
 //! Image
 import cube from "../assets/images/volcano/rubiks_cube.png";
@@ -21,7 +20,6 @@ import cube from "../assets/images/volcano/rubiks_cube.png";
 import styles from "../styles/Content.module.scss";
 import IndexEleven from "./IndexEleven";
 import ChooseBranch from "./ChooseBranch";
-import IndexEighteen from "./IndexEighteen";
 
 // --------------------------------------------------
 

@@ -1,6 +1,6 @@
 //! From Libarary
 import Image from "next/image";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 //! From Local
 import BranchContext from "../context/BranchContext";
@@ -13,14 +13,15 @@ import { allAlts } from "../assets/images/volcano/branches/altsList";
 import styles from "../styles/BranchContent.module.scss";
 
 export default function BranchContent({ branchIndex, branchData }) {
-  let images, alts, noOfAnimal, index;
-
-  const { branch, leftPath, rightPath } = useContext(BranchContext);
+  let images, alts, noOfAnimal, index, animals;
+  const { branch, leftPath, rightPath, animalsList, setAnimalsList } =
+    useContext(BranchContext);
 
   if (branch === "branch1_1") {
     noOfAnimal = 1;
     index = 0;
     images = allImages[index];
+    animals = images[3];
     alts = allAlts[index];
   }
 
@@ -29,6 +30,7 @@ export default function BranchContent({ branchIndex, branchData }) {
     index = 1;
     images = allImages[index];
     alts = allAlts[index];
+    animals = images[2];
   }
 
   if (branch === "branch2_1") {
@@ -36,6 +38,7 @@ export default function BranchContent({ branchIndex, branchData }) {
     index = 2;
     images = allImages[index];
     alts = allAlts[index];
+    animals = images[3];
   }
 
   if (branch === "branch2_2") {
@@ -43,6 +46,7 @@ export default function BranchContent({ branchIndex, branchData }) {
     index = 3;
     images = allImages[index];
     alts = allAlts[index];
+    animals = images[2];
   }
 
   if (branch === "branch3_1") {
@@ -50,6 +54,7 @@ export default function BranchContent({ branchIndex, branchData }) {
     index = 4;
     images = allImages[index];
     alts = allAlts[index];
+    animals = images[3];
   }
 
   if (branch === "branch3_2") {
@@ -57,6 +62,7 @@ export default function BranchContent({ branchIndex, branchData }) {
     index = 5;
     images = allImages[index];
     alts = allAlts[index];
+    animals = images[2];
   }
 
   if (branch === "branch4_1") {
@@ -64,6 +70,7 @@ export default function BranchContent({ branchIndex, branchData }) {
     index = 6;
     images = allImages[index];
     alts = allAlts[index];
+    animals = images[3];
   }
 
   if (branch === "branch4_2") {
@@ -71,6 +78,7 @@ export default function BranchContent({ branchIndex, branchData }) {
     index = 7;
     images = allImages[index];
     alts = allAlts[index];
+    animals = images[2];
   }
 
   if (branch === "branch5_1") {
@@ -78,6 +86,7 @@ export default function BranchContent({ branchIndex, branchData }) {
     index = 8;
     images = allImages[index];
     alts = allAlts[index];
+    animals = images[3];
   }
 
   if (branch === "branch5_2") {
@@ -85,7 +94,13 @@ export default function BranchContent({ branchIndex, branchData }) {
     index = 9;
     images = allImages[index];
     alts = allAlts[index];
+    animals = images[2];
   }
+
+  useEffect(() => {
+    setAnimalsList([...animalsList, animals]);
+    console.log(animalsList);
+  }, [animals]);
 
   return (
     <div className={styles.container}>

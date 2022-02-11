@@ -1,4 +1,4 @@
-import clientPromise from "../../lib/mongodb";
+import clientPromise from "../../lib/mongodb2";
 
 import Layout from "../../components/Layout";
 import Footer from "../../components/Footer";
@@ -13,8 +13,6 @@ export default function Quizpage({ questions }) {
   return (
     <div className={pageStyles.container}>
       <Layout>
-        <Quiz questions={questions} item="coconut" />
-
         <Quiz questions={questions} />
 
         <Map />
@@ -28,7 +26,7 @@ export default function Quizpage({ questions }) {
 export async function getServerSideProps() {
   try {
     const client = await clientPromise;
-    const db = client.db("volcano");
+    const db = client.db("kids-game");
 
     let data = await db.collection("questions").find({}).toArray();
     let questions = JSON.parse(JSON.stringify(data));
