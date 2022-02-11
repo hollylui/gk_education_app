@@ -31,7 +31,7 @@ export default function Quizpage ({questions}){
 export async function getServerSideProps() {
   try {
     const client = await clientPromise;
-    const db = client.db("kids-game");
+    const db = client.db("volcano");
 
     let data = await db.collection("questions").find({}).toArray();
     let questions = JSON.parse(JSON.stringify(data));
