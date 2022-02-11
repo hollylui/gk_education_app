@@ -15,7 +15,7 @@ export default function Quizpage({ questions }) {
       <Layout>
         <Quiz questions={questions} item="coconut" />
 
-        {/* <Footer /> */}
+        <Quiz questions={questions} />
 
         <Map />
 
