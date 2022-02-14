@@ -28,6 +28,10 @@ export default function Quiz({ questions, item }) {
     setModalIsOpen(true);
   }
 
+  function closeModal() {
+    setModalIsOpen(false);
+  }
+
   const handleClick = async (event) => {
     let value = event.target.value;
 
@@ -100,6 +104,7 @@ export default function Quiz({ questions, item }) {
             You answered the question{" "}
             {isCorrect ? "correctly, great job!" : "incorrectly"}
           </p>
+          <button onClick={closeModal}>close</button>
         </div>
       </ReactModal>
     </div>
