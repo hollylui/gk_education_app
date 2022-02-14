@@ -59,10 +59,10 @@ export async function getServerSideProps(context) {
     const client = await clientPromise;
     const db = client.db("volcano");
 
-    const branch1_1_data = await db.collection("branch1_1").find({}).toArray();
-    const branch1_2_data = await db.collection("branch1_2").find({}).toArray();
-    const branch1_1 = JSON.parse(JSON.stringify(branch1_1_data));
-    const branch1_2 = JSON.parse(JSON.stringify(branch1_2_data));
+    const data1 = await db.collection("branch1_1").find({}).toArray();
+    const data2 = await db.collection("branch1_2").find({}).toArray();
+    const branch1_1 = JSON.parse(JSON.stringify(data1));
+    const branch1_2 = JSON.parse(JSON.stringify(data2));
     return {
       props: { branch1_1, branch1_2 },
     };

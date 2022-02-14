@@ -4,5 +4,9 @@
 
   .branch {
     cursor: pointer;
+
+    .image {
+      border-radius: 40px;
+    }
   }
 }

@@ -1,0 +1,31 @@
+.container {
+  width: 800px;
+  max-height: 1000px;
+  margin-top: 100px;
+  border: 1px solid blue;
+
+  display: flex;
+  flex-direction: column;
+
+  .contents {
+    display: flex;
+    height: 350px;
+
+    .map {
+      width: 180px;
+      height: 100%;
+      border: 1px solid green;
+    }
+
+    .content {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .controller {
+    width: 100%;
+    height: 70px;
+    border: 1px solid red;
+  }
+}

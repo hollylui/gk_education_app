@@ -29,6 +29,9 @@ export default function ChooseBranch({ leftBranch, rightBranch }) {
     setLeftPath(leftBranch);
     leftBranch === "branch1_1" && router.push(`/volcano/branchone`);
     leftBranch === "branch2_1" && router.push(`/volcano/branchtwo`);
+    leftBranch === "branch3_1" && router.push(`/volcano/branchthree`);
+    leftBranch === "branch4_1" && router.push(`/volcano/branchfour`);
+    leftBranch === "branch5_1" && router.push(`/volcano/branchfive`);
   };
 
   const rightBranchHandler = () => {
@@ -39,6 +42,9 @@ export default function ChooseBranch({ leftBranch, rightBranch }) {
 
     rightBranch === "branch1_2" && router.push(`/volcano/branchone`);
     rightBranch === "branch2_2" && router.push(`/volcano/branchtwo`);
+    rightBranch === "branch3_2" && router.push(`/volcano/branchthree`);
+    rightBranch === "branch4_2" && router.push(`/volcano/branchfour`);
+    rightBranch === "branch5_2" && router.push(`/volcano/branchfive`);
   };
 
   return (
@@ -46,6 +52,7 @@ export default function ChooseBranch({ leftBranch, rightBranch }) {
       {/* left branch */}
       <div onClick={leftBranchHandler} className={styles.branch}>
         <Image
+          className={styles.image}
           src={`/images/volcano/${leftBranch}_way.png`}
           alt="left branch"
           width={width}
@@ -56,6 +63,7 @@ export default function ChooseBranch({ leftBranch, rightBranch }) {
       {/* right branch */}
       <div onClick={rightBranchHandler} className={styles.branch}>
         <Image
+          className={styles.image}
           src={`/images/volcano/${rightBranch}_way.png`}
           alt="right branch"
           width={width}

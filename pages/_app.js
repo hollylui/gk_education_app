@@ -28,6 +28,7 @@ function App({ Component, pageProps }) {
   const [branchIndex, setBranchIndex] = useState(0);
   const [leftPath, setLeftPath] = useState(null);
   const [rightPath, setRightPath] = useState(null);
+  const [animalsList, setAnimalsList] = useState([]);
 
   // GameContext
   const [currGameId, setCurrGameId] = useState({});
@@ -65,6 +66,8 @@ function App({ Component, pageProps }) {
           setLeftPath,
           rightPath,
           setRightPath,
+          animalsList,
+          setAnimalsList,
         }}
       >
         <NameContext.Provider value={{ name, setName }}>

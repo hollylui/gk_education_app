@@ -1,53 +1,110 @@
 //! From Libarary
 import Image from "next/image";
-import { useContext, useState } from "react";
+import { useContext, useEffect } from "react";
 
 //! From Local
 import BranchContext from "../context/BranchContext";
 
 //! Images
-import branch1_1a from "../assets/images/volcano/branch1_1a.png";
-import branch1_1b from "../assets/images/volcano/branch1_1b.png";
-import branch1_1c from "../assets/images/volcano/branch1_1c.png";
-import branch1_1d from "../assets/images/volcano/branch1_1d.png";
-
-import branch1_2a from "../assets/images/volcano/branch1_2a.png";
-import branch1_2b from "../assets/images/volcano/branch1_2b.png";
-import branch1_2c from "../assets/images/volcano/branch1_2c.png";
-import branch1_2d from "../assets/images/volcano/branch1_2d.png";
-import branch1_2e from "../assets/images/volcano/branch1_2e.png";
-
-import branch2_1a from "../assets/images/volcano/branch2_1a.png";
-import branch2_1b from "../assets/images/volcano/branch2_1b.png";
-import branch2_1c from "../assets/images/volcano/branch2_1c.png";
-import branch2_1d from "../assets/images/volcano/branch2_1d.png";
+import { allImages } from "../assets/images/volcano/branches/branchList";
+import { allAlts } from "../assets/images/volcano/branches/altsList";
 
 //! Styles
 import styles from "../styles/BranchContent.module.scss";
 
 export default function BranchContent({ branchIndex, branchData }) {
-  let images, alts;
-  const [noOfAnimal, setNoOfAnimal] = useState(1);
-  const { branch, setBranch, leftPath, rightPath } = useContext(BranchContext);
+  let images, alts, noOfAnimal, index, animals;
+  const { branch, leftPath, rightPath, animalsList, setAnimalsList } =
+    useContext(BranchContext);
 
   if (branch === "branch1_1") {
-    images = [branch1_1a, branch1_1b, branch1_1c, branch1_1d];
-    alts = ["crossing bridge", "monkey in the tree", "scorpion", "monkey"];
+    noOfAnimal = 1;
+    index = 0;
+    images = allImages[index];
+    animals = images[3];
+    alts = allAlts[index];
   }
 
   if (branch === "branch1_2") {
-    images = [branch1_2a, branch1_2b, branch1_2c, branch1_2d, branch1_2e];
-    alts = ["break branch", "bat cave", "turtle", "river", "small rock"];
+    noOfAnimal = 1;
+    index = 1;
+    images = allImages[index];
+    alts = allAlts[index];
+    animals = images[2];
   }
 
   if (branch === "branch2_1") {
     noOfAnimal = 2;
-    images = [branch2_1a, branch2_1b, branch2_1c, branch2_1d];
-    alts = ["waterfall", "forest", "deep in the forest", "frog"];
+    index = 2;
+    images = allImages[index];
+    alts = allAlts[index];
+    animals = images[3];
   }
+
+  if (branch === "branch2_2") {
+    noOfAnimal = 2;
+    index = 3;
+    images = allImages[index];
+    alts = allAlts[index];
+    animals = images[2];
+  }
+
+  if (branch === "branch3_1") {
+    noOfAnimal = 3;
+    index = 4;
+    images = allImages[index];
+    alts = allAlts[index];
+    animals = images[3];
+  }
+
+  if (branch === "branch3_2") {
+    noOfAnimal = 3;
+    index = 5;
+    images = allImages[index];
+    alts = allAlts[index];
+    animals = images[2];
+  }
+
+  if (branch === "branch4_1") {
+    noOfAnimal = 4;
+    index = 6;
+    images = allImages[index];
+    alts = allAlts[index];
+    animals = images[3];
+  }
+
+  if (branch === "branch4_2") {
+    noOfAnimal = 4;
+    index = 7;
+    images = allImages[index];
+    alts = allAlts[index];
+    animals = images[2];
+  }
+
+  if (branch === "branch5_1") {
+    noOfAnimal = 5;
+    index = 8;
+    images = allImages[index];
+    alts = allAlts[index];
+    animals = images[3];
+  }
+
+  if (branch === "branch5_2") {
+    noOfAnimal = 5;
+    index = 9;
+    images = allImages[index];
+    alts = allAlts[index];
+    animals = images[2];
+  }
+
+  useEffect(() => {
+    setAnimalsList([...animalsList, animals]);
+    console.log(animalsList);
+  }, [animals]);
 
   return (
     <div className={styles.container}>
+      {/* message ---------------------------- */}
       {branchIndex !== 5 && (
         <div
           className={
@@ -58,66 +115,67 @@ export default function BranchContent({ branchIndex, branchData }) {
         </div>
       )}
 
+      {/* index 0 --------------------------- */}
       {branchIndex === 0 && (
         <div className={styles.indexZero}>
-          {branch === leftPath && (
-            <div className={styles.bridge}>
+          {branch === leftPath ? (
+            <div className={styles.sub_1}>
               <Image src={images[0]} alt="left path image" />
             </div>
-          )}
-
-          {branch === rightPath && (
-            <div className={styles.cave}>
+          ) : (
+            <div className={styles.sub_2}>
               <Image src={images[0]} alt={alts[0]} />
             </div>
           )}
         </div>
       )}
 
+      {/* index 1 ------------------------------------ */}
       {branchIndex === 1 && (
         <div className={styles.indexOne}>
           {branch === rightPath && <Image src={images[1]} alt={alts[1]} />}
         </div>
       )}
 
+      {/* index 2 ---------------------------------- */}
       {branchIndex === 2 && (
         <div className={styles.indexTwo}>
-          {branch === leftPath && (
-            <div className={styles.monkey}>
+          {branch === leftPath ? (
+            <div className={styles.sub_3}>
               <Image src={images[1]} alt={alts[1]} />
             </div>
-          )}
-
-          {branch === rightPath && (
+          ) : (
             <>
-              <div className={styles.turtle}>
+              <div className={styles.sub_4}>
                 <Image src={images[2]} alt={alts[2]} />
               </div>
-              <div className={styles.river}>
+              <div className={styles.sub_5}>
                 <Image src={images[3]} alt={alts[3]} />
               </div>
             </>
           )}
         </div>
       )}
+
+      {/* index 3 ---------------------------------- */}
 
       {branchIndex === 3 && (
         <div className={styles.indexThree}>
           {branch === leftPath && (
-            <div className={styles.scorion}>
+            <div className={styles.sub_6}>
               <Image src={images[2]} alt={alts[2]} />
             </div>
           )}
           {branch === rightPath && (
             <>
-              <div className={styles.turtle}>
+              <div className={styles.sub_4}>
                 <Image src={images[2]} alt={alts[2]} />
               </div>
-              <div className={styles.river}>
+              <div className={styles.sub_5}>
                 <Image src={images[3]} alt={alts[3]} />
               </div>
 
-              <div className={styles.rock}>
+              <div className={styles.sub_7}>
                 <Image src={images[4]} alt={alts[4]} />
               </div>
             </>
@@ -125,23 +183,24 @@ export default function BranchContent({ branchIndex, branchData }) {
         </div>
       )}
 
+      {/* index 4 ---------------------------------- */}
       {branchIndex === 4 && (
         <div className={styles.indexFour}>
           {branch === leftPath && (
-            <div className={styles.scorion}>
+            <div className={styles.sub_6}>
               <Image src={images[2]} alt={alts[2]} />
             </div>
           )}
           {branch === rightPath && (
             <>
-              <div className={styles.turtle}>
+              <div className={styles.sub_4}>
                 <Image src={images[2]} alt={alts[2]} />
               </div>
-              <div className={styles.river}>
+              <div className={styles.sub_5}>
                 <Image src={images[3]} alt={alts[3]} />
               </div>
 
-              <div className={styles.rock}>
+              <div className={styles.sub_7}>
                 <Image src={images[4]} alt={alts[4]} />
               </div>
             </>
@@ -149,6 +208,7 @@ export default function BranchContent({ branchIndex, branchData }) {
         </div>
       )}
 
+      {/* index 5 ---------------------------------- */}
       {branchIndex === 5 && (
         <>
           <div
@@ -159,17 +219,14 @@ export default function BranchContent({ branchIndex, branchData }) {
             Hurray! You have saved the {branchData[branchIndex].savedAnimal},
             and rescued {noOfAnimal} of 5 animals.
           </div>
-          {branch === leftPath && (
-            <div className={styles.indexFive}>
-              <Image src={images[3]} alt={alts[3]} />
-            </div>
-          )}
 
-          {branch === rightPath && (
-            <div className={styles.indexFive}>
+          <div className={styles.indexFive}>
+            {branch === leftPath ? (
+              <Image src={images[3]} alt={alts[3]} />
+            ) : (
               <Image src={images[2]} alt={alts[2]} />
-            </div>
-          )}
+            )}
+          </div>
         </>
       )}
     </div>
