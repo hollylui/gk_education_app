@@ -1,6 +1,6 @@
 //! From Libarary
 import Image from "next/image";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useRouter } from "next/router";
 
 //! From local
@@ -22,16 +22,13 @@ export default function BranchFooter() {
   const router = useRouter();
   const { branchIndex, setBranchIndex } = useContext(BranchContext);
   const { currGameId, gameIds } = useContext(GameContext);
-  const {
-    audioIndex,
-    setAudioIndex,
-    branchAudioIndex,
-    setBranchAudioIndex,
-    setStage,
-  } = useContext(MusicContext);
+  const { audioIndex, branchAudioIndex, setBranchAudioIndex, setStage } =
+    useContext(MusicContext);
 
   const nextGameId = gameIds[gameIds.indexOf(currGameId) + 1];
   const prevGameId = gameIds[gameIds.indexOf(currGameId)];
+
+  const index = gameIds.indexOf(currGameId);
 
   const backToCrossRoad = () => {
     setBranchAudioIndex(0);
@@ -52,7 +49,12 @@ export default function BranchFooter() {
     if (branchIndex === 5) {
       setStage("audio");
       sessionStorage.setItem("audioIndex", Number(audioIndex) + 1);
-      router.push(`/volcano/${nextGameId}`);
+
+      if (index > 12 && index < 17) {
+        router.push(`/volcano/quiz`);
+      } else {
+        router.push(`/volcano/${nextGameId}`);
+      }
     }
   };
 

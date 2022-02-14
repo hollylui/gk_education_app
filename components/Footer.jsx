@@ -57,7 +57,13 @@ export default function Footer() {
 
     if (index === 2) localStorage.setItem("name", name);
     if (index == 3) localStorage.setItem("age", age);
-    router.push(`/volcano/${nextGameId}`);
+    // router.push(`/volcano/${nextGameId}`);
+
+    if (index === 13) {
+      router.push(`/volcano/quiz`);
+    } else {
+      router.push(`/volcano/${nextGameId}`);
+    }
   };
 
   return (
@@ -79,7 +85,7 @@ export default function Footer() {
       )}
 
       {/* next btn */}
-      {index !== 12 && index !== 14 && index !== 15 && index !== 16 ? (
+      {index !== 12 && index !== 15 && index !== 17 && index !== 19 ? (
         <div className={styles.btn} onClick={nextHandler}>
           <Image src={nextBtn} alt="go to next page" />
         </div>

@@ -12,6 +12,7 @@ import IndexSix from "./IndexSix";
 import IndexEight from "./IndexEight";
 import IndexNine from "./IndexNine";
 import IndexEighteen from "./IndexEighteen";
+import Quiz from "./Quiz";
 
 //! Image
 import cube from "../assets/images/volcano/rubiks_cube.png";
