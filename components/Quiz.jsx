@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import BackpackContext from "../context/BackpackContext";
 import ReactModal from "react-modal";
 
@@ -11,15 +11,22 @@ export default function Quiz({ questions, item }) {
 
   let items = ["coconut", "fire", "leaf", "stone", "water"];
 
-  function addItem() {
-    let backpackContentsHowMany = userItems.length();
-    let item = items[backpackContentsHowMany];
-    setUserItems(userItems.push(item));
+  //*index for choosing item from 'items' array.
+  const [index, setIndex] = useState(0);
+
+  //*add item to userItems state (why ternary operator?: to prevent showing 'null' when index is 0)
+  function addItem(_index) {
+    // let backpackContentsHowMany = userItems.length();
+    // let item = items[backpackContentsHowMany];
+    index === 0
+      ? setUserItems([])
+      : setUserItems([...userItems, items[_index - 1]]);
   }
 
-  function addItem() {
-    setUserItems(userItems.push(item));
-  }
+  //* there are 2 addItem which have same name. so I commented in.
+  // function addItem() {
+  //   setUserItems(userItems.push(item));
+  // }
 
   function makeCorrect() {
     setIsCorrect(true);
@@ -28,19 +35,46 @@ export default function Quiz({ questions, item }) {
     setModalIsOpen(true);
   }
 
+  function closeModal() {
+    setModalIsOpen(false);
+  }
+
   const handleClick = async (event) => {
     let value = event.target.value;
 
     console.log(typeof value);
 
     if (value === "true") {
-      addItem();
+      // addItem();
       makeCorrect();
       console.log("setting to correct");
+      //* If the user answers correctly, then the index is incremented.
+      setIndex(index + 1);
     }
 
     openModal();
   };
+
+  useEffect(() => {
+    //* Whenever the index changes, using this index as an index number for choosing a specific item in 'items' array, and then add the item to userItems state.
+    if (index >= 0 && index <= items.length) {
+      addItem(index);
+    }
+  }, [index]);
+
+  //* when this component mounts, get items from localstorage,
+  //* If there are items inside localstorage, save them to userItems state.
+  useEffect(() => {
+    const gotItems = window.localStorage.getItem("useritems");
+    if (gotItems !== null) {
+      setUserItems(JSON.parse(window.localStorage.getItem("useritems")));
+    }
+  }, []);
+
+  //* Whenever userItems changes save it to the localstorage.
+  useEffect(() => {
+    localStorage.setItem("useritems", JSON.stringify(userItems));
+  }, [userItems]);
 
   //pull random question from database
   let randomQuestion = Math.floor(Math.random() * questions.length);
@@ -100,6 +134,7 @@ export default function Quiz({ questions, item }) {
             You answered the question{" "}
             {isCorrect ? "correctly, great job!" : "incorrectly"}
           </p>
+          <button onClick={closeModal}>close</button>
         </div>
       </ReactModal>
     </div>

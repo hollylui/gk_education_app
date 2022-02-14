@@ -33,23 +33,24 @@ const Backpack = () => {
         >
           <div
             className={backpackStyles.item}
-            id={backpackStyles[`${userItems[0]}`]}
+            //* check if userItems empty. If it is not empty, show the item on the backpack.
+            id={userItems && backpackStyles[`${userItems[0]}`]}
           ></div>
           <div
             className={backpackStyles.item}
-            id={backpackStyles[`${userItems[1]}`]}
+            id={userItems && backpackStyles[`${userItems[1]}`]}
           ></div>
           <div
             className={backpackStyles.item}
-            id={backpackStyles[`${userItems[2]}`]}
+            id={userItems && backpackStyles[`${userItems[2]}`]}
           ></div>
           <div
             className={backpackStyles.item}
-            id={backpackStyles[`${userItems[3]}`]}
+            id={userItems && backpackStyles[`${userItems[3]}`]}
           ></div>
           <div
             className={backpackStyles.item}
-            id={backpackStyles[`${userItems[4]}`]}
+            id={userItems && backpackStyles[`${userItems[4]}`]}
           ></div>
 
           {/* {showItems ? <button>Compound</button> : null} */}
