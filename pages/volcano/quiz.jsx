@@ -4,34 +4,17 @@ import { useContext } from "react";
 
 //! From local
 import Layout from "../../components/Layout";
-
 import Map from "../../components/Map";
 import MapContent from "../../context/MapContent";
-
 import Quiz from "../../components/Quiz";
-// import Backpack from "../../components/Backpack";
-// import Footer from "../../components/Footer";
 import LargeMap from "../../components/LargeMap";
 import QuizFooter from "../../components/QuizFooter";
 
 //! Styles
-import styles from "../../styles/QuizPage.module.scss";
+import styles from "../../styles/id.module.scss";
 
 export default function Quizpage({ questions }) {
   const { expand } = useContext(MapContent);
-
-  // console.log(questions);
-  // return (
-  //   <div className={pageStyles.container}>
-  //     {/* <Layout> */}
-  //     <Quiz questions={questions} />
-
-  //     {/* <Map /> */}
-
-  //     {/* <Backpack />
-  //     </Layout> */}
-  //   </div>
-  // );
 
   return (
     <Layout>

@@ -20,27 +20,27 @@ export default function QuizFooter() {
   const nextGameId = gameIds[gameIds.indexOf(currGameId) + 1];
   const prevGameId = gameIds[gameIds.indexOf(currGameId)];
 
-  const backHandler = () => {
-    router.push(`/volcano/${prevGameId}`);
-  };
+  // const backHandler = () => {
+  //   router.push(`/volcano/${prevGameId}`);
+  // };
 
-  const nextHandler = () => {
-    router.push(`/volcano/${nextGameId}`);
-  };
+  // const nextHandler = () => {
+  //   router.push(`/volcano/${nextGameId}`);
+  // };
 
   return (
     <div className={styles.container}>
-      <div className={styles.btn} onClick={backHandler}>
+      {/* <div className={styles.btn} onClick={backHandler}>
         <Image src={backBtn} alt="got to previosu page" />
-      </div>
+      </div> */}
+
+      <div className={styles.btn}></div>
 
       <div>
         <Backpack />
       </div>
 
-      <div className={styles.btn} onClick={nextHandler}>
-        <Image src={nextBtn} alt="got to previosu page" />
-      </div>
+      <div className={styles.btn}></div>
     </div>
   );
 }

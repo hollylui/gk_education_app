@@ -1,5 +1,5 @@
 .container {
-  width: 250px;
+  width: 50%;
   padding: 10px 0;
   // background-color: green;
 
@@ -10,10 +10,11 @@
   align-items: center;
 
   .btn {
+    background-color: rgb(240, 255, 34);
     font-family: "Bangers", cursive;
     border: none;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     font-size: 2.5rem;
     border-radius: 50%;
     margin: 5px;
