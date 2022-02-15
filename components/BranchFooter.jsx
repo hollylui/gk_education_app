@@ -50,7 +50,7 @@ export default function BranchFooter() {
       setStage("audio");
       sessionStorage.setItem("audioIndex", Number(audioIndex) + 1);
 
-      if (index > 12 && index < 17) {
+      if (index > 12 && index < 18) {
         router.push(`/volcano/quiz`);
       } else {
         router.push(`/volcano/${nextGameId}`);
