@@ -1,18 +1,12 @@
 .container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 100%;
-}
-
-.btn {
-  width: 60px;
-}
-.container {
-  display: flex;
-  justify-content: space-between;
 
   .btn {
-    width: 60;
+    width: 60px;
+    cursor: pointer;
   }
 }
