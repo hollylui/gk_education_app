@@ -1,10 +1,17 @@
 import { useState, useContext } from "react";
 import BackpackContext from "../context/BackpackContext";
+import GameContext from "../context/GameContext"; 
 import ReactModal from "react-modal";
+import { useRouter } from "next/router";
 
 import styles from "../styles/Quiz.module.scss";
 
+
+
 export default function Quiz({ questions, item }) {
+  const router = useRouter();
+  const { currGameId, gameIds } = useContext(GameContext);
+  const nextGameId = gameIds[gameIds.indexOf(currGameId) + 1];
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false); //user items is an empty array in default state
   const { userItems, setUserItems } = useContext(BackpackContext);
@@ -12,13 +19,9 @@ export default function Quiz({ questions, item }) {
   let items = ["coconut", "fire", "leaf", "stone", "water"];
 
   function addItem() {
-    let backpackContentsHowMany = userItems.length();
+    let backpackContentsHowMany = userItems.length;
     let item = items[backpackContentsHowMany];
-    setUserItems(userItems.push(item));
-  }
-
-  function addItem() {
-    setUserItems(userItems.push(item));
+    setUserItems([...userItems, item]);
   }
 
   function makeCorrect() {
@@ -28,11 +31,14 @@ export default function Quiz({ questions, item }) {
     setModalIsOpen(true);
   }
 
-  function closeModal() {
+  function closeModal(event) {
+    router.push(`/volcano/${nextGameId}`);
     setModalIsOpen(false);
+   
   }
 
   const handleClick = async (event) => {
+   
     let value = event.target.value;
 
     console.log(typeof value);
@@ -42,7 +48,7 @@ export default function Quiz({ questions, item }) {
       makeCorrect();
       console.log("setting to correct");
     }
-
+    event.preventDefault();
     openModal();
   };
 
@@ -60,7 +66,7 @@ export default function Quiz({ questions, item }) {
           <button
             className={styles.button}
             onClick={handleClick}
-            type="submit"
+
             value={question.answers[0].correctAnswer}
           >
             {question.answers[0].text}{" "}
@@ -68,7 +74,7 @@ export default function Quiz({ questions, item }) {
           <button
             className={styles.button}
             onClick={handleClick}
-            type="submit"
+    
             value={question.answers[1].correctAnswer}
           >
             {question.answers[1].text}
@@ -76,7 +82,7 @@ export default function Quiz({ questions, item }) {
           <button
             className={styles.button}
             onClick={handleClick}
-            type="submit"
+ 
             value={question.answers[2].correctAnswer}
           >
             {question.answers[2].text}
@@ -84,7 +90,7 @@ export default function Quiz({ questions, item }) {
           <button
             className={styles.button}
             onClick={handleClick}
-            type="submit"
+       
             value={question.answers[3].correctAnswer}
           >
             {question.answers[3].text}
