@@ -12,7 +12,7 @@ import nextBtn from "../assets/images/volcano/next.png";
 import backBtn from "../assets/images/volcano/back.png";
 
 //! Styles
-import styles from "../styles/Footer.module.scss";
+import styles from "../styles/QuizFooter.module.scss";
 
 export default function QuizFooter() {
   const router = useRouter();
@@ -29,17 +29,19 @@ export default function QuizFooter() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.btn} onClick={backHandler}>
-        <Image src={backBtn} alt="got to previosu page" />
-      </div>
+    <div>
+      <div className={styles.container}>
+        <div className={styles.btn} onClick={backHandler}>
+          <Image src={backBtn} alt="got to previosu page" />
+        </div>
 
-      <div>
-        <Backpack />
-      </div>
+        <div>
+          <Backpack />
+        </div>
 
-      <div className={styles.btn} onClick={nextHandler}>
-        <Image src={nextBtn} alt="got to previosu page" />
+        <div className={styles.btn} onClick={nextHandler}>
+          <Image src={nextBtn} alt="got to previosu page" />
+        </div>
       </div>
     </div>
   );

@@ -74,3 +74,5 @@ export async function getServerSideProps() {
     };
   }
 }
+
+// <Quiz questions={questions} />
