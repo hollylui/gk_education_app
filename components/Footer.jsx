@@ -95,8 +95,7 @@ export default function Footer() {
       index !== 14 &&
       index !== 15 &&
       index !== 16 &&
-      index !== 17 &&
-      index !== 18 ? (
+      index !== 17 ? (
         <div className={styles.btn} onClick={nextHandler}>
           <Image src={nextBtn} alt="go to next page" />
         </div>
