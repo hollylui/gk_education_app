@@ -1,0 +1,15 @@
+.main {
+  min-height: 100vh;
+  background-image: url("https://cdn.dribbble.com/users/1183435/screenshots/3612807/fun_404_design.gif");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+
+  span {
+    font-size: 4rem;
+    margin-top: 10rem;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+  }
+}

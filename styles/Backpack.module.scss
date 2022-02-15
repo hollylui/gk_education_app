@@ -1,5 +1,5 @@
 .backpackOuter {
-  width: 50%;
+  width: 44rem;
   min-width: 44rem;
   position: relative;
   bottom: 1rem;
@@ -32,7 +32,7 @@
       justify-content: flex-start;
       align-items: center;
       padding-left: 50px;
-      animation: openBackpack 0.7s linear forwards;
+      // animation: openBackpack 0.7s linear forwards;
       transform-origin: left;
       .item {
         width: 3.5rem;
@@ -40,7 +40,7 @@
         margin: 0 0.5rem;
         border-radius: 1rem;
         background-color: #fff;
-        animation: showIconHolder 0.7s linear forwards;
+        // animation: showIconHolder 0.7s linear forwards;
         transform-origin: center;
         box-shadow: inset 2px 2px 5px #000;
       }
