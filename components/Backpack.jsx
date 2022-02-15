@@ -11,7 +11,6 @@ import { useRouter } from "next/router";
 const Backpack = () => {
   const {
     userItems,
-    setUserItems,
     showItems,
     showNHideItems,
     modal,
@@ -98,7 +97,12 @@ const Backpack = () => {
               <button id={backpackStyles.yes} onClick={() => setCombine(true)}>
                 Yes
               </button>
-              <button id={backpackStyles.no}>No</button>
+              <button
+                id={backpackStyles.no}
+                onClick={() => router.push("/volcano/ending")}
+              >
+                No
+              </button>
             </div>
           </>
         )}

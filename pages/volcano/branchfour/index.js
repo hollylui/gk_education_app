@@ -9,12 +9,12 @@ import MapContent from "../../../context/MapContent";
 import BranchContent from "../../../components/BranchContent";
 import LargeMap from "../../../components/LargeMap";
 import Map from "../../../components/Map";
+import BranchFooter from "../../../components/BranchFooter";
 
 //! Image
 
 //! Styles
-import styles from "../../../styles/branchone.module.scss";
-import BranchFooter from "../../../components/BranchFooter";
+import styles from "../../../styles/id.module.scss";
 
 export default function BranchOne({ branch4_1, branch4_2 }) {
   let data;

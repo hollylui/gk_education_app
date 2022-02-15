@@ -30,10 +30,10 @@ export default function BranchFooter() {
 
   const index = gameIds.indexOf(currGameId);
 
-  const backToCrossRoad = () => {
-    setBranchAudioIndex(0);
-    if (branchIndex === 0) router.push(`/volcano/${prevGameId}`);
-  };
+  // const backToCrossRoad = () => {
+  //   setBranchAudioIndex(0);
+  //   if (branchIndex === 0) router.push(`/volcano/${prevGameId}`);
+  // };
 
   const backHandler = () => {
     setBranchAudioIndex(branchAudioIndex - 1);
@@ -60,19 +60,23 @@ export default function BranchFooter() {
 
   return (
     <div className={styles.container}>
-      {branchIndex !== 0 && (
+      {branchIndex !== 0 && branchIndex !== 5 ? (
         <div className={styles.btn} onClick={backHandler}>
           <Image src={backBtn} alt="got to previosu page" />
         </div>
+      ) : (
+        <div className={styles.btn}></div>
       )}
 
-      {branchIndex === 0 && (
+      {/* {branchIndex === 0 && (
         <div className={styles.btn} onClick={backToCrossRoad}>
           <Image src={backBtn} alt="got to previosu page" />
         </div>
-      )}
+      )} */}
 
-      <div>{/* <Backpack /> */}</div>
+      <div>
+        <Backpack />
+      </div>
 
       <div className={styles.btn} onClick={nextHandler}>
         <Image src={nextBtn} alt="got to previosu page" />

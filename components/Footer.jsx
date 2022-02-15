@@ -69,7 +69,8 @@ export default function Footer() {
   return (
     <div className={styles.container}>
       {/* back btn */}
-      {index !== 13 &&
+      {index !== 12 &&
+      index !== 13 &&
       index !== 14 &&
       index !== 15 &&
       index !== 16 &&
@@ -83,7 +84,7 @@ export default function Footer() {
       )}
 
       {/* backpack section : Thank you Holly!*/}
-      {index >= 13 && (
+      {index >= 12 && (
         <div>
           <Backpack />
         </div>
@@ -94,8 +95,7 @@ export default function Footer() {
       index !== 14 &&
       index !== 15 &&
       index !== 16 &&
-      index !== 17 &&
-      index !== 18 ? (
+      index !== 17 ? (
         <div className={styles.btn} onClick={nextHandler}>
           <Image src={nextBtn} alt="go to next page" />
         </div>
