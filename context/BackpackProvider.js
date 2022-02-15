@@ -11,6 +11,9 @@ const BackpackProvider = ({ children }) => {
   const showNHideItems = () => {
     setShowItems(!showItems);
   };
+
+  const [modal, setModal] = useState(false);
+  const [combine, setCombine] = useState(false);
   return (
     <BackpackContext.Provider
       value={{
@@ -24,6 +27,10 @@ const BackpackProvider = ({ children }) => {
         setUserItems,
         showItems,
         showNHideItems,
+        modal,
+        setModal,
+        combine,
+        setCombine,
       }}
     >
       {children}
