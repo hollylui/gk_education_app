@@ -79,8 +79,16 @@
   }
 }
 
-.boat {
+#magicWand {
+  cursor: pointer;
+  &:hover {
+    animation: hoverBig 1s linear infinite;
+  }
+}
+
+#boat {
   width: 10rem;
+  animation: shaking 1s linear forwards;
 }
 .sentence {
   font-size: 1.5rem;
@@ -101,6 +109,45 @@
 
 #no {
   background-color: $orange;
+}
+
+@keyframes shaking {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  10% {
+    transform: rotate(1deg);
+  }
+  20%,
+  40%,
+  60% {
+    transform: rotate(-2deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotate(2deg);
+  }
+  80% {
+    transform: rotate(-1deg);
+  }
+  90% {
+    transform: rotate(1deg);
+  }
+}
+
+@keyframes hoverBig {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes openBackpack {

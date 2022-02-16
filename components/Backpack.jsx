@@ -33,7 +33,7 @@ const Backpack = () => {
     if (combine) {
       setTimeout(() => {
         router.push("/volcano/ending/special");
-      }, 3000);
+      }, 4000);
     }
   }, [combine]);
 
@@ -85,7 +85,12 @@ const Backpack = () => {
         {combine ? (
           <>
             <h1>You got a special item!</h1>
-            <Image width={200} height={200} src={Boat} />
+            <Image
+              width={200}
+              height={200}
+              src={Boat}
+              id={backpackStyles.boat}
+            />
             <p className={backpackStyles.sentence}>
               With this boat, you can sail to the special ending!
             </p>
@@ -94,7 +99,11 @@ const Backpack = () => {
           <>
             <h1>Do you want to combine your items to get a special Item?</h1>
             <div>
-              <Image src={magicWand} onClick={() => setCombine(true)} />
+              <Image
+                src={magicWand}
+                onClick={() => setCombine(true)}
+                id={backpackStyles.magicWand}
+              />
               {/* <button id={backpackStyles.yes} onClick={() => setCombine(true)}>
                 Yes
               </button>
