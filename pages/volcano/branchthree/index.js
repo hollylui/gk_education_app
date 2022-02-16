@@ -26,12 +26,11 @@ export default function BranchOne({ branch3_1, branch3_2 }) {
   return (
     <Layout>
       <div className={styles.container}>
+        <div className={styles.map}>
+          <Map />
+        </div>
         <div className={styles.contents}>
           {/* map section */}
-
-          <div className={styles.map}>
-            <Map />
-          </div>
 
           {/* content section */}
           <div className={styles.content}>
@@ -41,11 +40,11 @@ export default function BranchOne({ branch3_1, branch3_2 }) {
               <BranchContent branchIndex={branchIndex} branchData={data} />
             )}
           </div>
-        </div>
 
-        {/* footer section */}
-        <div className={styles.controller}>
-          <BranchFooter />
+          {/* footer section */}
+          <div className={styles.controller}>
+            <BranchFooter />
+          </div>
         </div>
       </div>
     </Layout>

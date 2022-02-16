@@ -17,6 +17,18 @@ export default function BranchContent({ branchIndex, branchData }) {
   const { branch, leftPath, rightPath, animalsList, setAnimalsList } =
     useContext(BranchContext);
 
+  const animalStyle = {
+    position: "relative",
+    width: "100%",
+    paddingBottom: "25%",
+  };
+
+  const indexBg = {
+    position: "relative",
+    width: "100%",
+    paddingBottom: "40%",
+  };
+
   if (branch === "branch1_1") {
     noOfAnimal = 1;
     index = 0;
@@ -141,8 +153,13 @@ export default function BranchContent({ branchIndex, branchData }) {
       {branchIndex === 2 && (
         <div className={styles.indexTwo}>
           {branch === leftPath ? (
-            <div className={styles.sub_3}>
-              <Image src={images[1]} alt={alts[1]} />
+            <div className={styles.sub_3} style={indexBg}>
+              <Image
+                src={images[1]}
+                alt={alts[1]}
+                layout="fill"
+                objectFit="contain"
+              />
             </div>
           ) : (
             <>
@@ -162,8 +179,13 @@ export default function BranchContent({ branchIndex, branchData }) {
       {branchIndex === 3 && (
         <div className={styles.indexThree}>
           {branch === leftPath && (
-            <div className={styles.sub_6}>
-              <Image src={images[2]} alt={alts[2]} />
+            <div className={styles.sub_6} style={indexBg}>
+              <Image
+                src={images[2]}
+                alt={alts[2]}
+                layout="fill"
+                objectFit="contain"
+              />
             </div>
           )}
           {branch === rightPath && (
@@ -187,8 +209,13 @@ export default function BranchContent({ branchIndex, branchData }) {
       {branchIndex === 4 && (
         <div className={styles.indexFour}>
           {branch === leftPath && (
-            <div className={styles.sub_6}>
-              <Image src={images[2]} alt={alts[2]} />
+            <div className={styles.sub_6} style={indexBg}>
+              <Image
+                src={images[2]}
+                alt={alts[2]}
+                layout="fill"
+                objectFit="contain"
+              />
             </div>
           )}
           {branch === rightPath && (
@@ -220,11 +247,21 @@ export default function BranchContent({ branchIndex, branchData }) {
             and rescued {noOfAnimal} of 5 animals.
           </div>
 
-          <div className={styles.indexFive}>
+          <div className={styles.indexFive} style={animalStyle}>
             {branch === leftPath ? (
-              <Image src={images[3]} alt={alts[3]} />
+              <Image
+                src={images[3]}
+                alt={alts[3]}
+                layout="fill"
+                objectFit="contain"
+              />
             ) : (
-              <Image src={images[2]} alt={alts[2]} />
+              <Image
+                src={images[2]}
+                alt={alts[2]}
+                layout="fill"
+                objectFit="contain"
+              />
             )}
           </div>
         </>
