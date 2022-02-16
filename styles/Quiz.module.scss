@@ -10,7 +10,6 @@
     font-size: 3rem;
     letter-spacing: 2px;
     padding: 10px 60px;
-    color: #ff5b1f;
   }
 
   .quizText {
@@ -24,20 +23,21 @@
     padding: 20px 0;
 
     .button {
-      background-color: #fd8154;
+      background-color: #ff6832;
       color: white;
-      width: 60px;
-      height: 60px;
+      width: 90px;
+      height: 90px;
       border: none;
       border-radius: 50%;
-      font-size: 30px;
+      font-size: 4rem;
       text-decoration: none;
       font-weight: 700;
       margin: 0 10px;
       cursor: pointer;
 
       &:hover {
-        background-color: #00bbe0;
+        background-color: #ffea47;
+        color: black;
       }
     }
   }

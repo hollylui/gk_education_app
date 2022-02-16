@@ -17,6 +17,7 @@ export default function BranchContent({ branchIndex, branchData }) {
   const { branch, leftPath, rightPath, animalsList, setAnimalsList } =
     useContext(BranchContext);
 
+  //responsive style -----------------
   const animalStyle = {
     position: "relative",
     width: "100%",
@@ -29,6 +30,13 @@ export default function BranchContent({ branchIndex, branchData }) {
     paddingBottom: "40%",
   };
 
+  const caveStyle = {
+    position: "relative",
+    width: "100%",
+    paddingBottom: "35%",
+  };
+
+  //----------------------------------
   if (branch === "branch1_1") {
     noOfAnimal = 1;
     index = 0;
@@ -144,8 +152,15 @@ export default function BranchContent({ branchIndex, branchData }) {
 
       {/* index 1 ------------------------------------ */}
       {branchIndex === 1 && (
-        <div className={styles.indexOne}>
-          {branch === rightPath && <Image src={images[1]} alt={alts[1]} />}
+        <div className={styles.indexOne} style={caveStyle}>
+          {branch === rightPath && (
+            <Image
+              src={images[1]}
+              alt={alts[1]}
+              layout="fill"
+              objectFit="contain"
+            />
+          )}
         </div>
       )}
 
