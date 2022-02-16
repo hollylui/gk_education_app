@@ -1,4 +1,4 @@
-import image1 from './images/animations/cave_background.png'
+import image1 from './images/animations/cave_background'
 import image2 from './images/animations/bridge_background.png'
 import image3 from './images/animations/insidecave.png'
 import image4 from './images/animations/monkeytree.png'
