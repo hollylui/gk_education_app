@@ -11,14 +11,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // padding-top: 15%;
 
   .modalCon {
-    // position: sticky;
     width: 50%;
     min-height: 30vh;
-    animation: openModal 0.3s ease-in-out forwards;
-    // top: 10rem;
+    animation: modalShake 1s ease-in-out forwards;
     z-index: 5;
     margin: 0.5rem 1rem;
     display: block;
@@ -31,22 +28,6 @@
     justify-content: center;
     color: black;
     box-sizing: content-box;
-    // .closeX {
-    //   display: flex;
-    //   justify-content: right;
-    //   cursor: pointer;
-    //   .xBox {
-    //     width: 1rem;
-    //     height: 1rem;
-    //     border-radius: 50%;
-    //     background-color: #233d4de1;
-    //     color: orangered;
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     padding: 0.7rem;
-    //   }
-    // }
     .children {
       @include flex-just-al-wrap(center, center, wrap);
       flex-direction: column;
@@ -55,4 +36,31 @@
 }
 .modalHide {
   display: none;
+}
+
+@keyframes modalShake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  10% {
+    transform: rotate(1deg);
+  }
+  20%,
+  40%,
+  60% {
+    transform: rotate(-2deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotate(2deg);
+  }
+  80% {
+    transform: rotate(-1deg);
+  }
+  90% {
+    transform: rotate(1deg);
+  }
 }

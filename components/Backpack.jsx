@@ -6,7 +6,7 @@ import BackpackContext from "../context/BackpackContext";
 import Modal from "./modal/Modal";
 import Boat from "../assets/images/items/boat.png";
 import { useRouter } from "next/router";
-// import coconutImg from "../assets/svg/coconut.png";
+import magicWand from "../assets/images/test/magicwand.gif";
 
 const Backpack = () => {
   const {
@@ -94,7 +94,8 @@ const Backpack = () => {
           <>
             <h1>Do you want to combine your items to get a special Item?</h1>
             <div>
-              <button id={backpackStyles.yes} onClick={() => setCombine(true)}>
+              <Image src={magicWand} onClick={() => setCombine(true)} />
+              {/* <button id={backpackStyles.yes} onClick={() => setCombine(true)}>
                 Yes
               </button>
               <button
@@ -102,7 +103,7 @@ const Backpack = () => {
                 onClick={() => router.push("/volcano/ending")}
               >
                 No
-              </button>
+              </button> */}
             </div>
           </>
         )}

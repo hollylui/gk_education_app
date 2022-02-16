@@ -7,7 +7,7 @@ function PageNotFound() {
   useEffect(() => {
     setTimeout(() => {
       router.push("/");
-    }, 3000);
+    }, 4000);
   }, []);
   return (
     <div className={styles.main}>
