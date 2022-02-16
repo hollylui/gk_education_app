@@ -25,7 +25,10 @@ export default function Start({ id }) {
 
   return (
     <>
-      <button onClick={startHandler} className={styles.button}>
+      <button
+        onClick={startHandler}
+        className={`${styles.button} ${styles.blink}`}
+      >
         Start
       </button>
       <button onClick={backToHomeHandler} className={styles.button}>

@@ -18,8 +18,8 @@ export default function ChooseBranch({ leftBranch, rightBranch }) {
     useContext(BranchContext);
   const { setStage } = useContext(MusicContext);
 
-  const width = 200;
-  const height = 200;
+  const width = 250;
+  const height = 250;
 
   //callback function------------------------
   const leftBranchHandler = () => {
