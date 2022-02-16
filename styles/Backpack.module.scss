@@ -1,11 +1,12 @@
 .backpackOuter {
-  width: 50%;
+  width: 44rem;
   min-width: 44rem;
   position: relative;
   bottom: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 
   .backpackInner {
     width: 60%;

@@ -72,7 +72,6 @@ export default function Navbar() {
     if (stage === "audio") {
       const audioIndexNum = sessionStorage.getItem("audioIndex");
       setAudioIndex(audioIndexNum);
-      console.log(audioIndex);
 
       audioItem = document.getElementById("audio");
       audioItem.volume = 1;

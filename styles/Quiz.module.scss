@@ -1,63 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 50vh;
 
-.button{
-    
-    background-color: #FD8154;
-    color: white;
-    border-radius: 50%;
-    border: none;
-    font-size: 30px;
-    text-decoration: none;
-    padding:20px;
-    font-weight:900;
-    margin: 10px 6px;
-  
-    display: inline-block;
-}
-
-.button:focus{
-    text-align: center;
-    background-color: #00bbe0;
-    color: white;
-    border-radius: 50%;
-    border: none;
-    font-size: 30px;
-   
-    padding:20px;
-    margin: 10px 6px;
-}
-
-
-
-.container{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #C2F5FF;
-   text-align: center;
-   padding-top: 200px;
-   margin: 0 auto;
-}
-
-.subContainer{
-text-align: center;
-align-items: center;
-flex-direction: row;
-padding-top: 20px;
-padding-bottom: 30px;
-
-}
-
-.quizText{
-    font-size: xx-large;
-}
-
-
-
-  .modalContent {
-   
-    background-color: whitesmoke;
-    margin: auto;
-    border: 1px solid #888;
-    width: 60%;
-   height: 50%;
-   padding-top: 200px;
+  h3 {
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    padding: 10px 60px;
+    color: #ff5b1f;
   }
 
+  .quizText {
+    font-size: xx-large;
+  }
+
+  .subContainer {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+
+    .button {
+      background-color: #fd8154;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border: none;
+      border-radius: 50%;
+      font-size: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      margin: 0 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #00bbe0;
+      }
+    }
+  }
+}
+
+.modalContent {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  background-color: rgb(0, 247, 255);
+  border: 1px solid #888;
+  position: relative;
+  top: 30%;
+  text-align: center;
+
+  button {
+    border: none;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    padding: 5px 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background-color: yellow;
+    font-family: "Bangers", cursive;
+
+    &:hover {
+      color: white;
+      background-color: red;
+    }
+  }
+}

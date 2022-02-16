@@ -1,6 +1,6 @@
 //! From Libarary
 import Image from "next/image";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useRouter } from "next/router";
 
 //! From local
@@ -13,7 +13,7 @@ import nextBtn from "../assets/images/volcano/next.png";
 import backBtn from "../assets/images/volcano/back.png";
 
 //! Styles
-import styles from "../styles/BranchFooter.module.scss";
+import styles from "../styles/Footer.module.scss";
 import Backpack from "./Backpack";
 
 //---------------------------------------------
@@ -22,21 +22,18 @@ export default function BranchFooter() {
   const router = useRouter();
   const { branchIndex, setBranchIndex } = useContext(BranchContext);
   const { currGameId, gameIds } = useContext(GameContext);
-  const {
-    audioIndex,
-    setAudioIndex,
-    branchAudioIndex,
-    setBranchAudioIndex,
-    setStage,
-  } = useContext(MusicContext);
+  const { audioIndex, branchAudioIndex, setBranchAudioIndex, setStage } =
+    useContext(MusicContext);
 
   const nextGameId = gameIds[gameIds.indexOf(currGameId) + 1];
   const prevGameId = gameIds[gameIds.indexOf(currGameId)];
 
-  const backToCrossRoad = () => {
-    setBranchAudioIndex(0);
-    if (branchIndex === 0) router.push(`/volcano/${prevGameId}`);
-  };
+  const index = gameIds.indexOf(currGameId);
+
+  // const backToCrossRoad = () => {
+  //   setBranchAudioIndex(0);
+  //   if (branchIndex === 0) router.push(`/volcano/${prevGameId}`);
+  // };
 
   const backHandler = () => {
     setBranchAudioIndex(branchAudioIndex - 1);
@@ -52,23 +49,30 @@ export default function BranchFooter() {
     if (branchIndex === 5) {
       setStage("audio");
       sessionStorage.setItem("audioIndex", Number(audioIndex) + 1);
-      router.push(`/volcano/${nextGameId}`);
+
+      if (index > 12 && index < 18) {
+        router.push(`/volcano/quiz`);
+      } else {
+        router.push(`/volcano/${nextGameId}`);
+      }
     }
   };
 
   return (
     <div className={styles.container}>
-      {branchIndex !== 0 && (
+      {branchIndex !== 0 && branchIndex !== 5 ? (
         <div className={styles.btn} onClick={backHandler}>
           <Image src={backBtn} alt="got to previosu page" />
         </div>
+      ) : (
+        <div className={styles.btn}></div>
       )}
 
-      {branchIndex === 0 && (
+      {/* {branchIndex === 0 && (
         <div className={styles.btn} onClick={backToCrossRoad}>
           <Image src={backBtn} alt="got to previosu page" />
         </div>
-      )}
+      )} */}
 
       <div>
         <Backpack />

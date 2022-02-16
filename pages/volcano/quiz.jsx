@@ -1,32 +1,43 @@
+//! From library
 import clientPromise from "../../lib/mongodb";
+import { useContext } from "react";
 
+//! From local
 import Layout from "../../components/Layout";
-import Footer from "../../components/Footer";
 import Map from "../../components/Map";
-
-import Backpack from "../../components/Backpack";
+import MapContent from "../../context/MapContent";
 import Quiz from "../../components/Quiz";
+import LargeMap from "../../components/LargeMap";
+import QuizFooter from "../../components/QuizFooter";
 
-import pageStyles from "../../styles/GameLanding.module.scss";
+//! Styles
+import styles from "../../styles/id.module.scss";
 
-export default function Quizpage ({questions}){
-   return(  
-        <div className={pageStyles.container}>
-     <Layout>
+export default function Quizpage({ questions }) {
+  const { expand } = useContext(MapContent);
 
-      <Quiz questions= {questions} item="coconut"/>
+  return (
+    <Layout>
+      <div className={styles.container}>
+        <div className={styles.contents}>
+          {/* map section */}
 
-          {/* <Footer /> */}
-    
-        <Map/>
-        
-        <Backpack/>
-       </Layout>
- 
-     
-     </div>
-     )}
+          <div className={styles.map}>
+            <Map />
+          </div>
 
+          {/* content section */}
+          <div className={styles.content}>
+            {expand ? <LargeMap /> : <Quiz questions={questions} />}
+          </div>
+        </div>
+
+        {/* footer section */}
+        <div className={styles.controller}>{<QuizFooter />}</div>
+      </div>
+    </Layout>
+  );
+}
 
 export async function getServerSideProps() {
   try {

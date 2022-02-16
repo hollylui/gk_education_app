@@ -11,8 +11,8 @@ import TypeOfQuestion from "./TypeOfQuestion";
 import IndexSix from "./IndexSix";
 import IndexEight from "./IndexEight";
 import IndexNine from "./IndexNine";
-import BranchContext from "../context/BranchContext";
-import MusicContext from "../context/MusicContext";
+import IndexEighteen from "./IndexEighteen";
+import Quiz from "./Quiz";
 
 //! Image
 import cube from "../assets/images/volcano/rubiks_cube.png";
@@ -27,8 +27,8 @@ import ChooseBranch from "./ChooseBranch";
 export default function Content({ game }) {
   const { currGameId, gameIds } = useContext(GameContext);
   const { name } = useContext(NameContext);
-  const { branchIndex } = useContext(BranchContext);
-  const { setBranchAudioIndex } = useContext(MusicContext);
+  // const { branchIndex } = useContext(BranchContext);
+  // const { setBranchAudioIndex } = useContext(MusicContext);
 
   const index = gameIds.indexOf(currGameId);
 
@@ -57,6 +57,24 @@ export default function Content({ game }) {
           <Image src={cube} alt="cube" />
         </div>
       )}
+
+      {index === 14 && (
+        <ChooseBranch leftBranch={"branch2_1"} rightBranch={"branch2_2"} />
+      )}
+
+      {index === 15 && (
+        <ChooseBranch leftBranch={"branch3_1"} rightBranch={"branch3_2"} />
+      )}
+
+      {index === 16 && (
+        <ChooseBranch leftBranch={"branch4_1"} rightBranch={"branch4_2"} />
+      )}
+
+      {index === 17 && (
+        <ChooseBranch leftBranch={"branch5_1"} rightBranch={"branch5_2"} />
+      )}
+
+      {index === 18 && <IndexEighteen />}
     </div>
   );
 }

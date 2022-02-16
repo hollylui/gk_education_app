@@ -2,13 +2,25 @@
   border: none;
   border-radius: 35px;
   padding: 5px 30px;
+  margin: 10px 0;
   font-size: 3rem;
   background-color: yellow;
   letter-spacing: 2px;
   font-family: "Bangers", cursive;
+  cursor: pointer;
 
   &:hover {
     background-color: #002fff;
     color: white;
+  }
+}
+
+.blink {
+  animation: blinker 1s step-start infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
   }
 }

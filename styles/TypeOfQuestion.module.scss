@@ -1,14 +1,13 @@
 .container {
   display: flex;
   gap: 20px;
-  background-color: white;
   padding: 10px 20px;
   margin-top: 10px;
   border-radius: 10px;
 
   .radio {
     font-size: 3rem;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     font-weight: 700;
     display: grid;
     grid-template-rows: auto 30px;

@@ -1,10 +1,8 @@
 //! From Library
 import Image from "next/image";
-import { useContext } from "react";
 
 //! From local
 import Start from "../components/Start";
-import GameContext from "../context/GameContext";
 
 //! Images
 import landing from "../assets/images/volcano/landing.png";
