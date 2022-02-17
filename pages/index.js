@@ -29,7 +29,7 @@ export default function Home() {
       </Head>
 
       <div className={styles.homeNav}>
-        <div className={styles.logo}>LOGO</div>
+        <div className={styles.logo}>GK</div>
         <ul className={styles.navlist}>
           <li>ABOUT</li>
           <li>CONTACT</li>
@@ -37,18 +37,22 @@ export default function Home() {
       </div>
       {/* <h1 className={styles.title}>Welcome to GK Education App</h1> */}
       <div className={styles.main}>
-        <div className={styles.title}>GK GAMES & MEDIA</div>
-        <span>EDUCATIONAL GAMES FOR CHILDREN</span>
+        <div className={styles.titleCon}>
+          <div className={styles.title}>GK GAMES & MEDIA</div>
+          <span>EDUCATIONAL GAMES FOR CHILDREN</span>
+        </div>
         <div className={styles.gameCon}>
           {games.map((game, index) => (
-            <Image
-              key={index}
-              src={game.img}
-              onClick={() => router.push(game.link)}
-              width={200}
-              height={200}
-              className={styles.gameIcons}
-            />
+            <div className={styles.gameIcons}>
+              <Image
+                key={index}
+                src={game.img}
+                onClick={() => router.push(game.link)}
+                width={200}
+                height={200}
+                className={styles.gameImage}
+              />
+            </div>
           ))}
         </div>
       </div>
