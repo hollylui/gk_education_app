@@ -1,7 +1,11 @@
+$btnBgColor: #f0ff22;
+$btnHover: #006eff;
+$btnFontColor: #ffffff;
+$btnActiveColor: #ff0000;
+
 .container {
   width: 50%;
   padding: 10px 0;
-  // background-color: green;
 
   display: flex;
   flex-direction: column;
@@ -10,7 +14,7 @@
   align-items: center;
 
   .btn {
-    background-color: #f0ff22;
+    background-color: $btnBgColor;
     font-family: "Bangers", cursive;
     border: none;
     width: 80px;
@@ -21,13 +25,13 @@
     cursor: pointer;
 
     &:hover {
-      background-color: #006eff;
-      color: #ffffff;
+      background-color: $btnHover;
+      color: $btnFontColor;
     }
   }
 }
 
 .active {
-  background-color: #ff0000;
-  color: #ff0000;
+  background-color: $btnActiveColor;
+  color: $btnActiveColor;
 }

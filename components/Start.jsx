@@ -18,6 +18,7 @@ export default function Start({ id }) {
   const startHandler = () => {
     startBtn.classList.remove(styles.blink);
     startBtn.style.backgroundColor = "red";
+    startBtn.style.color = "white";
     router.push(`/volcano/${id}`);
   };
 

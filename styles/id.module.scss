@@ -1,8 +1,15 @@
+$green: #35805a;
+$blue: #00bbe0;
+$back_blue: #00bbe0d7;
+$orange: #fd8154;
+$lightblue: #c2f5ff;
+$yellow: #ffea47;
+
 .container {
   width: 100vw;
   height: 100vh;
   padding: 120px 20px 20px 20px;
-  background-color: #00bbe0;
+  background-color: $lightblue;
   display: flex;
   justify-content: space-between;
 

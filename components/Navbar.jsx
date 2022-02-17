@@ -19,6 +19,7 @@ import menuImg from "../assets/images/volcano/menu_img.png";
 import bgMusic from "../assets/audios/volcano/cumbia_city_an_jone.mp3";
 import { audios } from "../assets/audios/volcano/audioList";
 import { branch1_1 } from "../assets/audios/volcano/branch1_1/branch1_1_list";
+import { branch1_2 } from "../assets/audios/volcano/branch1_2/branch1_2_list";
 
 //! Styles
 import styles from "../styles/Navbar.module.scss";
@@ -65,7 +66,7 @@ export default function Navbar() {
       setMusic(false);
       bgMusicItem.pause();
     }
-  }, []);
+  }, [music]);
 
   useEffect(() => {
     // get data from sessionStorate for reload
@@ -90,23 +91,31 @@ export default function Navbar() {
       branchItem.volume = 1;
       audio ? branchItem.play() : branchItem.pause();
     }
+
+    if (stage === "branch1_2") {
+      branchItem = document.getElementById("branch");
+      branchItem.volume = 1;
+      audio ? branchItem.play() : branchItem.pause();
+    }
   }, [branchAudioIndex]);
 
   return (
     <nav className={styles.container}>
       {/* background music */}
-      <audio loop id="bgMusic">
-        <source src={bgMusic} />
-      </audio>
+      <audio loop id="bgMusic" src={bgMusic} />
 
       {/* audio */}
 
-      {stage === "audio" && branchIndex <= 12 && (
-        <audio id="audio" source src={audios[audioIndex]} />
+      {stage === "audio" && branchIndex <= 11 && (
+        <audio id="audio" src={audios[audioIndex]} />
       )}
 
       {stage === "branch1_1" && (
-        <audio id="branch" source src={branch1_1[branchAudioIndex]} />
+        <audio id="branch" src={branch1_1[branchAudioIndex]} />
+      )}
+
+      {stage === "branch1_2" && (
+        <audio id="branch" src={branch1_2[branchAudioIndex]} />
       )}
 
       <div className={styles.soundControl}>
