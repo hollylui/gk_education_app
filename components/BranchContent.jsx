@@ -33,7 +33,7 @@ export default function BranchContent({ branchIndex, branchData }) {
   const caveStyle = {
     position: "relative",
     width: "100%",
-    paddingBottom: "35%",
+    paddingBottom: "85%",
   };
 
   //----------------------------------
