@@ -5,7 +5,7 @@ import { useContext } from "react";
 import clientPromise from "../../../lib/mongodb";
 import BranchContext from "../../../context/BranchContext";
 import Layout from "../../../components/Layout";
-import MapContent from "../../../context/MapContent";
+import MapContext from "../../../context/MapContext";
 import BranchContent from "../../../components/BranchContent";
 import LargeMap from "../../../components/LargeMap";
 import Map from "../../../components/Map";
@@ -19,7 +19,7 @@ import styles from "../../../styles/id.module.scss";
 export default function BranchOne({ branch4_1, branch4_2 }) {
   let data;
   const { branch, branchIndex } = useContext(BranchContext);
-  const { expand } = useContext(MapContent);
+  const { expand } = useContext(MapContext);
 
   branch === "branch4_1" ? (data = branch4_1) : (data = branch4_2);
 

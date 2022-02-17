@@ -101,7 +101,7 @@ export default function Navbar() {
 
       {/* audio */}
 
-      {stage === "audio" && (
+      {stage === "audio" && branchIndex <= 12 && (
         <audio id="audio" source src={audios[audioIndex]} />
       )}
 

@@ -9,11 +9,15 @@ import styles from "../styles/Start.module.scss";
 
 // -------------------------------------------------------
 
+let startBtn;
+
 export default function Start({ id }) {
   const router = useRouter();
   // const { index, data } = useContext(GameContext);
 
   const startHandler = () => {
+    startBtn.classList.remove(styles.blink);
+    startBtn.style.backgroundColor = "red";
     router.push(`/volcano/${id}`);
   };
 
@@ -21,13 +25,16 @@ export default function Start({ id }) {
     router.push(`/`);
   };
 
-  useEffect(() => {});
+  useEffect(() => {
+    startBtn = document.getElementById("start");
+  }, []);
 
   return (
     <>
       <button
         onClick={startHandler}
         className={`${styles.button} ${styles.blink}`}
+        id="start"
       >
         Start
       </button>

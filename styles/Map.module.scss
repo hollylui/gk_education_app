@@ -16,10 +16,57 @@
     right: 43px;
     width: 22px;
     height: 22px;
-    background-color: red;
+    background-color: #ff0000;
     z-index: 1000;
     cursor: pointer;
     animation: blinker 1s step-start infinite;
+  }
+
+  .image {
+    position: relative;
+    .progress {
+      position: absolute;
+      width: 100px;
+      left: 50px;
+      bottom: 60px;
+      background-color: #000000;
+      z-index: -1;
+    }
+  }
+
+  #stage1,
+  #stage2,
+  #stage3,
+  #stage4,
+  #stage5 {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1000;
+  }
+
+  #stage1 {
+    top: 202px;
+    left: 89px;
+  }
+
+  #stage2 {
+    top: 174px;
+    left: 71px;
+  }
+
+  #stage3 {
+    top: 141px;
+    left: 76px;
+  }
+
+  #stage4 {
+    top: 110px;
+    left: 70px;
+  }
+
+  #stage5 {
+    top: 90px;
+    left: 87px;
   }
 }
 
