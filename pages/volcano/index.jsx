@@ -30,7 +30,6 @@ export default function GameLanding({ games }) {
 
   return (
     <div>
-      <NavBarHome />
       <div className={styles.container}>
         <audio id="audio" source src={welcome} />
         <Landing games={games} />

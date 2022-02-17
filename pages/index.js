@@ -4,8 +4,11 @@ import { useEffect } from "react/cjs/react.production.min";
 import styles from "../styles/Home.module.scss";
 import { useRouter } from "next/router";
 import NavBarHome from "../components/NavHome";
+import { useContext, useState } from "react";
+import BackpackContext from "../context/BackpackContext";
 
 export default function Home() {
+  const { setGameOn } = useContext(BackpackContext);
   const router = useRouter();
   const games = [
     {
@@ -43,7 +46,10 @@ export default function Home() {
               <Image
                 key={index}
                 src={game.img}
-                onClick={() => router.push(game.link)}
+                onClick={() => {
+                  router.push(game.link);
+                  setGameOn(true);
+                }}
                 width={200}
                 height={200}
                 className={styles.gameImage}
