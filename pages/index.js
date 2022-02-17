@@ -29,14 +29,8 @@ export default function Home() {
         <link rel="icon" href="/children.ico" />
       </Head>
 
-      {/* <div className={styles.homeNav}>
-        <div className={styles.logo}>GK</div>
-        <ul className={styles.navlist}>
-          <li>ABOUT</li>
-          <li>CONTACT</li>
-        </ul>
-      </div> */}
       <NavBarHome />
+
       {/* <h1 className={styles.title}>Welcome to GK Education App</h1> */}
       <div className={styles.main}>
         <div className={styles.titleCon}>
