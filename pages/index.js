@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useEffect } from "react/cjs/react.production.min";
 import styles from "../styles/Home.module.scss";
 import { useRouter } from "next/router";
+import NavBarHome from "../components/NavHome";
 
 export default function Home() {
   const router = useRouter();
@@ -28,13 +29,14 @@ export default function Home() {
         <link rel="icon" href="/children.ico" />
       </Head>
 
-      <div className={styles.homeNav}>
+      {/* <div className={styles.homeNav}>
         <div className={styles.logo}>GK</div>
         <ul className={styles.navlist}>
           <li>ABOUT</li>
           <li>CONTACT</li>
         </ul>
-      </div>
+      </div> */}
+      <NavBarHome />
       {/* <h1 className={styles.title}>Welcome to GK Education App</h1> */}
       <div className={styles.main}>
         <div className={styles.titleCon}>
