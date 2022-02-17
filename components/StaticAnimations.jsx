@@ -24,8 +24,8 @@ const StaticAnimations = ({Position}) => {
 
     return (
       <>
-
-      <div className={`${Styles.controlled} ${Styles.hold}`}>
+      
+      <div className={`${Styles.controlled}`}>
       
     
        <Image src={TitleImage[Position]} layout='fill' alt="main" />
@@ -39,7 +39,7 @@ const StaticAnimations = ({Position}) => {
        </div>
       
       </div>
-    
+     
       </>
     );
 }

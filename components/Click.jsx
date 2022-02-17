@@ -7,7 +7,7 @@ import point from '../public/images/animations/finger-ga-1.png';
 import TitleImage from './../public/clickableImages';
 
 
-const Clicks = ({Position}) => {
+const Click = ({Position}) => {
     const [isStopped, setIsStopped] = useState(true);
     
 
@@ -46,4 +46,4 @@ const Clicks = ({Position}) => {
     );
 }
 
-export default Clicks;
+export default Click;

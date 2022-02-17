@@ -1,28 +1,44 @@
 
 
 
+
+
 .controlled {
+  
     position: relative;
-    border: 5px solid black;
+    border: 5px solid rgb(190, 21, 21);
     width: 955px;
     height: 540px;
+    margin: 0 auto;
+    align-items: center;
+    right: 350px;
+    bottom: 100px;
+    
+    
+    
+    
+   
+    
 }
 
-.hold {
-    position: relative;
+// .hold {
+//     position: relative;
+    
    
 
-}
+// }
 
 
 
 .ani {
+  
     position: absolute;
     
 }
 
 
 .lot {
+  margin: 0 auto;
     position: absolute;
     
 }

@@ -8,7 +8,7 @@ import TitleImage from "./../public/timeoutimages";
 
 //animation Controlls
 
-const TimeOutAnimation = ({ Position }) => {
+const TimeOut = ({ Position }) => {
   //useRouter to set a timeout for the animation
   const router = useRouter();
 
@@ -45,4 +45,4 @@ TimeOutAnimation.getInitialProps = ({ query: { id } }) => {
   return { animation };
 };
 
-export default TimeOutAnimation;
+export default TimeOut;
