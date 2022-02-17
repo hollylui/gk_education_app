@@ -29,11 +29,12 @@ export default function Home() {
         {/*THis is our icon, it can be changed later */}
         <link rel="icon" href="/children.ico" />
       </Head>
-
       <NavBarHome/>
+     
  
       {/* <h1 className={styles.title}>Welcome to GK Education App</h1> */}
       <div className={styles.main}>
+
         <div className={styles.title}>GK GAMES & MEDIA</div>
         <span>EDUCATIONAL GAMES FOR CHILDREN</span>
         <div className={styles.gameCon}>

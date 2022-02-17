@@ -36,6 +36,8 @@ $yellow: #ffea47;
 .container {
   height: 100vh;
   background-color: $lightblue;
+  display: flex;
+flex-direction: column; 
   .homeNav {
     font-size: $font_lg;
     @include flex-just-al-wrap(space-between, center, no-wrap);
