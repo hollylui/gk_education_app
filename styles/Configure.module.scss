@@ -33,6 +33,13 @@ $yellow: #ffea47;
   box-shadow: 3px 4px 10px #333;
 }
 
+@mixin grid($wd, $row, $column, $gap) {
+  width: $wd;
+  display: grid;
+  grid-template: $row / $column;
+  grid-gap: $gap;
+}
+
 // ? Breakpoints
 
 $xs: 0px;
@@ -74,6 +81,11 @@ $over: 1600px;
 }
 @mixin breakpoint-xxl {
   @media (min-width: $xxl) {
+    @content;
+  }
+}
+@mixin breakpoint-over {
+  @media (min-width: $over) {
     @content;
   }
 }

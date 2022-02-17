@@ -1,6 +1,7 @@
 @import "./Configure.module.scss";
 
 .container {
+  height: 100%;
   min-height: 100vh;
   // background-color: $lightblue;
   background-image: url("https://i.pinimg.com/originals/be/87/14/be8714c4e87b970c3726e8f6910d2af1.gif");
@@ -14,16 +15,15 @@
     box-shadow: 1px 2px 5px #333;
     margin-bottom: 1rem;
     height: 3.5rem;
-    @include breakpoint-sm {
+    @include breakpoint-md {
       padding: 0rem 5rem;
       font-size: $font_md;
       height: 5rem;
     }
     .logo {
       background-color: #fff;
-      @include border-box(3rem, 3rem, 1rem);
       @include flex-just-al-wrap(center, center, no-wrap);
-      @include breakpoint-sm {
+      @include breakpoint-md {
         @include border-box(4.5rem, 4.5rem, 2rem);
       }
     }
@@ -32,6 +32,15 @@
       list-style: none;
       @include flex-just-al-wrap(space-between, center, no-wrap);
       @include breakpoint-sm {
+        width: 40%;
+      }
+      @include breakpoint-md {
+        width: 40%;
+      }
+      @include breakpoint-lg {
+        width: 30%;
+      }
+      @include breakpoint-xl {
         width: 23%;
       }
     }
@@ -39,10 +48,8 @@
   .main {
     @include flex-just-al-wrap(space-evenly, center, no-wrap);
     min-height: 84vh;
-    height: 100%;
     width: 100%;
     flex-direction: column;
-    // background-color: $lightblue;
     .titleCon {
       @include flex-just-al-wrap(center, center, no-wrap);
       flex-direction: column;
@@ -70,23 +77,26 @@
     .gameCon {
       width: 85%;
       max-width: 57rem;
-      @include flex-just-al-wrap(space-evenly, center, wrap);
-      @include border-shadow-box(1rem, 2rem);
       background-color: $back_blue;
-      @include breakpoint-md {
-        width: 55%;
-        max-width: 57rem;
+      border-radius: 2rem;
+      box-shadow: 1px 2px 5px #333;
+      @include grid(85%, repeat(3, 1fr), repeat(2, 1fr), 0);
+      @include breakpoint-sm {
+        @include grid(85%, repeat(2, 1fr), repeat(3, 1fr), 0);
       }
+
       .gameIcons {
         cursor: pointer;
         margin: 1rem;
-        width: 100px;
-        height: 100px;
-        @include breakpoint-sm {
-          width: 150px;
-          height: 150px;
+        width: 130px;
+        height: 130px;
+        justify-self: center;
+        align-self: center;
+        @include breakpoint-md {
+          width: 170px;
+          height: 170px;
         }
-        @include breakpoint-xxl {
+        @include breakpoint-xl {
           width: 200px;
           height: 200px;
         }
