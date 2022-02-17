@@ -5,24 +5,25 @@ import Image from "next/image";
 //! From local
 
 //! Image
-import backpack from "../assets/images/volcano/backpack.png";
-import littleMap from "../assets/images/volcano/little_map.png";
+import mapAndBackpack from "../assets/images/volcano/map_and_backpack.png";
 
 //! Styles
 import styles from "../styles/IndexSix.module.scss";
 
 export default function IndexSix({ game }) {
+  const style = { position: "relative", width: "100%", paddingBottom: "15%" };
+
   return (
     <div className={styles.container}>
       <h2>{game.title}</h2>
       <p>{game.message}</p>
-      <div className={styles.contents}>
-        <div className={styles.map}>
-          <Image src={littleMap} alt="map" />
-        </div>
-        <div className={styles.backpack}>
-          <Image src={backpack} alt="backpack" />
-        </div>
+      <div className={styles.image} style={style}>
+        <Image
+          src={mapAndBackpack}
+          alt="map"
+          layout="fill"
+          objectFit="contain"
+        />
       </div>
       <p>{game.hint}</p>
     </div>

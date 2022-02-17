@@ -12,7 +12,6 @@ import IndexSix from "./IndexSix";
 import IndexEight from "./IndexEight";
 import IndexNine from "./IndexNine";
 import IndexEighteen from "./IndexEighteen";
-import Quiz from "./Quiz";
 
 //! Image
 import cube from "../assets/images/volcano/rubiks_cube.png";
@@ -27,8 +26,11 @@ import ChooseBranch from "./ChooseBranch";
 export default function Content({ game }) {
   const { currGameId, gameIds } = useContext(GameContext);
   const { name } = useContext(NameContext);
-  // const { branchIndex } = useContext(BranchContext);
-  // const { setBranchAudioIndex } = useContext(MusicContext);
+  const cubeStyle = {
+    position: "relative",
+    width: "100%",
+    paddingBottom: "17%",
+  };
 
   const index = gameIds.indexOf(currGameId);
 
@@ -53,8 +55,8 @@ export default function Content({ game }) {
         <ChooseBranch leftBranch={"branch1_1"} rightBranch={"branch1_2"} />
       )}
       {index === 13 && (
-        <div className={styles.indexThirteen}>
-          <Image src={cube} alt="cube" />
+        <div className={styles.indexThirteen} style={cubeStyle}>
+          <Image src={cube} alt="cube" layout="fill" objectFit="contain" />
         </div>
       )}
 

@@ -4,7 +4,7 @@ import timeout from "../lotties/timeout";
 import { useRouter } from "next/router";
 import Styles from "./../styles/animation_styles/cartoon.module.scss";
 import Image from "next/image";
-import TitleImage from "./../public/timeoutimages";
+import TitleImage from "../public/timeoutimages";
 
 //animation Controlls
 

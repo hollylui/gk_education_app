@@ -35,30 +35,29 @@ export default function GameStart({ game, ids }) {
   return (
     <Layout>
       <div className={styles.container}>
+        {/* map section */}
+        <div className={styles.map}>
+          {index !== 0 &&
+          index !== 1 &&
+          index !== 2 &&
+          index !== 3 &&
+          index !== 4 &&
+          index !== 5 ? (
+            <Map />
+          ) : (
+            ""
+          )}
+        </div>
         <div className={styles.contents}>
-          {/* map section */}
-          <div className={styles.map}>
-            {index !== 0 &&
-            index !== 1 &&
-            index !== 2 &&
-            index !== 3 &&
-            index !== 4 &&
-            index !== 5 ? (
-              <Map />
-            ) : (
-              ""
-            )}
-          </div>
-
           {/* content section */}
           <div className={styles.content}>
             {expand ? <LargeMap /> : <Content game={game} />}
           </div>
-        </div>
 
-        {/* footer section */}
-        <div className={styles.controller}>
-          <Footer />
+          {/* footer section */}
+          <div className={styles.controller}>
+            <Footer />
+          </div>
         </div>
       </div>
     </Layout>
@@ -67,7 +66,6 @@ export default function GameStart({ game, ids }) {
 
 // Fetch data ------------------------------------------
 export const getStaticProps = async (context) => {
-
   const allData = await fetch(`http://localhost:3000/api/volcanos/`);
   const games = await allData.json();
   const ids = games.map((game) => game._id);

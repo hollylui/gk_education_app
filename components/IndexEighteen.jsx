@@ -8,8 +8,8 @@ import BranchContext from "../context/BranchContext";
 export default function IndexEighteen() {
   const { animalsList } = useContext(BranchContext);
 
-  const width = 90;
-  const height = 90;
+  const width = 140;
+  const height = 140;
 
   const anima1 = `${animalsList[0].src}`;
   const anima2 = `${animalsList[1].src}`;

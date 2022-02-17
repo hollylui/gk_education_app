@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Lottie from 'react-lottie';
-import animationData from './../lotties/clicks';
+import animationData from '../lotties/clicks';
 import Styles from '../styles/animation_styles/cartoon.module.scss'
 import Image from 'next/image';
 import point from '../public/images/animations/finger-ga-1.png';
-import TitleImage from './../public/clickableImages';
+import TitleImage from '../public/clickableImages';
 
 
 const Click = ({Position}) => {
