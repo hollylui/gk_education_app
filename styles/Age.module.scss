@@ -10,7 +10,7 @@
   align-items: center;
 
   .btn {
-    background-color: rgb(240, 255, 34);
+    background-color: #f0ff22;
     font-family: "Bangers", cursive;
     border: none;
     width: 80px;
@@ -22,11 +22,12 @@
 
     &:hover {
       background-color: #006eff;
+      color: #ffffff;
     }
   }
 }
 
 .active {
-  background-color: red;
-  color: white;
+  background-color: #ff0000;
+  color: #ff0000;
 }

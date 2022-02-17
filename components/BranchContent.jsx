@@ -152,14 +152,16 @@ export default function BranchContent({ branchIndex, branchData }) {
 
       {/* index 1 ------------------------------------ */}
       {branchIndex === 1 && (
-        <div className={styles.indexOne} style={caveStyle}>
+        <div className={styles.indexOne}>
           {branch === rightPath && (
-            <Image
-              src={images[1]}
-              alt={alts[1]}
-              layout="fill"
-              objectFit="contain"
-            />
+            <div style={caveStyle}>
+              <Image
+                src={images[1]}
+                alt={alts[1]}
+                layout="fill"
+                objectFit="contain"
+              />
+            </div>
           )}
         </div>
       )}
