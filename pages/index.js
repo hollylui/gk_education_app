@@ -5,7 +5,6 @@ import styles from "../styles/Home.module.scss";
 import { useRouter } from "next/router";
 import NavBarHome from "../components/NavHome";
 
-
 export default function Home() {
   const router = useRouter();
   const games = [
@@ -30,8 +29,8 @@ export default function Home() {
         <link rel="icon" href="/children.ico" />
       </Head>
 
-      <NavBarHome/>
- 
+      <NavBarHome />
+
       {/* <h1 className={styles.title}>Welcome to GK Education App</h1> */}
       <div className={styles.main}>
         <div className={styles.title}>GK GAMES & MEDIA</div>
@@ -47,8 +46,6 @@ export default function Home() {
               className={styles.gameIcons}
             />
           ))}
-
-
         </div>
       </div>
     </div>
