@@ -8,7 +8,6 @@ import { useContext, useState } from "react";
 import BackpackContext from "../context/BackpackContext";
 
 export default function Home() {
-  const { setGameOn } = useContext(BackpackContext);
   const router = useRouter();
   const games = [
     {
@@ -46,10 +45,7 @@ export default function Home() {
               <Image
                 key={index}
                 src={game.img}
-                onClick={() => {
-                  router.push(game.link);
-                  setGameOn(true);
-                }}
+                onClick={() => router.push(game.link)}
                 width={200}
                 height={200}
                 className={styles.gameImage}

@@ -7,19 +7,13 @@ import styles from "../styles/Home.module.scss";
 export default function Contact() {
   const { gameOn, setGameOn } = useContext(BackpackContext);
   return (
-    <>
-      {!gameOn ? (
-        <div className={styles.container}>
-          <NavBarHome />
-          <div>
-            <h2> We would love to hear fom you!</h2>
-            <p>
-              How can we improve our games? What do you like about our games?
-            </p>
-            <ContactForm />
-          </div>
-        </div>
-      ) : null}
-    </>
+    <div className={styles.container}>
+      <NavBarHome />
+      <div>
+        <h2> We would love to hear fom you!</h2>
+        <p>How can we improve our games? What do you like about our games?</p>
+        <ContactForm />
+      </div>
+    </div>
   );
 }
