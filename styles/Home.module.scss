@@ -7,6 +7,7 @@ $font_md: 2rem;
 //colors
 $green: #35805a;
 $blue: #00bbe0;
+$back_blue: #00bbe0d7;
 $orange: #fd8154;
 $lightblue: #c2f5ff;
 $yellow: #ffea47;
@@ -56,7 +57,10 @@ $yellow: #ffea47;
     @include flex-just-al-wrap(space-evenly, center, wrap);
     height: 84vh;
     flex-direction: column;
-    background-color: $lightblue;
+    // background-color: $lightblue;
+    background-image: url("https://gifimage.net/wp-content/uploads/2017/11/island-gif-4.gif");
+    background-position: center;
+    background-size: cover;
     .title {
       font-size: $font_xl;
       background-color: $orange;
@@ -73,7 +77,7 @@ $yellow: #ffea47;
       padding: 0 10rem;
       @include flex-just-al-wrap(space-evenly, center, wrap);
       @include border-shadow-box(1rem, 2rem);
-      background-color: $blue;
+      background-color: $back_blue;
       .gameIcons {
         border-radius: 3rem;
         cursor: pointer;

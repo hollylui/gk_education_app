@@ -1,3 +1,5 @@
+@import "../styles/Home.module.scss";
+
 .backpackOuter {
   width: 44rem;
   min-width: 44rem;
@@ -27,13 +29,13 @@
       bottom: 0;
       left: 50px;
       box-shadow: 3px 2px 10px #000;
-      background-color: #35805a;
+      background-color: $green;
       border-radius: 0 1rem 1rem 0;
       display: flex;
       justify-content: flex-start;
       align-items: center;
       padding-left: 50px;
-      animation: openBackpack 0.7s linear forwards;
+      // animation: openBackpack 0.7s linear forwards;
       transform-origin: left;
       .item {
         width: 3.5rem;
@@ -41,7 +43,7 @@
         margin: 0 0.5rem;
         border-radius: 1rem;
         background-color: #fff;
-        animation: showIconHolder 0.7s linear forwards;
+        // animation: showIconHolder 0.7s linear forwards;
         transform-origin: center;
         box-shadow: inset 2px 2px 5px #000;
       }
@@ -74,6 +76,77 @@
   }
   .itemContainerHide {
     display: none;
+  }
+}
+
+#magicWand {
+  cursor: pointer;
+  &:hover {
+    animation: hoverBig 1s linear infinite;
+  }
+}
+
+#boat {
+  width: 10rem;
+  animation: shaking 1s linear forwards;
+}
+.sentence {
+  font-size: 1.5rem;
+}
+
+#yes,
+#no {
+  padding: 1rem 2rem;
+  margin: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 1rem;
+}
+
+#yes {
+  background-color: $green;
+}
+
+#no {
+  background-color: $orange;
+}
+
+@keyframes shaking {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  10% {
+    transform: rotate(1deg);
+  }
+  20%,
+  40%,
+  60% {
+    transform: rotate(-2deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotate(2deg);
+  }
+  80% {
+    transform: rotate(-1deg);
+  }
+  90% {
+    transform: rotate(1deg);
+  }
+}
+
+@keyframes hoverBig {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
