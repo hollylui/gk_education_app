@@ -1,0 +1,30 @@
+.modalContent {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    background-color: rgb(0, 247, 255);
+    border: 1px solid #888;
+    position: relative;
+    top: 30%;
+    text-align: center;
+  
+    button {
+      border: none;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      padding: 5px 25px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      background-color: yellow;
+      font-family: "Bangers", cursive;
+  
+      &:hover {
+        color: white;
+        background-color: red;
+      }
+    }
+  }
+  
+  .container{
+    margin-left: auto;
+    background-color: blue;
+  }
