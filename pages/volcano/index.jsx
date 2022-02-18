@@ -14,6 +14,7 @@ import welcome from "../../assets/audios/volcano/welcome.mp3";
 
 //! Styles
 import styles from "../../styles/GameLanding.module.scss";
+import NavBarHome from "../../components/NavHome";
 
 export default function GameLanding({ games }) {
   const { music } = useContext(MusicContext);
@@ -29,6 +30,7 @@ export default function GameLanding({ games }) {
   }, []);
 
   return (
+
     <div className={styles.container}>
       <Head>
         <title>Volcano Rescue</title>
@@ -37,6 +39,7 @@ export default function GameLanding({ games }) {
 
       <audio id="audio" source src={welcome} />
       <Landing games={games} />
+
     </div>
   );
 }

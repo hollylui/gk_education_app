@@ -3,6 +3,9 @@ import Image from "next/image";
 import { useEffect } from "react/cjs/react.production.min";
 import styles from "../styles/Home.module.scss";
 import { useRouter } from "next/router";
+import NavBarHome from "../components/NavHome";
+import { useContext, useState } from "react";
+import BackpackContext from "../context/BackpackContext";
 
 export default function Home() {
   const router = useRouter();
@@ -28,27 +31,26 @@ export default function Home() {
         <link rel="icon" href="/children.ico" />
       </Head>
 
-      <div className={styles.homeNav}>
-        <div className={styles.logo}>LOGO</div>
-        <ul className={styles.navlist}>
-          <li>ABOUT</li>
-          <li>CONTACT</li>
-        </ul>
-      </div>
+      <NavBarHome />
+
       {/* <h1 className={styles.title}>Welcome to GK Education App</h1> */}
       <div className={styles.main}>
-        <div className={styles.title}>GK GAMES & MEDIA</div>
-        <span>EDUCATIONAL GAMES FOR CHILDREN</span>
+        <div className={styles.titleCon}>
+          <div className={styles.title}>GK GAMES & MEDIA</div>
+          <span>EDUCATIONAL GAMES FOR CHILDREN</span>
+        </div>
         <div className={styles.gameCon}>
           {games.map((game, index) => (
-            <Image
-              key={index}
-              src={game.img}
-              onClick={() => router.push(game.link)}
-              width={200}
-              height={200}
-              className={styles.gameIcons}
-            />
+            <div className={styles.gameIcons}>
+              <Image
+                key={index}
+                src={game.img}
+                onClick={() => router.push(game.link)}
+                width={200}
+                height={200}
+                className={styles.gameImage}
+              />
+            </div>
           ))}
         </div>
       </div>
