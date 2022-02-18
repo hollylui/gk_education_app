@@ -1,3 +1,6 @@
+$expandBtn: #ff0000;
+$pathBg: #000000;
+
 .container {
   position: relative;
   z-index: 0;
@@ -6,14 +9,64 @@
 
   .expand {
     position: absolute;
-    bottom: 83px;
-    right: 73.5px;
+    bottom: 72.5px;
+    right: 56.5px;
     width: 30px;
     height: 30px;
-    background-color: red;
+    background-color: $expandBtn;
     z-index: 4000;
     cursor: pointer;
     animation: blinker 1s step-start infinite;
+  }
+
+  .image {
+    position: relative;
+
+    .largeMapProgress {
+      position: absolute;
+      width: 200px;
+      // height: 290px;
+      left: 190px;
+      bottom: 60px;
+      background-color: $pathBg;
+      z-index: -1;
+    }
+  }
+
+  #stage1,
+  #stage2,
+  #stage3,
+  #stage4,
+  #stage5 {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1000;
+    font-size: 2rem;
+  }
+
+  #stage1 {
+    top: 300px;
+    left: 295px;
+  }
+
+  #stage2 {
+    top: 240px;
+    left: 210px;
+  }
+
+  #stage3 {
+    top: 170px;
+    left: 240px;
+  }
+
+  #stage4 {
+    top: 115px;
+    left: 225px;
+  }
+
+  #stage5 {
+    top: 70px;
+    left: 260px;
   }
 }
 

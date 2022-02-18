@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import BranchContext from "../context/BranchContext";
 import GameContext from "../context/GameContext";
 import MusicContext from "../context/MusicContext";
+import MapContext from "../context/MapContext";
 
 //! Images
 import nextBtn from "../assets/images/volcano/next.png";
@@ -24,9 +25,11 @@ export default function BranchFooter() {
   const { currGameId, gameIds } = useContext(GameContext);
   const { audioIndex, branchAudioIndex, setBranchAudioIndex, setStage } =
     useContext(MusicContext);
+  const { progress, setProgress, largeMapProgress, setLargeMapProgress } =
+    useContext(MapContext);
 
   const nextGameId = gameIds[gameIds.indexOf(currGameId) + 1];
-  const prevGameId = gameIds[gameIds.indexOf(currGameId)];
+  // const prevGameId = gameIds[gameIds.indexOf(currGameId)];
 
   const index = gameIds.indexOf(currGameId);
 
@@ -48,6 +51,8 @@ export default function BranchFooter() {
     if (branchIndex !== 5) setBranchIndex(branchIndex + 1);
     if (branchIndex === 5) {
       setStage("audio");
+      setProgress(progress + 28);
+      setLargeMapProgress(largeMapProgress + 58);
       sessionStorage.setItem("audioIndex", Number(audioIndex) + 1);
 
       if (index > 12 && index < 18) {

@@ -5,7 +5,7 @@ import { useContext } from "react";
 //! From local
 import Layout from "../../components/Layout";
 import Map from "../../components/Map";
-import MapContent from "../../context/MapContent";
+import MapContext from "../../context/MapContext";
 import Quiz from "../../components/Quiz";
 import LargeMap from "../../components/LargeMap";
 import QuizFooter from "../../components/QuizFooter";
@@ -14,7 +14,7 @@ import QuizFooter from "../../components/QuizFooter";
 import styles from "../../styles/id.module.scss";
 
 export default function Quizpage({ questions }) {
-  const { expand } = useContext(MapContent);
+  const { expand } = useContext(MapContext);
 
   return (
     <Layout>

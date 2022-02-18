@@ -1,6 +1,13 @@
+$green: #35805a;
+$blue: #00bbe0;
+$back_blue: #00bbe0d7;
+$orange: #fd8154;
+$lightblue: #c2f5ff;
+$yellow: #ffea47;
+
 .container {
   position: fixed;
-  background-color: #c2f5ff;
+  background-color: $yellow;
   width: 100%;
   display: flex;
   justify-content: space-between;

@@ -1,3 +1,12 @@
+$quizBtn: #ff6832;
+$quizColor: #ffffff;
+$quizBtnHover: #ffea47;
+$quizBtnHoverColor: #000000;
+$modalBg: #00f7ff;
+$closeBtn: #ffff00;
+$closeBtnHover: #ff0000;
+$closeBtnColor: #ffffff;
+
 .container {
   display: flex;
   flex-direction: column;
@@ -23,21 +32,21 @@
     padding: 20px 0;
 
     .button {
-      background-color: #ff6832;
-      color: white;
+      background-color: $quizBtn;
+      color: $quizColor;
       width: 90px;
       height: 90px;
       border: none;
       border-radius: 50%;
-      font-size: 4rem;
+      font-size: 3.5rem;
       text-decoration: none;
       font-weight: 700;
       margin: 0 10px;
       cursor: pointer;
 
       &:hover {
-        background-color: #ffea47;
-        color: black;
+        background-color: $quizBtnHover;
+        color: $quizBtnHoverColor;
       }
     }
   }
@@ -46,7 +55,7 @@
 .modalContent {
   font-size: 3rem;
   letter-spacing: 2px;
-  background-color: rgb(0, 247, 255);
+  background-color: $modalBg;
   border: 1px solid #888;
   position: relative;
   top: 30%;
@@ -59,12 +68,12 @@
     padding: 5px 25px;
     border-radius: 20px;
     margin-bottom: 20px;
-    background-color: yellow;
+    background-color: $closeBtn;
     font-family: "Bangers", cursive;
 
     &:hover {
-      color: white;
-      background-color: red;
+      color: $closeBtnColor;
+      background-color: $closeBtnHover;
     }
   }
 }
