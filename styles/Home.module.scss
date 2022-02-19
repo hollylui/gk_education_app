@@ -88,9 +88,14 @@
   }
   .logo {
     background-color: #fff;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1rem;
     @include flex-just-al-wrap(center, center, no-wrap);
     @include breakpoint-md {
-      @include border-box(4.5rem, 4.5rem, 2rem);
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 1.5rem;
     }
   }
   .navlist {
