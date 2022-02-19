@@ -5,7 +5,6 @@ import BackpackContext from "../context/BackpackContext";
 import styles from "../styles/Home.module.scss";
 
 export default function Contact() {
-  const { gameOn, setGameOn } = useContext(BackpackContext);
   return (
     <div className={styles.container}>
       <NavBarHome />
