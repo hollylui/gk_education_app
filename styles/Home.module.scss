@@ -3,48 +3,9 @@
 .container {
   height: 100%;
   min-height: 100vh;
-  // background-color: $lightblue;
-  background-image: url("https://i.pinimg.com/originals/be/87/14/be8714c4e87b970c3726e8f6910d2af1.gif");
+  background-color: $lightblue;
   background-position: top;
   background-size: cover;
-  .homeNav {
-    font-size: $font_sm;
-    @include flex-just-al-wrap(space-between, center, no-wrap);
-    padding: 0rem 3rem;
-    background-color: $yellow;
-    box-shadow: 1px 2px 5px #333;
-    margin-bottom: 1rem;
-    height: 3.5rem;
-    @include breakpoint-md {
-      padding: 0rem 5rem;
-      font-size: $font_md;
-      height: 5rem;
-    }
-    .logo {
-      background-color: #fff;
-      @include flex-just-al-wrap(center, center, no-wrap);
-      @include breakpoint-md {
-        @include border-box(4.5rem, 4.5rem, 2rem);
-      }
-    }
-    .navlist {
-      width: 50%;
-      list-style: none;
-      @include flex-just-al-wrap(space-between, center, no-wrap);
-      @include breakpoint-sm {
-        width: 40%;
-      }
-      @include breakpoint-md {
-        width: 40%;
-      }
-      @include breakpoint-lg {
-        width: 30%;
-      }
-      @include breakpoint-xl {
-        width: 23%;
-      }
-    }
-  }
   .main {
     @include flex-just-al-wrap(space-evenly, center, no-wrap);
     min-height: 84vh;
@@ -107,6 +68,51 @@
           }
         }
       }
+    }
+  }
+}
+
+// get navbar styles out of container to adapt to other pages.
+.homeNav {
+  font-size: $font_sm;
+  @include flex-just-al-wrap(space-between, center, no-wrap);
+  padding: 0rem 3rem;
+  background-color: $yellow;
+  box-shadow: 1px 2px 5px #333;
+  margin-bottom: 1rem;
+  height: 3.5rem;
+  @include breakpoint-md {
+    padding: 0rem 5rem;
+    font-size: $font_md;
+    height: 5rem;
+  }
+  .logo {
+    background-color: #fff;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1rem;
+    @include flex-just-al-wrap(center, center, no-wrap);
+    @include breakpoint-md {
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 1.5rem;
+    }
+  }
+  .navlist {
+    width: 50%;
+    list-style: none;
+    @include flex-just-al-wrap(space-between, center, no-wrap);
+    @include breakpoint-sm {
+      width: 40%;
+    }
+    @include breakpoint-md {
+      width: 40%;
+    }
+    @include breakpoint-lg {
+      width: 30%;
+    }
+    @include breakpoint-xl {
+      width: 23%;
     }
   }
 }
