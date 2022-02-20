@@ -97,6 +97,9 @@
       height: 4.5rem;
       border-radius: 1.5rem;
     }
+    &:hover {
+      cursor: pointer;
+    }
   }
   .navlist {
     width: 50%;
@@ -113,6 +116,12 @@
     }
     @include breakpoint-xl {
       width: 23%;
+    }
+    li {
+      &:hover {
+        cursor: pointer;
+        color: $green;
+      }
     }
   }
 }
