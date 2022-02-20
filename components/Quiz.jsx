@@ -11,7 +11,8 @@ export default function Quiz({ questions }) {
   const router = useRouter();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false); //user items is an empty array in default state
-  const { userItems, setUserItems } = useContext(BackpackContext);
+  const { userItems, setUserItems, quizCount, setQuizCount } =
+    useContext(BackpackContext);
 
   const { currGameId, gameIds } = useContext(GameContext);
   const nextGameId = gameIds[gameIds.indexOf(currGameId) + 1];
@@ -42,6 +43,8 @@ export default function Quiz({ questions }) {
       makeCorrect();
       addItem();
     }
+    //* to check how many quizzes users tried to solve.
+    setQuizCount(quizCount + 1);
     openModal();
   };
 

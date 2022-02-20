@@ -6,6 +6,9 @@ const BackpackProvider = ({ children }) => {
   const [currentGame, setCurrentGame] = useState("0");
   const [progressValue, setProgressValue] = useState(10);
   const [userItems, setUserItems] = useState([]);
+  const [quizCount, setQuizCount] = useState(0);
+  const is5Items = userItems.length >= 5;
+  const is5Quizzes = quizCount >= 5;
 
   const [showItems, setShowItems] = useState(true);
   const showNHideItems = () => {
@@ -31,6 +34,10 @@ const BackpackProvider = ({ children }) => {
         setModal,
         combine,
         setCombine,
+        quizCount,
+        setQuizCount,
+        is5Items,
+        is5Quizzes,
       }}
     >
       {children}

@@ -13,7 +13,6 @@
     grid-template-rows: auto 30px;
     gap: 10px;
     text-transform: uppercase;
-
     .reading {
       color: blue;
     }
@@ -22,4 +21,10 @@
       color: rgb(255, 174, 0);
     }
   }
+  // input[type="radio"] {
+  //   -ms-transform: scale(1.7);
+  //   -webkit-transform: scale(1.7);
+  //   transform: scale(1.7);
+  //   justify-self: center;
+  // }
 }

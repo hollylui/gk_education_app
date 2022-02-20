@@ -88,27 +88,17 @@
 
 #boat {
   width: 10rem;
-  animation: shaking 1s linear forwards;
+  &:hover {
+    animation: shaking 1s linear infinite;
+  }
 }
 .sentence {
   font-size: 1.5rem;
 }
 
-#yes,
-#no {
-  padding: 1rem 2rem;
-  margin: 1rem;
-  font-size: 1.2rem;
-  font-weight: 700;
-  border-radius: 1rem;
-}
-
 #yes {
-  background-color: $green;
-}
-
-#no {
-  background-color: $orange;
+  color: red;
+  font-size: 2rem;
 }
 
 @keyframes shaking {
