@@ -3,6 +3,7 @@ import Lottie from 'react-lottie';
 import animationData from './../lotties/staticAnimation';
 import Styles from '../styles/animation_styles/cartoon.module.scss'
 import Image from 'next/image';
+import Container from './../styles/BranchContent.module.scss'
 
 import TitleImage from './../public/staticImages';
 
