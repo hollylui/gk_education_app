@@ -17,7 +17,7 @@ import backBtn from "../assets/images/volcano/back.png";
 import styles from "../styles/Footer.module.scss";
 import Backpack from "./Backpack";
 
-//---------------------------------------------
+//------------------------------------------------
 
 export default function BranchFooter() {
   const router = useRouter();
