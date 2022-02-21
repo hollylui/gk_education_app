@@ -1,5 +1,6 @@
 //! From Library
 import { useEffect, useContext } from "react";
+import Head from "next/head";
 
 //! From local
 import clientPromise from "../../lib/mongodb";
@@ -13,6 +14,7 @@ import welcome from "../../assets/audios/volcano/welcome.mp3";
 
 //! Styles
 import styles from "../../styles/GameLanding.module.scss";
+import NavBarHome from "../../components/NavHome";
 
 export default function GameLanding({ games }) {
   const { music } = useContext(MusicContext);
@@ -28,9 +30,16 @@ export default function GameLanding({ games }) {
   }, []);
 
   return (
+
     <div className={styles.container}>
+      <Head>
+        <title>Volcano Rescue</title>
+        <link rel="icon" href="/images/volcano/favicon.png" />
+      </Head>
+
       <audio id="audio" source src={welcome} />
       <Landing games={games} />
+
     </div>
   );
 }

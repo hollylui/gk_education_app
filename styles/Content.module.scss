@@ -1,3 +1,6 @@
+$messageBg: #35805a;
+$messageColor: #ffffff;
+
 .container {
   height: 100%;
   display: flex;
@@ -12,8 +15,8 @@
     margin: 10px 50px;
     letter-spacing: 2px;
     border-radius: 20px;
-    background-color: #35805a;
-    color: white;
+    // background-color: $messageBg;
+    // color: $messageColor;
   }
 
   .indexThirteen {

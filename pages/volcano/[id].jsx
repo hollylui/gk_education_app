@@ -5,7 +5,7 @@ import { useContext, useEffect } from "react";
 import Layout from "../../components/Layout";
 import Map from "../../components/Map";
 import Footer from "../../components/Footer";
-import MapContent from "../../context/MapContent";
+import MapContext from "../../context/MapContext";
 import LargeMap from "../../components/LargeMap";
 import Content from "../../components/Content";
 import GameContext from "../../context/GameContext";
@@ -18,7 +18,7 @@ import styles from "../../styles/id.module.scss";
 // --------------------------------------------
 
 export default function GameStart({ game, ids }) {
-  const { expand } = useContext(MapContent);
+  const { expand } = useContext(MapContext);
   const { currGameId, setCurrGameId, gameIds, setGameIds } =
     useContext(GameContext);
 

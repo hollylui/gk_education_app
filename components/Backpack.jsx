@@ -3,32 +3,30 @@ import Image from "next/image";
 import backpackStyles from "../styles/Backpack.module.scss";
 import { useContext, useEffect } from "react";
 import BackpackContext from "../context/BackpackContext";
-import Modal from "./modal/Modal";
-import Boat from "../assets/images/items/boat.png";
 import { useRouter } from "next/router";
-import magicWand from "../assets/images/test/magicwand.gif";
+import EndingModal from "./EndingModal";
 
 const Backpack = () => {
   const {
     userItems,
     showItems,
     showNHideItems,
-    modal,
     setModal,
     combine,
-    setCombine,
+    quizCount,
+    is5Quizzes,
   } = useContext(BackpackContext);
 
   const router = useRouter();
 
+  //* After user tried to solve 5 quizzes, then a modal is opened to show them the result.
   useEffect(() => {
-    console.log(userItems);
-    console.log(userItems.length);
-    if (userItems.length === 5) {
+    if (is5Quizzes) {
       setModal(true);
     }
-  }, [userItems]);
+  }, [quizCount]);
 
+  //* After users had combined their 5 items and got a special item. after 5 second push to the special ending page.
   useEffect(() => {
     if (combine) {
       setTimeout(() => {
@@ -81,42 +79,7 @@ const Backpack = () => {
           </div>
         </div>
       </div>
-      <Modal state={modal} setState={setModal}>
-        {combine ? (
-          <>
-            <h1>You got a special item!</h1>
-            <Image
-              width={200}
-              height={200}
-              src={Boat}
-              id={backpackStyles.boat}
-            />
-            <p className={backpackStyles.sentence}>
-              With this boat, you can sail to the special ending!
-            </p>
-          </>
-        ) : (
-          <>
-            <h1>Do you want to combine your items to get a special Item?</h1>
-            <div>
-              <Image
-                src={magicWand}
-                onClick={() => setCombine(true)}
-                id={backpackStyles.magicWand}
-              />
-              {/* <button id={backpackStyles.yes} onClick={() => setCombine(true)}>
-                Yes
-              </button>
-              <button
-                id={backpackStyles.no}
-                onClick={() => router.push("/volcano/ending")}
-              >
-                No
-              </button> */}
-            </div>
-          </>
-        )}
-      </Modal>
+      <EndingModal />
     </>
   );
 };

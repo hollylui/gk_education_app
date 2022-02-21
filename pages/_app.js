@@ -4,7 +4,7 @@ import { useState } from "react";
 //! From local
 import AgeContext from "../context/AgeContext";
 import GameContext from "../context/GameContext";
-import MapContent from "../context/MapContent";
+import MapContext from "../context/MapContext";
 import NameContext from "../context/NameContext";
 import BranchContext from "../context/BranchContext";
 import MusicContext from "../context/MusicContext";
@@ -19,6 +19,8 @@ function App({ Component, pageProps }) {
 
   //MapContext
   const [expand, setExpand] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [largeMapProgress, setLargeMapProgress] = useState(0);
 
   //NameContext
   const [name, setName] = useState("Hero");
@@ -71,7 +73,16 @@ function App({ Component, pageProps }) {
         }}
       >
         <NameContext.Provider value={{ name, setName }}>
-          <MapContent.Provider value={{ expand, setExpand }}>
+          <MapContext.Provider
+            value={{
+              expand,
+              setExpand,
+              progress,
+              setProgress,
+              largeMapProgress,
+              setLargeMapProgress,
+            }}
+          >
             <GameContext.Provider
               value={{
                 currGameId,
@@ -86,7 +97,7 @@ function App({ Component, pageProps }) {
                 </BackpackProvider>
               </AgeContext.Provider>
             </GameContext.Provider>
-          </MapContent.Provider>
+          </MapContext.Provider>
         </NameContext.Provider>
       </BranchContext.Provider>
     </MusicContext.Provider>
