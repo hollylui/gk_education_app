@@ -1,11 +1,13 @@
-import { useContext } from "react";
-import ContactForm from "../components/Contact";
+//! From local
+import ContactForm from "../components/ContactForm";
 import NavBarHome from "../components/NavHome";
-import BackpackContext from "../context/BackpackContext";
+
+//! Styles
+import styles from "../styles/Contact.module.scss";
 
 export default function Contact() {
   return (
-    <div>
+    <div className={styles.containter}>
       <NavBarHome />
       <div>
         <h2> We would love to hear fom you!</h2>
