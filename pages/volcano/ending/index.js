@@ -1,11 +1,12 @@
-import styles from "../../../styles/Special.module.scss";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 function Ending() {
-  return (
-    <div className={styles.container}>
-      <h1>Normal Ending</h1>
-    </div>
-  );
+  const router = useRouter();
+  useEffect(() => {
+    router.push("/volcano/ending/0");
+  }, []);
+  return <></>;
 }
 
 export default Ending;

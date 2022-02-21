@@ -4,7 +4,7 @@ import timeout from "../lotties/timeout";
 import { useRouter } from "next/router";
 import Styles from "./../styles/animation_styles/cartoon.module.scss";
 import Image from "next/image";
-import images from "../public/timeoutimages.js";
+import TitleImage from "../public/timeoutimages.js";
 
 //animation Controlls
 
@@ -31,7 +31,7 @@ const TimeOut = ({ Position }) => {
 
   return (
     <div className={`${Styles.controlled} ${Styles.hold}`}>
-      <Image src={images[Position]} layout="fill" alt="main" />
+      <Image src={TitleImage[Position]} layout="fill" alt="main" />
       <div className={Styles.lot}>
         <Lottie options={defaultOptions} height={540} width={960} />
       </div>
