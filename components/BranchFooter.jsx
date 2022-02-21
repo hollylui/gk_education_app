@@ -16,6 +16,7 @@ import backBtn from "../assets/images/volcano/back.png";
 //! Styles
 import styles from "../styles/Footer.module.scss";
 import Backpack from "./Backpack";
+import backpackStyles from "../styles/Backpack.module.scss";
 
 //---------------------------------------------
 
@@ -79,8 +80,9 @@ export default function BranchFooter() {
         </div>
       )} */}
 
-      <div>
+      <div className={backpackStyles.middleFooter}>
         <Backpack />
+        <div id={backpackStyles.animal}></div>
       </div>
 
       <div className={styles.btn} onClick={nextHandler}>

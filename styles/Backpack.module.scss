@@ -101,15 +101,17 @@
   font-size: 2rem;
 }
 .middleFooter {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template: 1fr / 2fr 1fr;
   align-items: center;
+  justify-content: center;
   #animal {
     background-image: url("../assets/images/volcano/animal_counter.png");
     background-size: contain;
     background-repeat: no-repeat;
     width: 6rem;
     height: 4.5rem;
+    padding-right: 8rem;
   }
 }
 @keyframes shaking {
