@@ -1,6 +1,6 @@
 //! From Libarary
 import Image from "next/image";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 
 //! From local
@@ -65,6 +65,10 @@ export default function BranchFooter() {
       }
     }
   };
+
+  useEffect(() => {
+    setNext(false);
+  }, []);
 
   return (
     <div className={styles.container}>
