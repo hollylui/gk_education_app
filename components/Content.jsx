@@ -41,7 +41,9 @@ export default function Content({ game }) {
       )}
 
       {index === 3 && (
-        <p className={styles.message}>{`${name}, ${game.message}`}</p>
+        <p className={styles.message}>
+          <span className={styles.name}>{name}</span>,{game.message}
+        </p>
       )}
 
       {index === 2 && <Name />}

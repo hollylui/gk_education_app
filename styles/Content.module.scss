@@ -1,5 +1,6 @@
 $messageBg: #35805a;
 $messageColor: #ffffff;
+$nameColor: #0400ff;
 
 .container {
   height: 100%;
@@ -17,6 +18,10 @@ $messageColor: #ffffff;
     border-radius: 20px;
     // background-color: $messageBg;
     // color: $messageColor;
+  }
+
+  .name {
+    color: $nameColor;
   }
 
   .indexThirteen {
