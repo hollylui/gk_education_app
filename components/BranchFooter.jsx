@@ -23,7 +23,7 @@ import backpackStyles from "../styles/Backpack.module.scss";
 //! Contexts
 import BackpackContext from "../context/BackpackContext";
 
-//---------------------------------------------
+//------------------------------------------------
 
 export default function BranchFooter() {
   const router = useRouter();
@@ -95,10 +95,6 @@ export default function BranchFooter() {
 
       <div className={backpackStyles.middleFooter}>
         <Backpack />
-        <div className={backpackStyles.animalCounter}>
-          <Image src={mouse} width={100} height={150} />
-          <h1>{animalCount}/5</h1>
-        </div>
       </div>
       {branchIndex !== 3 || next ? (
         <div className={styles.btn} onClick={nextHandler}>

@@ -43,10 +43,6 @@ export default function QuizFooter() {
 
       <div className={backpackStyles.middleFooter}>
         <Backpack />
-        <div className={backpackStyles.animalCounter}>
-          <Image src={mouse} width={100} height={150} />
-          <h1>{animalCount}/5</h1>
-        </div>
       </div>
 
       <div className={styles.btn}></div>
