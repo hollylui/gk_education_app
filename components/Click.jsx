@@ -7,6 +7,7 @@ import point from "../public/images/animations/finger-ga-1.png";
 import TitleImage from "../public/clickableImages";
 import BranchFooterContext from "../context/BranchFooterContext";
 
+//----------------------------------
 const Click = ({ Position }) => {
   const [isStopped, setIsStopped] = useState(true);
   const { setNext } = useContext(BranchFooterContext);
