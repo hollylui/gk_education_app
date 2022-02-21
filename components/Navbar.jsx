@@ -55,7 +55,7 @@ export default function Navbar() {
   //   useEffect ------------------------------------------
   useEffect(() => {
     bgMusicItem = document.getElementById("bgMusic");
-    bgMusicItem.volume = 0.01;
+    bgMusicItem.volume = 0.05;
 
     const musicStatus = sessionStorage.getItem("music");
 
