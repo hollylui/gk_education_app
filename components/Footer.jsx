@@ -55,8 +55,8 @@ export default function Footer() {
 
     sessionStorage.setItem("_id", nextGameId);
 
-    if (index === 2) localStorage.setItem("name", name);
-    if (index == 3) localStorage.setItem("age", age);
+    if (index === 2) sessionStorage.setItem("name", name);
+    if (index == 3) sessionStorage.setItem("age", age);
     // router.push(`/volcano/${nextGameId}`);
 
     if (index === 13) {
