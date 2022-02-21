@@ -6,11 +6,11 @@ import an5 from './get_away.json'
 import an6 from './escape_boat2.json'
 import an7 from './theend.json'
 import an8 from './credits.json'
+import an9 from './crash_landing.json'
 
 
-
-    const timeout = [an1, an2, an3, an4, an5, an6, an7, an8];
+    const timeout = [an1, an2, an3, an4, an5, an6, an7, an8, an9];
     
 
  
-export default timeout;
+export default timeout;  
