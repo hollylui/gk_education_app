@@ -1,0 +1,68 @@
+.controlled {
+  position: relative;
+  border: 5px solid #000000;
+  width: 160%;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  // height: 180%;
+
+  // right: 275px;
+  // bottom: 75px;
+  // margin-top: 10px;
+}
+
+// .hold {
+//     position: relative;
+
+// }
+
+.ani {
+  position: absolute;
+}
+
+.lot {
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+}
+
+.actionyy {
+  position: absolute;
+  cursor: pointer;
+  // border: 1px solid red;
+  width: 100px;
+  height: 100px;
+  top: 73%;
+  left: 31%;
+
+  z-index: 100;
+}
+
+.stick {
+  position: absolute;
+  margin-left: 22.5%;
+  margin-bottom: 0%;
+  transform: rotate(325deg);
+  width: 100px;
+  z-index: 10;
+
+  animation: MoveUpDown 1s linear infinite;
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    bottom: 120px;
+  }
+  60% {
+    bottom: 80px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .controlled {
+    width: 477.5px;
+    height: 270px;
+  }
+}
