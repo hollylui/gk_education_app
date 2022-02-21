@@ -12,6 +12,7 @@ import MusicContext from "../context/MusicContext";
 //! Styles
 import "../styles/globals.css";
 import BackpackProvider from "../context/BackpackProvider";
+import BranchFooterContext from "../context/BranchFooterContext";
 
 function App({ Component, pageProps }) {
   //AgeContext
@@ -32,6 +33,9 @@ function App({ Component, pageProps }) {
   const [rightPath, setRightPath] = useState(null);
   const [animalsList, setAnimalsList] = useState([]);
 
+  //BranchFooter
+  const [next, setNext] = useState(false);
+
   // GameContext
   const [currGameId, setCurrGameId] = useState({});
   const [gameIds, setGameIds] = useState("");
@@ -44,63 +48,65 @@ function App({ Component, pageProps }) {
   const [branchAudioIndex, setBranchAudioIndex] = useState(0);
 
   return (
-    <MusicContext.Provider
-      value={{
-        audioIndex,
-        setAudioIndex,
-        music,
-        setMusic,
-        audio,
-        setAudio,
-        stage,
-        setStage,
-        branchAudioIndex,
-        setBranchAudioIndex,
-      }}
-    >
-      <BranchContext.Provider
+    <BranchFooterContext.Provider value={{ next, setNext }}>
+      <MusicContext.Provider
         value={{
-          branch,
-          setBranch,
-          branchIndex,
-          setBranchIndex,
-          leftPath,
-          setLeftPath,
-          rightPath,
-          setRightPath,
-          animalsList,
-          setAnimalsList,
+          audioIndex,
+          setAudioIndex,
+          music,
+          setMusic,
+          audio,
+          setAudio,
+          stage,
+          setStage,
+          branchAudioIndex,
+          setBranchAudioIndex,
         }}
       >
-        <NameContext.Provider value={{ name, setName }}>
-          <MapContext.Provider
-            value={{
-              expand,
-              setExpand,
-              progress,
-              setProgress,
-              largeMapProgress,
-              setLargeMapProgress,
-            }}
-          >
-            <GameContext.Provider
+        <BranchContext.Provider
+          value={{
+            branch,
+            setBranch,
+            branchIndex,
+            setBranchIndex,
+            leftPath,
+            setLeftPath,
+            rightPath,
+            setRightPath,
+            animalsList,
+            setAnimalsList,
+          }}
+        >
+          <NameContext.Provider value={{ name, setName }}>
+            <MapContext.Provider
               value={{
-                currGameId,
-                setCurrGameId,
-                gameIds,
-                setGameIds,
+                expand,
+                setExpand,
+                progress,
+                setProgress,
+                largeMapProgress,
+                setLargeMapProgress,
               }}
             >
-              <AgeContext.Provider value={{ age, setAge }}>
-                <BackpackProvider>
-                  <Component {...pageProps} />
-                </BackpackProvider>
-              </AgeContext.Provider>
-            </GameContext.Provider>
-          </MapContext.Provider>
-        </NameContext.Provider>
-      </BranchContext.Provider>
-    </MusicContext.Provider>
+              <GameContext.Provider
+                value={{
+                  currGameId,
+                  setCurrGameId,
+                  gameIds,
+                  setGameIds,
+                }}
+              >
+                <AgeContext.Provider value={{ age, setAge }}>
+                  <BackpackProvider>
+                    <Component {...pageProps} />
+                  </BackpackProvider>
+                </AgeContext.Provider>
+              </GameContext.Provider>
+            </MapContext.Provider>
+          </NameContext.Provider>
+        </BranchContext.Provider>
+      </MusicContext.Provider>
+    </BranchFooterContext.Provider>
   );
 }
 
