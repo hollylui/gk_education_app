@@ -16,6 +16,7 @@ import backBtn from "../assets/images/volcano/back.png";
 
 //! Styles
 import styles from "../styles/Footer.module.scss";
+import backpackStyles from "../styles/Backpack.module.scss";
 
 export default function Footer() {
   const router = useRouter();
@@ -86,8 +87,9 @@ export default function Footer() {
       {/* backpack section : Thank you Holly!*/}
       {/* //! I think It makes more sense to show the backpack with the instruction. Could you check it? */}
       {index >= 6 && (
-        <div>
+        <div className={backpackStyles.middleFooter}>
           <Backpack />
+          <div id={backpackStyles.animal}></div>
         </div>
       )}
 
