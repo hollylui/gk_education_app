@@ -12,19 +12,21 @@ import { allAlts } from "../assets/images/volcano/branches/altsList";
 //! Styles
 import styles from "../styles/BranchContent.module.scss";
 
-
 import StaticAnimations from "./StaticAnimations";
 import Click from "./Click";
 
-
-
 export default function BranchContent({ branchIndex, branchData }) {
-  let images, alts, noOfAnimal, index, animals ;
+  let images, alts, noOfAnimal, index, animals;
   const { branch, leftPath, rightPath, animalsList, setAnimalsList } =
     useContext(BranchContext);
 
+  const animalStyle = {
+    position: "relative",
+    width: "100%",
+    paddingBottom: "25%",
+  };
+
   if (branch === "branch1_1") {
-    
     noOfAnimal = 1;
     index = 0;
     images = allImages[index];
@@ -133,7 +135,6 @@ export default function BranchContent({ branchIndex, branchData }) {
           ) : (
             <div className={styles.sub_2}>
               <Image src={images[0]} alt={alts[0]} />
-             
             </div>
           )}
         </div>
@@ -142,9 +143,8 @@ export default function BranchContent({ branchIndex, branchData }) {
       {/* index 1 ------------------------------------ */}
       {branchIndex === 1 && (
         <div className={styles.indexOne}>
-          
-          {branch === rightPath && <StaticAnimations Position={0} /> }
-          
+          {branch === rightPath && <StaticAnimations Position={0} />}
+
           {/* <Image src={images[1]} alt={alts[1]} /> */}
         </div>
       )}
@@ -153,7 +153,7 @@ export default function BranchContent({ branchIndex, branchData }) {
       {branchIndex === 2 && (
         <div className={styles.indexTwo}>
           {branch === leftPath ? (
-            <div className={styles.sub_3}>
+            <div>
               {/* <Image src={images[1]} alt={alts[1]} /> */}
               <StaticAnimations Position={3} />
             </div>
@@ -161,7 +161,6 @@ export default function BranchContent({ branchIndex, branchData }) {
             <>
               <div className={styles.sub_4}>
                 <Image src={images[2]} alt={alts[2]} />
-                
               </div>
               <div className={styles.sub_5}>
                 <Image src={images[3]} alt={alts[3]} />
@@ -185,9 +184,8 @@ export default function BranchContent({ branchIndex, branchData }) {
             <>
               <div className={styles.sub_4}>
                 {/* <Image src={images[2]} alt={alts[2]} /> */}
-                
               </div>
-              <div className={styles.sub_5}>
+              <div className={styles.sub_5a}>
                 {/* <Image src={images[3]} alt={alts[3]} /> */}
                 <Click Position={1} />
               </div>
@@ -204,20 +202,20 @@ export default function BranchContent({ branchIndex, branchData }) {
       {branchIndex === 4 && (
         <div className={styles.indexFour}>
           {branch === leftPath && (
-            <div className={styles.sub_6}>
+            <div className={styles.sub_5b}>
               <Image src={images[2]} alt={alts[2]} />
             </div>
           )}
           {branch === rightPath && (
             <>
-              <div className={styles.sub_4}>
+              <div className={styles.animal}>
                 <Image src={images[2]} alt={alts[2]} />
               </div>
-              <div className={styles.sub_5}>
+              <div className={styles.sub_5a}>
                 <Image src={images[3]} alt={alts[3]} />
               </div>
 
-              <div className={styles.sub_7}>
+              <div className={styles.sub_7a}>
                 <Image src={images[4]} alt={alts[4]} />
               </div>
             </>
@@ -237,11 +235,21 @@ export default function BranchContent({ branchIndex, branchData }) {
             and rescued {noOfAnimal} of 5 animals.
           </div>
 
-          <div className={styles.indexFive}>
+          <div className={styles.indexFive} style={animalStyle}>
             {branch === leftPath ? (
-              <Image src={images[3]} alt={alts[3]} />
+              <Image
+                src={images[3]}
+                alt={alts[3]}
+                layout="fill"
+                objectFit="contain"
+              />
             ) : (
-              <Image src={images[2]} alt={alts[2]} />
+              <Image
+                src={images[2]}
+                alt={alts[2]}
+                layout="fill"
+                objectFit="contain"
+              />
             )}
           </div>
         </>
