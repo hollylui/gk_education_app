@@ -9,6 +9,7 @@ const BackpackProvider = ({ children }) => {
   const [quizCount, setQuizCount] = useState(0);
   const is5Items = userItems.length >= 5;
   const is5Quizzes = quizCount >= 5;
+  const [animalCount, setAnimalCount] = useState(0);
 
   const [showItems, setShowItems] = useState(true);
   const showNHideItems = () => {
@@ -38,6 +39,8 @@ const BackpackProvider = ({ children }) => {
         setQuizCount,
         is5Items,
         is5Quizzes,
+        animalCount,
+        setAnimalCount,
       }}
     >
       {children}
