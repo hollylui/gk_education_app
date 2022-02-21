@@ -8,6 +8,7 @@ import BranchContext from "../context/BranchContext";
 import GameContext from "../context/GameContext";
 import MusicContext from "../context/MusicContext";
 import MapContext from "../context/MapContext";
+import BranchFooterContext from "../context/BranchFooterContext";
 
 //! Images
 import nextBtn from "../assets/images/volcano/next.png";
@@ -28,6 +29,7 @@ export default function BranchFooter() {
     useContext(MusicContext);
   const { progress, setProgress, largeMapProgress, setLargeMapProgress } =
     useContext(MapContext);
+  const { next, setNext } = useContext(BranchFooterContext);
 
   const nextGameId = gameIds[gameIds.indexOf(currGameId) + 1];
   // const prevGameId = gameIds[gameIds.indexOf(currGameId)];
@@ -40,6 +42,7 @@ export default function BranchFooter() {
   // };
 
   const backHandler = () => {
+    setNext(false);
     setBranchAudioIndex(branchAudioIndex - 1);
     if (branchIndex !== 0) {
       setBranchIndex(branchIndex - 1);
@@ -84,10 +87,13 @@ export default function BranchFooter() {
         <Backpack />
         <div id={backpackStyles.animal}></div>
       </div>
-
-      <div className={styles.btn} onClick={nextHandler}>
-        <Image src={nextBtn} alt="got to previosu page" />
-      </div>
+      {branchIndex !== 3 || next ? (
+        <div className={styles.btn} onClick={nextHandler}>
+          <Image src={nextBtn} alt="got to previosu page" />
+        </div>
+      ) : (
+        <div className={styles.btn}></div>
+      )}
     </div>
   );
 }

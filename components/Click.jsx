@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Lottie from "react-lottie";
 import animationData from "../lotties/clicks";
 import Styles from "../styles/animation_styles/cartoon.module.scss";
 import Image from "next/image";
 import point from "../public/images/animations/finger-ga-1.png";
 import TitleImage from "../public/clickableImages";
+import BranchFooterContext from "../context/BranchFooterContext";
 
 const Click = ({ Position }) => {
   const [isStopped, setIsStopped] = useState(true);
+  const { setNext } = useContext(BranchFooterContext);
 
   const imageStyle = {
     position: "relative",
@@ -24,13 +26,15 @@ const Click = ({ Position }) => {
     },
   };
 
+  const stopHandler = () => {
+    setIsStopped(false);
+    setNext(true);
+  };
+
   return (
     <>
       <div className={`${Styles.controlled} ${Styles.hold}`}>
-        <div
-          className={Styles.actionyy}
-          onClick={() => setIsStopped(false)}
-        ></div>
+        <div className={Styles.actionyy} onClick={stopHandler}></div>
         <div className={Styles.stick}>
           <Image src={point} alt="stick" />
         </div>
