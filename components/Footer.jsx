@@ -84,7 +84,7 @@ export default function Footer() {
       )}
 
       {/* backpack section : Thank you Holly!*/}
-      {/* //! I think It makes sense to show the backpack with the instruction. Could you check it? */}
+      {/* //! I think It makes more sense to show the backpack with the instruction. Could you check it? */}
       {index >= 6 && (
         <div>
           <Backpack />
