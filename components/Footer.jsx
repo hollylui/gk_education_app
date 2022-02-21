@@ -84,7 +84,8 @@ export default function Footer() {
       )}
 
       {/* backpack section : Thank you Holly!*/}
-      {index >= 12 && (
+      {/* //! I think It makes sense to show the backpack with the instruction. Could you check it? */}
+      {index >= 6 && (
         <div>
           <Backpack />
         </div>
