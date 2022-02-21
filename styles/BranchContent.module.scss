@@ -33,33 +33,29 @@
   .indexTwo,
   .indexThree,
   .indexFour {
-    // position: relative;
-    height: 58%;
-    width: 30%;
-    // z-index: -1;
-    // bottom: 200px;
-    // left: 100px;
+    position: relative;
+    height: 200px;
+    width: 600px;
+    z-index: -1;
 
     .sub_4 {
       position: absolute;
-      top: 350px;
       left: 60%;
       width: 100px;
       z-index: -2;
     }
 
     .sub_5 {
-      width: 30%;
+      position: relative;
+      top: 0;
+      left: 30%;
+      width: 250px;
       position: absolute;
-      left: 50%;
-      transform: translate(-50%, 0);
+      z-index: -3;
     }
   }
 
   .indexThree {
-    .sub_5a {
-      width: 90%;
-    }
     .sub_7 {
       position: absolute;
       top: 80px;
@@ -68,36 +64,11 @@
   }
 
   .indexFour {
-    width: 600px;
-    margin-top: 20px;
-    position: relative;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-
-    .sub_5a {
+    .sub_7 {
       position: absolute;
-      width: 400px;
-      left: 50%;
-      transform: translate(-50%, 0);
-    }
-
-    .sub_5b {
-      width: 90%;
-    }
-
-    .animal {
-      position: absolute;
-      left: 400px;
-      width: 100px;
-      z-index: -2;
-    }
-
-    .sub_7a {
-      position: absolute;
-      top: 100px;
-      left: 200px;
-      width: 60px;
+      top: 70px;
+      left: 250px;
+      width: 50px;
     }
   }
 
@@ -115,7 +86,7 @@
   .messageTwo {
     font-size: 2.5rem;
     letter-spacing: 2px;
-    padding: 0px 15px 5px 15px;
+    padding: 10px 15px;
     border-radius: 20px;
     z-index: 10;
   }
