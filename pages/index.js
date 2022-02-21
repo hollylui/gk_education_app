@@ -1,11 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useEffect } from "react/cjs/react.production.min";
 import styles from "../styles/Home.module.scss";
 import { useRouter } from "next/router";
 import NavBarHome from "../components/NavHome";
-import { useContext, useState } from "react";
-import BackpackContext from "../context/BackpackContext";
 
 export default function Home() {
   const router = useRouter();
