@@ -9,7 +9,7 @@ function Ending() {
   }, []);
   return (
     <div className={styles.container}>
-      <h1>Please wait moments....</h1>
+      <h1>Please wait moments...</h1>
     </div>
   );
 }
