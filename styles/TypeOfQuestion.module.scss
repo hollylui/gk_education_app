@@ -14,6 +14,13 @@
     gap: 10px;
     text-transform: uppercase;
 
+    input[type="radio"] {
+      -ms-transform: scale(1.7); /* for IE 9 */
+      -webkit-transform: scale(1.7); /* for Chrome, Safari, Opera */
+      transform: scale(1.7); /* default */
+      justify-self: center; /* for centering */
+    }
+
     .reading {
       color: blue;
     }
