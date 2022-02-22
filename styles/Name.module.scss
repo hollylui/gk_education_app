@@ -1,3 +1,4 @@
+@import "./Configure.module.scss";
 $inputBg: #d8d8d8;
 
 .input {
@@ -8,5 +9,10 @@ $inputBg: #d8d8d8;
   border: none;
   border-radius: 10px;
   margin-top: 10px;
-  background-color: $inputBg;
+  background-color: $orange;
+  border: 5px solid black;
+  &::placeholder {
+    color: $yellow;
+    text-align: center;
+  }
 }

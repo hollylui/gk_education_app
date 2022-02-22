@@ -1,3 +1,5 @@
+@import "./Configure.module.scss";
+
 .container {
   width: 80%;
   display: flex;
@@ -21,7 +23,8 @@
   }
 
   .indexOne {
-    width: 420px;
+    // width: 420px;
+    width: 50%;
   }
 
   // .indexTwo {
@@ -120,8 +123,9 @@
     padding: 1.6rem;
     border-radius: 20px;
     z-index: 10;
-    -webkit-transform: perspective(50em) rotateX(-30deg);
-    transform: perspective(90em) rotateX(-30deg);
+    // -webkit-transform: perspective(50em) rotateX(-30deg);
+    // transform: perspective(90em) rotateX(-30deg);
+    animation: showUp 0.5s linear forwards;
     border: 5px solid rgb(0, 0, 0);
     border-radius: 20px;
     background-color: #fff;
@@ -131,4 +135,8 @@
     // position: absolute;
     top: 0;
   }
+}
+
+.hurray {
+  background-image: url("https://i.pinimg.com/originals/e5/83/3e/e5833e1bea7d379f0f4e4ae250b7cf81.gif");
 }

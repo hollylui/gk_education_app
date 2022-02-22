@@ -1,3 +1,5 @@
+@import "./Configure.module.scss";
+
 $quizBtn: #ff6832;
 $quizColor: #ffffff;
 $quizBtnHover: #ffea47;
@@ -19,7 +21,8 @@ $closeBtnColor: #ffffff;
     border: 5px solid rgb(0, 0, 0);
     border-radius: 20px;
     background-color: #fff;
-    padding: 2rem;
+    padding: 3rem;
+    animation: showBig 0.5s linear forwards;
 
     h3 {
       margin: 0;

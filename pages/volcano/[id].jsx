@@ -24,6 +24,7 @@ export default function GameStart({ game, ids }) {
 
   useEffect(() => {
     setCurrGameId(game._id);
+    console.log(game);
   }, [game]);
 
   useEffect(() => {

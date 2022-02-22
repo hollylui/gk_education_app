@@ -3,7 +3,11 @@
 .container {
   height: 100%;
   min-height: 100vh;
-  background-color: $lightblue;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 187, 224, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
   background-position: top;
   background-size: cover;
   .main {
@@ -11,6 +15,7 @@
     min-height: 84vh;
     width: 100%;
     flex-direction: column;
+    position: relative;
     .titleCon {
       @include flex-just-al-wrap(center, center, no-wrap);
       flex-direction: column;
@@ -53,6 +58,7 @@
         height: 130px;
         justify-self: center;
         align-self: center;
+        z-index: 1;
         @include breakpoint-md {
           width: 170px;
           height: 170px;
@@ -69,6 +75,85 @@
         }
       }
     }
+    .bubble {
+      width: 7rem;
+      height: 7rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-radius: 50%;
+      z-index: 0;
+      animation: balloonMove 3.5s linear infinite;
+      border: 1px solid rgba(109, 109, 109, 0.24);
+      &:hover {
+        cursor: crosshair;
+      }
+    }
+    .bubble1 {
+      background-color: rgba(253, 129, 84, 0.4);
+      left: 10vw;
+      animation-duration: 4s;
+      // animation: balloonMove 3s linear infinite;
+    }
+    .bubble2 {
+      background-color: rgba(84, 253, 197, 0.4);
+      left: 20vw;
+      bottom: 10%;
+      animation-duration: 2.5s;
+    }
+    .bubble3 {
+      background-color: rgba(253, 242, 84, 0.4);
+      left: 30vw;
+    }
+    .bubble4 {
+      background-color: rgba(163, 84, 253, 0.4);
+      left: 40vw;
+      bottom: 30%;
+    }
+    .bubble5 {
+      background-color: rgba(84, 191, 253, 0.4);
+      left: 0vw;
+    }
+    .bubble6 {
+      background-color: rgba(253, 84, 163, 0.4);
+      left: 90vw;
+      bottom: 10%;
+      animation-duration: 3s;
+    }
+    .bubble7 {
+      background-color: rgba(253, 84, 84, 0.4);
+      left: 70vw;
+      bottom: 40%;
+      animation-duration: 2s;
+    }
+    .bubble8 {
+      background-color: rgba(174, 253, 84, 0.4);
+      left: 80vw;
+      bottom: 0;
+      animation-duration: 2.5s;
+    }
+  }
+  .score {
+    position: absolute;
+    bottom: 0;
+    left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    #scoreTitle {
+      font-size: $font_sm;
+      color: #fff;
+      text-shadow: -3px 5px 10px black;
+    }
+    #scoreCounter {
+      font-size: $font_lg;
+      color: $yellow;
+      text-shadow: -3px 5px 10px black;
+    }
+  }
+  .scoreNone {
+    display: none;
   }
 }
 

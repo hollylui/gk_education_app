@@ -26,7 +26,13 @@ export default function BranchOne({ branch1_1, branch1_2 }) {
 
   return (
     <Layout>
-      <div className={styles.bgImage}>
+      <div
+        className={
+          branchIndex == 5
+            ? `${styles.bgImage} ${styles.hurray}`
+            : styles.bgImage
+        }
+      >
         <div className={`${styles.container} ${styles.palmLow}`}>
           <div className={styles.map}>
             <Map />

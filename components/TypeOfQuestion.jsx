@@ -11,7 +11,7 @@ export default function TypeOfQuestion() {
   return (
     <div className={styles.container}>
       {/* math */}
-      <div className={styles.radio}>
+      <div className={`${styles.radio} ${styles.math}`}>
         <label>Math</label>
         <input
           type="radio"
@@ -23,8 +23,8 @@ export default function TypeOfQuestion() {
       </div>
 
       {/* reading */}
-      <div className={styles.radio}>
-        <label className={styles.reading}>Reading</label>
+      <div className={`${styles.radio} ${styles.reading}`}>
+        <label>Reading</label>
         <input
           type="radio"
           name="question"
@@ -35,8 +35,8 @@ export default function TypeOfQuestion() {
       </div>
 
       {/* logic */}
-      <div className={styles.radio}>
-        <label className={styles.logic}>Logic</label>
+      <div className={`${styles.radio} ${styles.logic}`}>
+        <label>Logic</label>
         <input
           type="radio"
           name="question"
