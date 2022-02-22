@@ -19,6 +19,7 @@ export default function Quiz({ questions }) {
 
   let items = ["coconut", "fire", "leaf", "stone", "water"];
   let nextItemIndex = userItems.length;
+  let item= items[nextItemIndex-1];
   let nextItem = items[nextItemIndex];
 
   function addItem() {
@@ -105,7 +106,7 @@ export default function Quiz({ questions }) {
       >
         <p>
           You answered the question
-          {isCorrect ? ` correctly, great job! You get a ${nextItem}` : ` incorrectly`}
+          {isCorrect ? ` correctly, great job! You get a ${item}` : ` incorrectly`}
         </p>
         <button onClick={closeModal}>Next</button>
       </ReactModal>
