@@ -11,12 +11,16 @@ import MusicContext from "../context/MusicContext";
 
 //! Styles
 import styles from "../styles/ChooseBranch.module.scss";
+import BranchFooterContext from "../context/BranchFooterContext";
 
 export default function ChooseBranch({ leftBranch, rightBranch }) {
   const router = useRouter();
   const { setBranch, setBranchIndex, setLeftPath, setRightPath } =
     useContext(BranchContext);
   const { setStage } = useContext(MusicContext);
+  const { setNext } = useContext(BranchFooterContext);
+
+  setNext(false);
 
   const width = 250;
   const height = 250;

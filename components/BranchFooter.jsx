@@ -73,6 +73,7 @@ export default function BranchFooter() {
   useEffect(() => {
     if (branchIndex === 5) setAnimalCount(animalCount + 1);
   }, [branchIndex]);
+
   useEffect(() => {
     console.log(animalCount);
   }, [animalCount]);
