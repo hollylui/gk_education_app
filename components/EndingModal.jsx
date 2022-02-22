@@ -14,11 +14,11 @@ function EndingModal() {
 
   const router = useRouter();
   // if (combine)
-  //   useEffect(() => {
-  //     setTimeout(() => {
-  //       router.push("/volcano/ending/special");
-  //     }, 4000);
-  //   }, [combine]);
+  useEffect(() => {
+    setTimeout(() => {
+      router.push("/volcano/ending/special");
+    }, 4000);
+  }, [combine]);
 
   return (
     <Modal state={modal} setState={setModal}>
