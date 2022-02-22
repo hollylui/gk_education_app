@@ -8,7 +8,6 @@ import { useEffect } from "react";
 import Styles from "./../../styles/animation_styles/cartoon.module.scss";
 import TitleImage from "./../../public/timeoutimages";
 
-
 const EndSequence = ({ animation, id }) => {
   const router = useRouter();
 
@@ -29,14 +28,12 @@ const EndSequence = ({ animation, id }) => {
   }, [id]);
 
   return (
-   
-    <div  className={`${Styles.controlled} ${Styles.hold}`}>
+    <div className={`${Styles.controlled} ${Styles.hold}`}>
       <Image src={TitleImage[id]} layout="fill" alt="main" />
-      <div  className={Styles.lot}>
+      <div className={Styles.lot}>
         <Lottie options={defaultOptions} height={540} width={960} />
       </div>
     </div>
-    
   );
 };
 
