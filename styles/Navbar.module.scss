@@ -4,15 +4,17 @@ $back_blue: #00bbe0d7;
 $orange: #fd8154;
 $lightblue: #c2f5ff;
 $yellow: #ffea47;
+$yellowOpacity: #ffea4767;
+$lightblueOpacity: rgba(194, 245, 255, 0.616);
 
 .container {
   position: fixed;
-  background-color: $yellow;
+  background-color: $lightblueOpacity;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 5px;
   z-index: 300;
 
   .soundControl {

@@ -34,29 +34,26 @@ export default function GameStart({ game, ids }) {
 
   return (
     <Layout>
-      <div className={styles.container}>
-        {/* map section */}
-        <div className={styles.map}>
-          {index !== 0 &&
-          index !== 1 &&
-          index !== 2 &&
-          index !== 3 &&
-          index !== 4 &&
-          index !== 5 ? (
-            <Map />
-          ) : (
-            ""
-          )}
-        </div>
-        <div className={styles.contents}>
-          {/* content section */}
-          <div className={styles.content}>
-            {expand ? <LargeMap /> : <Content game={game} />}
-          </div>
+      <div className={styles.bgImage}>
+        <div
+          className={
+            index > 11
+              ? `${styles.container} ${styles.palmLow}`
+              : styles.container
+          }
+        >
+          {/* map section */}
+          <div className={styles.map}>{index > 5 ? <Map /> : ""}</div>
+          <div className={styles.contents}>
+            {/* content section */}
+            <div className={styles.content}>
+              {expand ? <LargeMap /> : <Content game={game} />}
+            </div>
 
-          {/* footer section */}
-          <div className={styles.controller}>
-            <Footer />
+            {/* footer section */}
+            <div className={styles.controller}>
+              <Footer />
+            </div>
           </div>
         </div>
       </div>

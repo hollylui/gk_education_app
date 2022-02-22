@@ -13,12 +13,12 @@ function EndingModal() {
     useContext(BackpackContext);
 
   const router = useRouter();
-  if (combine)
-    useEffect(() => {
+  useEffect(() => {
+    if (combine)
       setTimeout(() => {
         router.push("/volcano/ending/special");
       }, 4000);
-    }, [combine]);
+  }, [combine]);
 
   return (
     <Modal state={modal} setState={setModal}>

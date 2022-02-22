@@ -5,13 +5,27 @@ $orange: #fd8154;
 $lightblue: #c2f5ff;
 $yellow: #ffea47;
 
-.container {
+.bgImage {
   width: 100vw;
   height: 100vh;
-  padding: 120px 20px 20px 20px;
-  background-color: $lightblue;
-  display: flex;
-  justify-content: space-between;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 187, 224, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  position: relative;
+
+  .container {
+    width: 100vw;
+    height: 100vh;
+    // padding: 120px 20px 20px 20px;
+    background-image: url("../assets/images/bgs/palms_background.png");
+    background-size: 73%;
+    background-position: center 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+  }
 
   .contents {
     display: flex;
@@ -37,5 +51,8 @@ $yellow: #ffea47;
     height: 100px;
     display: flex;
     justify-content: center;
+  }
+  .palmLow {
+    background-image: url("../assets/images/bgs/palms_low_opacity.png");
   }
 }

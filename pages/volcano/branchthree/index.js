@@ -25,25 +25,27 @@ export default function BranchOne({ branch3_1, branch3_2 }) {
 
   return (
     <Layout>
-      <div className={styles.container}>
-        <div className={styles.map}>
-          <Map />
-        </div>
-        <div className={styles.contents}>
-          {/* map section */}
-
-          {/* content section */}
-          <div className={styles.content}>
-            {expand ? (
-              <LargeMap />
-            ) : (
-              <BranchContent branchIndex={branchIndex} branchData={data} />
-            )}
+      <div className={styles.bgImage}>
+        <div className={`${styles.container} ${styles.palmLow}`}>
+          <div className={styles.map}>
+            <Map />
           </div>
+          <div className={styles.contents}>
+            {/* map section */}
 
-          {/* footer section */}
-          <div className={styles.controller}>
-            <BranchFooter />
+            {/* content section */}
+            <div className={styles.content}>
+              {expand ? (
+                <LargeMap />
+              ) : (
+                <BranchContent branchIndex={branchIndex} branchData={data} />
+              )}
+            </div>
+
+            {/* footer section */}
+            <div className={styles.controller}>
+              <BranchFooter />
+            </div>
           </div>
         </div>
       </div>

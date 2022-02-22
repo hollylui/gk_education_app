@@ -11,47 +11,54 @@ $closeBtnColor: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
   height: 50vh;
+  .questionBox {
+    width: 60%;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 2rem;
 
-  h3 {
-    margin: 0;
-    font-size: 3rem;
-    letter-spacing: 2px;
-    padding: 10px 60px;
-  }
+    h3 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      padding: 10px 60px;
+    }
 
-  .quizText {
-    font-size: xx-large;
-  }
+    .quizText {
+      font-size: xx-large;
+    }
 
-  .subContainer {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
+    .subContainer {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
 
-    .button {
-      background-color: $quizBtn;
-      color: $quizColor;
-      width: 90px;
-      height: 90px;
-      border: none;
-      border-radius: 50%;
-      font-size: 3.5rem;
-      text-decoration: none;
-      font-weight: 700;
-      margin: 0 10px;
-      cursor: pointer;
+      .button {
+        background-color: $quizBtn;
+        color: $quizColor;
+        width: 90px;
+        height: 90px;
+        border: none;
+        border-radius: 50%;
+        font-size: 3.5rem;
+        text-decoration: none;
+        font-weight: 700;
+        margin: 0 10px;
+        cursor: pointer;
 
-      &:hover {
-        background-color: $quizBtnHover;
-        color: $quizBtnHoverColor;
+        &:hover {
+          background-color: $quizBtnHover;
+          color: $quizBtnHoverColor;
+        }
       }
     }
   }
 }
-
 .modalContent {
   font-size: 3rem;
   letter-spacing: 2px;
