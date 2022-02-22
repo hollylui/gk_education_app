@@ -44,14 +44,14 @@ export default function Home() {
         </div>
         <div className={styles.gameCon}>
           {games.map((game, index) => (
-            <div className={styles.gameIcons}>
+            <div className={styles.gameIcons} key={index}>
               <Image
-                key={index}
                 src={game.img}
                 onClick={() => router.push(game.link)}
                 width={200}
                 height={200}
                 className={styles.gameImage}
+                alt=""
               />
             </div>
           ))}
