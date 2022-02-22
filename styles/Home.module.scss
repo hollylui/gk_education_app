@@ -117,10 +117,13 @@
     @include breakpoint-xl {
       width: 23%;
     }
+    @include breakpoint-over {
+      width: 16%;
+    }
     li {
       &:hover {
         cursor: pointer;
-        color: $green;
+        color: blue;
       }
     }
   }
