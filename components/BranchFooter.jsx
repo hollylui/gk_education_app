@@ -13,10 +13,15 @@ import BranchFooterContext from "../context/BranchFooterContext";
 //! Images
 import nextBtn from "../assets/images/volcano/next.png";
 import backBtn from "../assets/images/volcano/back.png";
+import mouse from "../assets/images/volcano/animalcounter/mouse.png";
 
 //! Styles
 import styles from "../styles/Footer.module.scss";
 import Backpack from "./Backpack";
+import backpackStyles from "../styles/Backpack.module.scss";
+
+//! Contexts
+import BackpackContext from "../context/BackpackContext";
 
 //------------------------------------------------
 
@@ -34,7 +39,7 @@ export default function BranchFooter() {
   // const prevGameId = gameIds[gameIds.indexOf(currGameId)];
 
   const index = gameIds.indexOf(currGameId);
-
+  const { animalCount, setAnimalCount } = useContext(BackpackContext);
   // const backToCrossRoad = () => {
   //   setBranchAudioIndex(0);
   //   if (branchIndex === 0) router.push(`/volcano/${prevGameId}`);
@@ -57,7 +62,6 @@ export default function BranchFooter() {
       setProgress(progress + 28);
       setLargeMapProgress(largeMapProgress + 58);
       sessionStorage.setItem("audioIndex", Number(audioIndex) + 1);
-
       if (index > 12 && index < 18) {
         router.push(`/volcano/quiz`);
       } else {
@@ -67,8 +71,11 @@ export default function BranchFooter() {
   };
 
   useEffect(() => {
-    setNext(false);
-  }, []);
+    if (branchIndex === 5) setAnimalCount(animalCount + 1);
+  }, [branchIndex]);
+  useEffect(() => {
+    console.log(animalCount);
+  }, [animalCount]);
 
   return (
     <div className={styles.container}>
@@ -86,7 +93,7 @@ export default function BranchFooter() {
         </div>
       )} */}
 
-      <div>
+      <div className={backpackStyles.middleFooter}>
         <Backpack />
       </div>
       {branchIndex !== 3 || next ? (

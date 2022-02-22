@@ -10,16 +10,21 @@ import GameContext from "../context/GameContext";
 //! Images
 import nextBtn from "../assets/images/volcano/next.png";
 import backBtn from "../assets/images/volcano/back.png";
-
+import mouse from "../assets/images/volcano/animalcounter/mouse.png";
 //! Styles
 import styles from "../styles/Footer.module.scss";
+import backpackStyles from "../styles/Backpack.module.scss";
 
+//! Contexts
+import BackpackContext from "../context/BackpackContext";
+
+//!
 export default function QuizFooter() {
   const router = useRouter();
   const { currGameId, gameIds } = useContext(GameContext);
   const nextGameId = gameIds[gameIds.indexOf(currGameId) + 1];
   const prevGameId = gameIds[gameIds.indexOf(currGameId)];
-
+  const { animalCount } = useContext(BackpackContext);
   // const backHandler = () => {
   //   router.push(`/volcano/${prevGameId}`);
   // };
@@ -36,7 +41,7 @@ export default function QuizFooter() {
 
       <div className={styles.btn}></div>
 
-      <div>
+      <div className={backpackStyles.middleFooter}>
         <Backpack />
       </div>
 

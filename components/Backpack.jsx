@@ -5,6 +5,7 @@ import { useContext, useEffect } from "react";
 import BackpackContext from "../context/BackpackContext";
 import { useRouter } from "next/router";
 import EndingModal from "./EndingModal";
+import mouse from "../assets/images/volcano/animalcounter/mouse.png";
 
 const Backpack = () => {
   const {
@@ -15,6 +16,7 @@ const Backpack = () => {
     combine,
     quizCount,
     is5Quizzes,
+    animalCount,
   } = useContext(BackpackContext);
 
   const router = useRouter();
@@ -37,6 +39,7 @@ const Backpack = () => {
 
   return (
     <>
+      {/* <div className={backpackStyles.middleFooter}> */}
       <div className={backpackStyles.backpackOuter}>
         <div className={backpackStyles.backpackInner}>
           <Image
@@ -79,6 +82,11 @@ const Backpack = () => {
           </div>
         </div>
       </div>
+      <div className={backpackStyles.animalCounter}>
+        <Image src={mouse} width={100} height={150} />
+        <h1>{animalCount}/5</h1>
+      </div>
+      {/* </div> */}
       <EndingModal />
     </>
   );

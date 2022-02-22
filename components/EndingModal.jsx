@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import BackpackContext from "../context/BackpackContext";
 import Modal from "./modal/Modal";
 import backpackStyles from "../styles/Backpack.module.scss";
@@ -13,6 +13,13 @@ function EndingModal() {
     useContext(BackpackContext);
 
   const router = useRouter();
+  if (combine)
+    useEffect(() => {
+      setTimeout(() => {
+        router.push("/volcano/ending/special");
+      }, 4000);
+    }, [combine]);
+
   return (
     <Modal state={modal} setState={setModal}>
       {/* if users got 5items and combined them */}

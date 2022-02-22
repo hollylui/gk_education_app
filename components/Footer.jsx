@@ -13,9 +13,14 @@ import MusicContext from "../context/MusicContext";
 //! Images
 import nextBtn from "../assets/images/volcano/next.png";
 import backBtn from "../assets/images/volcano/back.png";
+import mouse from "../assets/images/volcano/animalcounter/mouse.png";
 
 //! Styles
 import styles from "../styles/Footer.module.scss";
+import backpackStyles from "../styles/Backpack.module.scss";
+
+//! Contexts
+import BackpackContext from "../context/BackpackContext";
 
 export default function Footer() {
   const router = useRouter();
@@ -24,7 +29,7 @@ export default function Footer() {
   const { age } = useContext(AgeContext);
   const { currGameId, gameIds } = useContext(GameContext);
   const { audioIndex, setAudioIndex } = useContext(MusicContext);
-
+  const { animalCount } = useContext(BackpackContext);
   const nextGameId = gameIds[gameIds.indexOf(currGameId) + 1];
   const prevGameId = gameIds[gameIds.indexOf(currGameId) - 1];
   const index = gameIds.indexOf(currGameId);
@@ -86,7 +91,7 @@ export default function Footer() {
       {/* backpack section : Thank you Holly!*/}
       {/* //! I think It makes more sense to show the backpack with the instruction. Could you check it? */}
       {index >= 6 && (
-        <div>
+        <div className={backpackStyles.middleFooter}>
           <Backpack />
         </div>
       )}

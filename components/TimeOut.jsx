@@ -4,7 +4,7 @@ import timeout from "../lotties/timeout";
 import { useRouter } from "next/router";
 import Styles from "./../styles/animation_styles/cartoon.module.scss";
 import Image from "next/image";
-import TitleImage from "../public/timeoutimages";
+import TitleImage from "../public/timeoutimages.js";
 
 //animation Controlls
 
@@ -39,7 +39,7 @@ const TimeOut = ({ Position }) => {
   );
 };
 
-TimeOutAnimation.getInitialProps = ({ query: { id } }) => {
+TimeOut.getInitialProps = ({ query: { id } }) => {
   const animation = timeout[id];
   // const { data } = await axios.get(`http://localhost:3000/api/notes/${id}`);
   return { animation };
