@@ -18,16 +18,19 @@ export default function Quiz({ questions }) {
   const nextGameId = gameIds[gameIds.indexOf(currGameId) + 1];
 
   let items = ["coconut", "fire", "leaf", "stone", "water"];
+  let nextItemIndex = userItems.length;
+  let item= items[nextItemIndex-1];
+  let nextItem = items[nextItemIndex];
 
   function addItem() {
-    let nextItemIndex = userItems.length;
-    let item = items[nextItemIndex];
-    setUserItems([...userItems, item]);
+    setUserItems([...userItems, nextItem]);
   }
 
   function makeCorrect() {
     setIsCorrect(true);
   }
+
+
   function openModal() {
     setModalIsOpen(true);
   }
@@ -97,17 +100,17 @@ export default function Quiz({ questions }) {
       </div>
 
       {/* Pop-up Modal */}
-
+      
       <ReactModal
         isOpen={modalIsOpen}
         contentLabel={"Question Answer"}
-        className={styles.modalContent}
+        className={isCorrect ? styles.rightModal : styles.wrongModal}
       >
         <p>
           You answered the question
-          {isCorrect ? " correctly, great job!" : " incorrectly"}
+          {isCorrect ? ` correctly, great job! You get a ${item}` : ` incorrectly`}
         </p>
-        <button onClick={closeModal}>Close</button>
+        <button onClick={closeModal}>Next</button>
       </ReactModal>
     </div>
   );

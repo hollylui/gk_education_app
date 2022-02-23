@@ -31,6 +31,7 @@ function EndingModal() {
             height={200}
             src={laserGun}
             id={backpackStyles.boat}
+            alt=""
           />
           <p className={backpackStyles.sentence}>
             This laser gun seems to attract something....
@@ -47,6 +48,7 @@ function EndingModal() {
               id={backpackStyles.magicWand}
               width={400}
               height={250}
+              alt=""
             />
           </div>
           <h3>
@@ -57,7 +59,7 @@ function EndingModal() {
       ) : is5Quizzes && !is5Items ? (
         <>
           {/* if users tried to solve 5 quizzes but didn't get 5 items from them. */}
-          <h1>You don't get all 5 items, but well done!</h1>
+          <h1>{`You don't get all 5 items, but well done!`}</h1>
           <div>
             <Image
               src={boat}
@@ -65,6 +67,7 @@ function EndingModal() {
               id={backpackStyles.boat}
               width={300}
               height={250}
+              alt=""
             />
           </div>
           <h2>Click the boat and Go!</h2>
