@@ -6,16 +6,16 @@ import Image from "next/image";
 export default function NavBarHome() {
   return (
     <div className={styles.homeNav}>
-      <Link href="/">
+      <Link href="/" passHref={true}>
         <div className={styles.logo}>
-          <Image src={logo} className={styles.logo} />
+          <Image src={logo} className={styles.logo} alt="" />
         </div>
       </Link>
       <ul className={styles.navlist}>
-        <Link className={styles.homeLink} href="/about">
+        <Link className={styles.homeLink} href="/about" passHref={true}>
           <li>ABOUT</li>
         </Link>
-        <Link href="/contact">
+        <Link href="/contact" passHref={true}>
           <li>CONTACT</li>
         </Link>
       </ul>

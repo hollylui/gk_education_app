@@ -12,7 +12,7 @@ export default function IndexEight() {
   const style = { position: "relative", width: "100%", paddingBottom: "13%" };
   return (
     <div style={style}>
-      <Image src={mainBackpack} layout="fill" objectFit="contain" />
+      <Image src={mainBackpack} layout="fill" objectFit="contain" alt="" />
     </div>
   );
 }
