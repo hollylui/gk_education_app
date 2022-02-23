@@ -18,20 +18,22 @@ export default function Quizpage({ questions }) {
 
   return (
     <Layout>
-      <div className={styles.container}>
-        {/* map section */}
+      <div className={styles.bgImage}>
+        <div className={styles.container}>
+          {/* map section */}
 
-        <div className={styles.map}>
-          <Map />
-        </div>
-        <div className={styles.contents}>
-          {/* content section */}
-          <div className={styles.content}>
-            {expand ? <LargeMap /> : <Quiz questions={questions} />}
+          <div className={styles.map}>
+            <Map />
           </div>
+          <div className={styles.contents}>
+            {/* content section */}
+            <div className={styles.content}>
+              {expand ? <LargeMap /> : <Quiz questions={questions} />}
+            </div>
 
-          {/* footer section */}
-          <div className={styles.controller}>{<QuizFooter />}</div>
+            {/* footer section */}
+            <div className={styles.controller}>{<QuizFooter />}</div>
+          </div>
         </div>
       </div>
     </Layout>

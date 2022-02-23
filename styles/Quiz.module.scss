@@ -14,10 +14,6 @@ $orange: #fd8154;
 $lightblue: #c2f5ff;
 $yellow: #ffea47;
 
-
-
-
-
 .container {
   display: flex;
   flex-direction: column;
@@ -73,7 +69,7 @@ $yellow: #ffea47;
   top: 30%;
   text-align: center;
   padding-top: 50px;
-  color:white;
+  color: white;
   border: 2px solid;
   border-radius: 10%;
   align-items: center;
@@ -88,8 +84,6 @@ $yellow: #ffea47;
     background-color: $orange;
     font-family: "Bangers", cursive;
     color: white;
-
-   
   }
 }
 
@@ -103,7 +97,7 @@ $yellow: #ffea47;
   top: 30%;
   text-align: center;
   padding-top: 50px;
-  color:white;
+  color: white;
   align-items: center;
   border: 2px solid;
 
@@ -117,13 +111,13 @@ $yellow: #ffea47;
     background-color: $orange;
     font-family: "Bangers", cursive;
     color: white;
-
-   
   }
 }
 
+.right {
+  color: white;
+}
 
-
-.right {color:white};
-
-.wrong{color: red};
+.wrong {
+  color: red;
+}

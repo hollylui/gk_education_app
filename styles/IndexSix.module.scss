@@ -1,7 +1,15 @@
+@import "./Configure.module.scss";
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: 5px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  background-color: #fff;
+  // -webkit-transform: perspective(50em) rotateX(-30deg);
+  // transform: perspective(90em) rotateX(-30deg);
+  animation: showUp 0.5s linear forwards;
 
   h2 {
     font-size: 3.5rem;

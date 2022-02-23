@@ -89,3 +89,52 @@ $over: 1600px;
     @content;
   }
 }
+
+//animation
+@keyframes showUp {
+  0% {
+    transform: translateY(-1rem) perspective(90em) rotateX(-30deg);
+  }
+  100% {
+    transform: translateY(0) perspective(90em) rotateX(-30deg);
+  }
+}
+
+@keyframes showBig {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes bluewave {
+  0% {
+    transform: translate(-50%, 0) rotateZ(0deg);
+  }
+  50% {
+    transform: translate(-50%, -2%) rotateZ(180deg);
+  }
+  100% {
+    transform: translate(-50%, 0%) rotateZ(360deg);
+  }
+}
+
+@keyframes balloonMove {
+  0% {
+    transform: translateY(50vh);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+@keyframes counterBig {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}

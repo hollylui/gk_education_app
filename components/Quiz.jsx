@@ -59,41 +59,43 @@ export default function Quiz({ questions }) {
     <div>
       {/* Question box */}
       <div className={styles.container}>
-        <h3>{question.text}</h3>
+        <div className={styles.questionBox}>
+          <h3>{question.text}</h3>
 
-        <div className={styles.subContainer}>
-          <button
-            className={styles.button}
-            onClick={handleClick}
-            type="submit"
-            value={question.answers[0].correctAnswer}
-          >
-            {question.answers[0].text}
-          </button>
-          <button
-            className={styles.button}
-            onClick={handleClick}
-            type="submit"
-            value={question.answers[1].correctAnswer}
-          >
-            {question.answers[1].text}
-          </button>
-          <button
-            className={styles.button}
-            onClick={handleClick}
-            type="submit"
-            value={question.answers[2].correctAnswer}
-          >
-            {question.answers[2].text}
-          </button>
-          <button
-            className={styles.button}
-            onClick={handleClick}
-            type="submit"
-            value={question.answers[3].correctAnswer}
-          >
-            {question.answers[3].text}
-          </button>
+          <div className={styles.subContainer}>
+            <button
+              className={styles.button}
+              onClick={handleClick}
+              type="submit"
+              value={question.answers[0].correctAnswer}
+            >
+              {question.answers[0].text}
+            </button>
+            <button
+              className={styles.button}
+              onClick={handleClick}
+              type="submit"
+              value={question.answers[1].correctAnswer}
+            >
+              {question.answers[1].text}
+            </button>
+            <button
+              className={styles.button}
+              onClick={handleClick}
+              type="submit"
+              value={question.answers[2].correctAnswer}
+            >
+              {question.answers[2].text}
+            </button>
+            <button
+              className={styles.button}
+              onClick={handleClick}
+              type="submit"
+              value={question.answers[3].correctAnswer}
+            >
+              {question.answers[3].text}
+            </button>
+          </div>
         </div>
       </div>
 

@@ -11,6 +11,9 @@ export default async function handler(req, res) {
 
   const filtered = games.filter((game) => game._id === _id);
 
+  // const db = client.db("volcano");
+  // const data = await db.collection("main").findOne({}, { _id });
+
   if (filtered.length > 0) {
     res.status(200).json(filtered[0]);
   } else {

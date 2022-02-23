@@ -1,3 +1,5 @@
+@import "./Configure.module.scss";
+
 .container {
   width: 80%;
   display: flex;
@@ -9,8 +11,8 @@
   z-index: 1000;
 
   .indexZero {
-    width: 420px;
-
+    // width: 550px;
+    width: 50%;
     // .sub_1 {
     //   z-index: -1;
     // }
@@ -21,7 +23,8 @@
   }
 
   .indexOne {
-    width: 420px;
+    // width: 420px;
+    width: 50%;
   }
 
   // .indexTwo {
@@ -34,8 +37,8 @@
   .indexThree,
   .indexFour {
     // position: relative;
-    height: 58%;
-    width: 30%;
+    height: 55%;
+    width: 40%;
     // z-index: -1;
     // bottom: 200px;
     // left: 100px;
@@ -68,7 +71,8 @@
   }
 
   .indexFour {
-    width: 600px;
+    // width: 600px;
+    width: 70%;
     margin-top: 20px;
     position: relative;
     margin: 0 auto;
@@ -113,15 +117,26 @@
 
   .messageOne,
   .messageTwo {
-    font-size: 2.5rem;
+    width: 70%;
+    font-size: 2.2rem;
     letter-spacing: 2px;
-    padding: 0px 15px 5px 15px;
+    padding: 1.6rem;
     border-radius: 20px;
     z-index: 10;
+    // -webkit-transform: perspective(50em) rotateX(-30deg);
+    // transform: perspective(90em) rotateX(-30deg);
+    animation: showUp 0.5s linear forwards;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    background-color: #fff;
   }
 
   .messageTwo {
     // position: absolute;
     top: 0;
   }
+}
+
+.hurray {
+  background-image: url("https://i.pinimg.com/originals/e5/83/3e/e5833e1bea7d379f0f4e4ae250b7cf81.gif");
 }

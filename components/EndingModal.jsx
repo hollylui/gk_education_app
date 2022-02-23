@@ -13,7 +13,7 @@ function EndingModal() {
     useContext(BackpackContext);
 
   const router = useRouter();
-
+  
   useEffect(() => {
     if (combine)
       setTimeout(() => {
