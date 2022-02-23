@@ -1,4 +1,4 @@
-//! From Libaray
+// ! From Libaray
 import { useState } from "react";
 
 //! From local
