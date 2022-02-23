@@ -18,42 +18,52 @@ $yellow: #ffea47;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
   height: 50vh;
+  width: 100%;
+  .questionBox {
+    width: 50%;
+    padding: 2rem;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    background-color: #fff;
+    animation: showBig 0.5s linear forwards;
 
-  h3 {
-    margin: 0;
-    font-size: 3rem;
-    letter-spacing: 2px;
-    padding: 10px 60px;
-  }
+    h3 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      padding: 10px 60px;
+    }
 
-  .quizText {
-    font-size: xx-large;
-  }
+    .quizText {
+      font-size: xx-large;
+    }
 
-  .subContainer {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
+    .subContainer {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
 
-    .button {
-      background-color: $orange;
-      color: white;
-      width: 90px;
-      height: 90px;
-      border: none;
-      border-radius: 50%;
-      font-size: 3.5rem;
-      text-decoration: none;
-      font-weight: 700;
-      margin: 0 10px;
-      cursor: pointer;
+      .button {
+        background-color: $orange;
+        color: white;
+        width: 90px;
+        height: 90px;
+        border: none;
+        border-radius: 50%;
+        font-size: 3.5rem;
+        text-decoration: none;
+        font-weight: 700;
+        margin: 0 10px;
+        cursor: pointer;
 
-      &:hover {
-        background-color: $yellow;
-        color: black;
+        &:hover {
+          background-color: $yellow;
+          color: black;
+        }
       }
     }
   }
