@@ -119,6 +119,12 @@ export default function BranchContent({ branchIndex, branchData }) {
           className={
             branch === leftPath ? styles.messageOne : styles.messageTwo
           }
+          style={
+            (branch === leftPath && branchIndex == 0) ||
+            (branch === rightPath && branchIndex == 1)
+              ? { display: "none" }
+              : { display: "block" }
+          }
         >
           {branchData[branchIndex].message}
         </div>

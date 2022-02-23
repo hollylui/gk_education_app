@@ -39,7 +39,11 @@ export default function Start({ id }) {
       >
         Start
       </button>
-      <button onClick={backToHomeHandler} className={styles.button}>
+      <button
+        onClick={backToHomeHandler}
+        className={styles.button}
+        id={styles.homeBtn}
+      >
         Back to Home
       </button>
     </>

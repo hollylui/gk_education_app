@@ -4,15 +4,15 @@ $pathBg: #000000;
 
 .container {
   width: 200px;
-  margin-top: -30px;
-  margin-left: -20px;
+  margin-top: 70px;
+  margin-left: 20px;
   padding-bottom: 100vh;
   padding-top: 20px;
   padding-right: 10px;
   height: 100%;
-  position: relative;
+  position: fixed;
   z-index: 0;
-  background-color: $mapBg;
+  // background-color: $mapBg;
 
   .expand {
     position: absolute;

@@ -1,3 +1,5 @@
+@import "./Configure.module.scss";
+
 .container {
   display: flex;
   gap: 20px;
@@ -13,6 +15,11 @@
     grid-template-rows: auto 30px;
     gap: 10px;
     text-transform: uppercase;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    color: $yellow;
+    text-shadow: -3px 5px 10px black;
+    padding: 1.5rem;
 
     input[type="radio"] {
       -ms-transform: scale(1.7); /* for IE 9 */
@@ -20,15 +27,18 @@
       transform: scale(1.7); /* default */
       justify-self: center; /* for centering */
     }
+  }
+  .math {
+    background-color: $green;
+  }
 
+  .reading {
+    background-color: $orange;
+  }
 
-    .reading {
-      color: blue;
-    }
-
-    .logic {
-      color: rgb(255, 174, 0);
-    }
+  .logic {
+    background-color: $blue;
+    // color: rgb(255, 174, 0);
   }
   // input[type="radio"] {
   //   -ms-transform: scale(1.7);

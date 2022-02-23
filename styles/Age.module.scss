@@ -1,5 +1,4 @@
-
-
+@import "./Configure.module.scss";
 
 $btnBgColor: #f0ff22;
 $btnHover: #006eff;
@@ -16,7 +15,7 @@ $btnActiveColor: #ff0000;
   align-items: center;
 
   .btn {
-    background-color: $btnBgColor;
+    background-color: $yellow;
     font-family: "Bangers", cursive;
     border: none;
     width: 80px;
@@ -25,15 +24,15 @@ $btnActiveColor: #ff0000;
     border-radius: 50%;
     margin: 5px;
     cursor: pointer;
+    border: 3px solid black;
 
     &:hover {
-      background-color: $btnHover;
+      background-color: $orange;
       color: $btnFontColor;
     }
   }
-}
-
-.active {
-  background-color: $btnActiveColor;
-  color: $btnActiveColor;
+  .active {
+    background-color: $orange;
+    color: #fff;
+  }
 }

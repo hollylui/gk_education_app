@@ -19,7 +19,7 @@ export default function Quiz({ questions }) {
 
   let items = ["coconut", "fire", "leaf", "stone", "water"];
   let nextItemIndex = userItems.length;
-  let item= items[nextItemIndex-1];
+  let item = items[nextItemIndex - 1];
   let nextItem = items[nextItemIndex];
 
   function addItem() {
@@ -29,7 +29,6 @@ export default function Quiz({ questions }) {
   function makeCorrect() {
     setIsCorrect(true);
   }
-
 
   function openModal() {
     setModalIsOpen(true);
@@ -58,47 +57,52 @@ export default function Quiz({ questions }) {
   return (
     <div>
       {/* Question box */}
-      <div className={styles.container}>
-        <h3>{question.text}</h3>
+      <div
+        className={styles.container}
+        style={modalIsOpen ? { display: "none" } : null}
+      >
+        <div className={styles.questionBox}>
+          <h3>{question.text}</h3>
 
-        <div className={styles.subContainer}>
-          <button
-            className={styles.button}
-            onClick={handleClick}
-            type="submit"
-            value={question.answers[0].correctAnswer}
-          >
-            {question.answers[0].text}
-          </button>
-          <button
-            className={styles.button}
-            onClick={handleClick}
-            type="submit"
-            value={question.answers[1].correctAnswer}
-          >
-            {question.answers[1].text}
-          </button>
-          <button
-            className={styles.button}
-            onClick={handleClick}
-            type="submit"
-            value={question.answers[2].correctAnswer}
-          >
-            {question.answers[2].text}
-          </button>
-          <button
-            className={styles.button}
-            onClick={handleClick}
-            type="submit"
-            value={question.answers[3].correctAnswer}
-          >
-            {question.answers[3].text}
-          </button>
+          <div className={styles.subContainer}>
+            <button
+              className={styles.button}
+              onClick={handleClick}
+              type="submit"
+              value={question.answers[0].correctAnswer}
+            >
+              {question.answers[0].text}
+            </button>
+            <button
+              className={styles.button}
+              onClick={handleClick}
+              type="submit"
+              value={question.answers[1].correctAnswer}
+            >
+              {question.answers[1].text}
+            </button>
+            <button
+              className={styles.button}
+              onClick={handleClick}
+              type="submit"
+              value={question.answers[2].correctAnswer}
+            >
+              {question.answers[2].text}
+            </button>
+            <button
+              className={styles.button}
+              onClick={handleClick}
+              type="submit"
+              value={question.answers[3].correctAnswer}
+            >
+              {question.answers[3].text}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Pop-up Modal */}
-      
+
       <ReactModal
         isOpen={modalIsOpen}
         contentLabel={"Question Answer"}
@@ -106,8 +110,9 @@ export default function Quiz({ questions }) {
       >
         <p>
           You answered the question
-          {isCorrect ? ` correctly, great job! You get a ${item}` : ` incorrectly`}
+          {isCorrect ? ` correctly!` : ` incorrectly.`}
         </p>
+        {isCorrect ? <p>great job!👍🏻 You get a {item}!</p> : null}
         <button onClick={closeModal}>Next</button>
       </ReactModal>
     </div>

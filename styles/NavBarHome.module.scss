@@ -41,7 +41,8 @@ $yellow: #ffea47;
     // box-shadow: 1px 2px 5px #333;
     .logo {
       background-color: #fff;
-      @include border-box(6rem, 6rem, 2rem);
+      // @include border-box(6rem, 6rem, 2rem);
+      border-radius: 50%;
       @include flex-just-al-wrap(center, center, no-wrap);
     }
     .navlist {

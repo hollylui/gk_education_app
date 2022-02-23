@@ -1,3 +1,5 @@
+@import "./Configure.module.scss";
+
 .container {
   width: 80%;
   display: flex;
@@ -7,10 +9,17 @@
   height: 100%;
   text-align: center;
   z-index: 1000;
+  margin-top: 4.5rem;
 
   .indexZero {
-    width: 420px;
-
+    // width: 550px;
+    width: 20%;
+    @include breakpointH-sm {
+      width: 30%;
+    }
+    @include breakpointH-md {
+      width: 50%;
+    }
     // .sub_1 {
     //   z-index: -1;
     // }
@@ -21,7 +30,14 @@
   }
 
   .indexOne {
-    width: 420px;
+    // width: 420px;
+    width: 20%;
+    @include breakpointH-sm {
+      width: 30%;
+    }
+    @include breakpointH-md {
+      width: 50%;
+    }
   }
 
   // .indexTwo {
@@ -34,8 +50,15 @@
   .indexThree,
   .indexFour {
     // position: relative;
-    height: 58%;
-    width: 30%;
+
+    height: 65%;
+    width: 20%;
+    @include breakpointH-sm {
+      width: 27%;
+    }
+    @include breakpointH-md {
+      width: 38%;
+    }
     // z-index: -1;
     // bottom: 200px;
     // left: 100px;
@@ -68,18 +91,32 @@
   }
 
   .indexFour {
-    width: 600px;
+    // width: 600px;
+    width: 30%;
     margin-top: 20px;
     position: relative;
     margin: 0 auto;
     display: flex;
     justify-content: center;
+    padding-top: 3rem;
+    @include breakpointH-sm {
+      width: 40%;
+    }
+    @include breakpointH-md {
+      width: 60%;
+    }
 
     .sub_5a {
       position: absolute;
-      width: 400px;
+      width: 30%;
       left: 50%;
       transform: translate(-50%, 0);
+      @include breakpointH-sm {
+        width: 50%;
+      }
+      @include breakpointH-md {
+        width: 60%;
+      }
     }
 
     .sub_5b {
@@ -89,15 +126,29 @@
     .animal {
       position: absolute;
       left: 400px;
-      width: 100px;
+      width: 5%;
       z-index: -2;
+      @include breakpointH-sm {
+        width: 10%;
+      }
+      @include breakpointH-md {
+        width: 20%;
+      }
     }
 
     .sub_7a {
       position: absolute;
       top: 100px;
-      left: 200px;
-      width: 60px;
+      left: 300px;
+      width: 5%;
+      @include breakpointH-sm {
+        width: 7%;
+        left: 220px;
+      }
+      @include breakpointH-md {
+        width: 10%;
+        left: 200px;
+      }
     }
   }
 
@@ -107,21 +158,34 @@
   // }
 
   .indexFive {
-    width: 180px;
-    margin-top: 10px;
+    margin-top: 2rem;
+    width: 30%;
+    height: 30%;
   }
 
   .messageOne,
   .messageTwo {
-    font-size: 2.5rem;
+    width: 70%;
+    font-size: 2.2rem;
     letter-spacing: 2px;
-    padding: 0px 15px 5px 15px;
+    padding: 1.6rem;
     border-radius: 20px;
     z-index: 10;
+    // -webkit-transform: perspective(50em) rotateX(-30deg);
+    // transform: perspective(90em) rotateX(-30deg);
+    animation: showUp 0.5s linear forwards;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    box-shadow: 2px 2px 20px black;
+    background-color: #fff;
   }
 
   .messageTwo {
     // position: absolute;
     top: 0;
   }
+}
+
+.hurray {
+  background-image: url("https://i.pinimg.com/originals/e5/83/3e/e5833e1bea7d379f0f4e4ae250b7cf81.gif");
 }

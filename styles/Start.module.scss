@@ -1,3 +1,5 @@
+@import "../styles/Configure.module.scss";
+
 .button {
   border: none;
   border-radius: 35px;
@@ -17,6 +19,15 @@
 
 .blink {
   animation: blinker 1s step-start infinite;
+}
+
+#homeBtn {
+  position: absolute;
+  bottom: 10%;
+  background-color: $lightblue;
+  &:hover {
+    background-color: #002fff;
+  }
 }
 
 @keyframes blinker {

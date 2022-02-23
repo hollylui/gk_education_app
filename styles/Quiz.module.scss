@@ -78,3 +78,76 @@ $closeBtnColor: #ffffff;
     }
   }
 }
+
+.rightModal {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  background-color: $blue;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  top: 20%;
+  text-align: center;
+  padding-top: 50px;
+  color: black;
+  border: 5px solid black;
+  border-radius: 3rem;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 2px 2px 20px black;
+  @include breakpointH-md {
+    top: 25%;
+  }
+  button {
+    border: none;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    padding: 5px 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background-color: $orange;
+    font-family: "Bangers", cursive;
+    color: black;
+    &:hover {
+      cursor: pointer;
+      color: white;
+    }
+  }
+}
+
+.wrongModal {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  background-color: $orange;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  top: 20%;
+  text-align: center;
+  padding-top: 50px;
+  color: black;
+  align-items: center;
+  border: 5px solid black;
+  border-radius: 3rem;
+  padding: 1rem;
+  box-shadow: 2px 2px 20px black;
+  @include breakpointH-md {
+    top: 25%;
+  }
+
+  button {
+    border: none;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    padding: 5px 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background-color: $yellow;
+    font-family: "Bangers", cursive;
+    color: black;
+    &:hover {
+      cursor: pointer;
+      color: white;
+    }
+  }
+}
