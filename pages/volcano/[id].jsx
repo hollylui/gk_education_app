@@ -64,12 +64,10 @@ export default function GameStart({ game, ids }) {
 
 // Fetch data ------------------------------------------
 export const getStaticProps = async (context) => {
-  const allData = await fetch(`http://localhost:3000/api/volcanos/`);
+  const allData = await fetch(`/api/volcanos/`);
   const games = await allData.json();
   const ids = games.map((game) => game._id);
-  const data = await fetch(
-    `http://localhost:3000/api/volcanos/${context.params.id}`
-  );
+  const data = await fetch(`/api/volcanos/${context.params.id}`);
   const game = await data.json();
 
   return {
