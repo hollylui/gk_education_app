@@ -47,7 +47,7 @@ export default function Home() {
         bubble9: "block",
         bubble10: "block",
       });
-    }, 10000);
+    }, 9000);
     return () => {
       clearInterval(bubbleAgain);
     };

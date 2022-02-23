@@ -83,7 +83,7 @@
       left: 0;
       border-radius: 50%;
       z-index: 0;
-      animation: balloonMove 6s linear infinite;
+      animation: balloonMove 9s linear infinite;
       border: 1px solid rgba(109, 109, 109, 0.24);
       &:hover {
         cursor: crosshair;
@@ -92,14 +92,14 @@
     .bubble1 {
       background-color: rgba(253, 129, 84, 0.4);
       left: 10vw;
-      animation-duration: 4s;
+      animation-duration: 7s;
       // animation: balloonMove 3s linear infinite;
     }
     .bubble2 {
       background-color: rgba(84, 253, 197, 0.4);
       left: 20vw;
       bottom: 10%;
-      animation-duration: 3.5s;
+      animation-duration: 5s;
     }
     .bubble3 {
       background-color: rgba(253, 242, 84, 0.4);
