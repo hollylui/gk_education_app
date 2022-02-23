@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-import styles from "../../../../styles/Special.module.scss";
-
-function specialEndingSequence() {
-  return (
-    <div className={styles.container}>
-      <h1>Special Ending</h1>
-    </div>
-  );
-}
-=======
 // import timeout from "../timeout";
 import animationArray from "../../../../lotties/special";
 import { useRouter } from "next/router";
@@ -19,8 +7,6 @@ import Image from "next/image";
 import { useEffect } from "react";
 import Styles from "./../../../../styles/animation_styles/cartoon.module.scss";
 import TitleImage from "./../../../../public/specialEnding.js";
-
->>>>>>> animation_integration
 
 const SpecialEndingSequence = ({ animation, id }) => {
   const router = useRouter();
@@ -42,14 +28,12 @@ const SpecialEndingSequence = ({ animation, id }) => {
   }, [id]);
 
   return (
-   
-    <div  className={`${Styles.controlled} ${Styles.hold}`}>
+    <div className={`${Styles.controlled} ${Styles.hold}`}>
       <Image src={TitleImage[id]} layout="fill" alt="main" />
-      <div  className={Styles.lot}>
-        <Lottie options={defaultOptions} height={540} width={960} />
+      <div className={Styles.lot}>
+        <Lottie options={defaultOptions} height={"100vh"} width={"100vw"} />
       </div>
     </div>
-    
   );
 };
 

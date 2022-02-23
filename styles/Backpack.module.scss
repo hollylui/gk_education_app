@@ -5,21 +5,22 @@
   align-items: center;
   justify-content: center;
   margin: 0 2rem;
+
   .backpackOuter {
     width: 33rem;
     position: relative;
-    bottom: 1rem;
+    bottom: 0.5rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     z-index: 1;
-
     .backpackInner {
       width: 80%;
       position: relative;
       display: flex;
       align-items: center;
       .backpackImg {
+        border-radius: 3rem;
         position: absolute;
         &:hover {
           cursor: pointer;
@@ -109,6 +110,8 @@
     display: flex;
     align-items: center;
     width: 7rem;
+    height: 5rem;
+    border-radius: 1rem;
     h1 {
       color: rgb(0, 133, 233);
       font-size: 3rem;
@@ -116,6 +119,11 @@
     }
   }
 }
+
+.blinking {
+  animation: blinkingBorder 1s linear infinite;
+}
+
 @keyframes shaking {
   0%,
   100% {
@@ -161,6 +169,21 @@
   }
   100% {
     transform: scaleX(1);
+  }
+}
+
+@keyframes blinkingBorder {
+  0% {
+    box-shadow: 2px 2px 30px 3px $yellow;
+    background-color: #ffea4775;
+  }
+  50% {
+    box-shadow: none;
+    background-color: transparent;
+  }
+  100% {
+    box-shadow: 2px 2px 30px 3px $yellow;
+    background-color: #ffea4775;
   }
 }
 

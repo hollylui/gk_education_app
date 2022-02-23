@@ -8,11 +8,17 @@ import MapContext from "../context/MapContext";
 
 //! Styles
 import styles from "../styles/Map.module.scss";
+import backpackStyles from "../styles/Backpack.module.scss";
+
+//! contexts
+import GameContext from "../context/GameContext";
 
 let progressLevel;
 
 export default function Map() {
   const { expand, setExpand, progress } = useContext(MapContext);
+  const { currGameId, gameIds } = useContext(GameContext);
+  const index = gameIds.indexOf(currGameId);
 
   const expandHandler = () => {
     setExpand(!expand);
@@ -34,7 +40,13 @@ export default function Map() {
       <div id={styles.stage3}>x</div>
       <div id={styles.stage4}>x</div>
       <div id={styles.stage5}>x</div>
-      <div className={styles.image}>
+      <div
+        className={
+          index == 6 || index == 7
+            ? `${styles.image} ${backpackStyles.blinking}`
+            : styles.image
+        }
+      >
         <Image src={littleMap} alt="map" />
         <div id="progress" className={styles.progress}></div>
       </div>

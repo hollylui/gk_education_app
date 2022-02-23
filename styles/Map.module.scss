@@ -1,6 +1,7 @@
 $mapBg: #00ff80;
 $expandBtn: #ff0000;
 $pathBg: #000000;
+@import "./Configure.module.scss";
 
 .container {
   width: 200px;
@@ -20,7 +21,7 @@ $pathBg: #000000;
     right: 43px;
     width: 22px;
     height: 22px;
-    background-color: $expandBtn;
+    background-color: $orange;
     z-index: 1000;
     cursor: pointer;
     animation: blinker 1s step-start infinite;
