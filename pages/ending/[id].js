@@ -1,7 +1,7 @@
 import timeout from "../timeout";
 import animationArray from "../../lotties/timeout";
 import { useRouter } from "next/router";
-import TimeOutAnimation from "../../Components/TimeOut";
+import TimeOutAnimation from "../../components/TimeOut";
 import Lottie from "react-lottie";
 import Image from "next/image";
 import { useEffect } from "react";
