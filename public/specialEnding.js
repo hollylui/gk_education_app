@@ -1,16 +1,16 @@
-import image1 from "../public/images/animations/sky.png";
-import image2 from "../public/images/animations/zoom_in_palms.png";
-import image3 from "../public/images/animations/insidecave.png";
-import image4 from "../public/images/animations/bridge_scorpion_encounter.png";
-import image5 from "../public/images/animations/boat_background.png";
-import image6 from "../public/images/animations/volcano island.png";
-import image7 from "../public/images/animations/volcano_end_image.png";
-import image8 from "../public/images/animations/alien_landing_background.png"
-import image9 from "../public/images/animations/zoom_crash_background.png"
-import image10 from "../public/images/animations/alien_crash_background.png"
-import image11 from "../public/images/animations/alien_crash_background.png"
-import image12 from "../public/images/animations/stars.jpg"
-import image13 from "../public/images/animations/endtitles.png";
+import image1 from "./images/animations/sky.png";
+import image2 from "./images/animations/zoom_in_palms.png";
+import image3 from "./images/animations/insidecave.png";
+import image4 from "./images/animations/bridge_scorpion_encounter.png";
+import image5 from "./images/animations/boat_background.png";
+import image6 from "./images/animations/volcano island.png";
+import image7 from "./images/animations/volcano_end_image.png";
+import image8 from "./images/animations/alien_landing_background.png"
+import image9 from "./images/animations/zoom_crash_background.png"
+import image10 from "./images/animations/alien_crash_background.png"
+import image11 from "./images/animations/alien_crash_background.png"
+import image12 from "./images/animations/stars.jpg"
+import image13 from "./images/animations/endtitles.png";
 
 // import image9 from "../public/images/animations/alien_landing.png";
 
