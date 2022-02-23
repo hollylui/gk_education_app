@@ -120,9 +120,10 @@ export default function BranchContent({ branchIndex, branchData }) {
             branch === leftPath ? styles.messageOne : styles.messageTwo
           }
           style={
-            branchIndex == 0 || (branch === rightPath && branchIndex == 1)
+            (branch === leftPath && branchIndex == 0) ||
+            (branch === rightPath && branchIndex == 1)
               ? { display: "none" }
-              : null
+              : { display: "block" }
           }
         >
           {branchData[branchIndex].message}

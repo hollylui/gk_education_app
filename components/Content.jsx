@@ -29,7 +29,8 @@ export default function Content({ game }) {
   const cubeStyle = {
     position: "relative",
     width: "100%",
-    paddingBottom: "17%",
+    height: "13rem",
+    // paddingBottom: "17%",
   };
 
   const index = gameIds.indexOf(currGameId);

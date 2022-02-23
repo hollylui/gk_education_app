@@ -57,7 +57,10 @@ export default function Quiz({ questions }) {
   return (
     <div>
       {/* Question box */}
-      <div className={styles.container}>
+      <div
+        className={styles.container}
+        style={modalIsOpen ? { display: "none" } : null}
+      >
         <div className={styles.questionBox}>
           <h3>{question.text}</h3>
 
@@ -107,10 +110,9 @@ export default function Quiz({ questions }) {
       >
         <p>
           You answered the question
-          {isCorrect
-            ? ` correctly, great job! You get a ${item}`
-            : ` incorrectly`}
+          {isCorrect ? ` correctly!` : ` incorrectly.`}
         </p>
+        {isCorrect ? <p>great job!👍🏻 You get a {item}!</p> : null}
         <button onClick={closeModal}>Next</button>
       </ReactModal>
     </div>

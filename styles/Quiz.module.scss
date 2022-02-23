@@ -24,11 +24,12 @@ $yellow: #ffea47;
   width: 100%;
 
   .questionBox {
-    width: 50%;
+    width: 65%;
     padding: 2rem;
     border: 5px solid rgb(0, 0, 0);
     border-radius: 20px;
     background-color: #fff;
+    box-shadow: 2px 2px 20px black;
     animation: showBig 0.5s linear forwards;
 
     h3 {
@@ -71,7 +72,7 @@ $yellow: #ffea47;
 }
 
 .rightModal {
-  font-size: 3rem;
+  font-size: 2.5rem;
   letter-spacing: 2px;
   background-color: $blue;
   width: 50%;
@@ -80,10 +81,11 @@ $yellow: #ffea47;
   top: 30%;
   text-align: center;
   padding-top: 50px;
-  color: white;
-  border: 2px solid;
-  border-radius: 10%;
+  color: black;
+  border: 5px solid black;
+  border-radius: 3rem;
   align-items: center;
+  padding: 1rem;
 
   button {
     border: none;
@@ -94,23 +96,25 @@ $yellow: #ffea47;
     margin-bottom: 20px;
     background-color: $orange;
     font-family: "Bangers", cursive;
-    color: white;
+    color: black;
   }
 }
 
 .wrongModal {
   font-size: 3rem;
   letter-spacing: 2px;
-  background-color: red;
+  background-color: $orange;
   width: 50%;
   margin: 0 auto;
   position: relative;
   top: 30%;
   text-align: center;
   padding-top: 50px;
-  color: white;
+  color: black;
   align-items: center;
-  border: 2px solid;
+  border: 5px solid black;
+  border-radius: 3rem;
+  padding: 1rem;
 
   button {
     border: none;
@@ -119,9 +123,9 @@ $yellow: #ffea47;
     padding: 5px 25px;
     border-radius: 20px;
     margin-bottom: 20px;
-    background-color: $orange;
+    background-color: $yellow;
     font-family: "Bangers", cursive;
-    color: white;
+    color: black;
   }
 }
 
