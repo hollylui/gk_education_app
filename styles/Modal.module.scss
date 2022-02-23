@@ -20,8 +20,9 @@
     margin: 0.5rem 1rem;
     display: block;
     background-color: $yellow;
-    border-radius: 1rem;
-    box-shadow: 1px 1px 5px 1px #333;
+    border-radius: 3rem;
+    border: 5px solid black;
+    box-shadow: 2px 2px 20px black;
     padding: 1rem;
     display: flex;
     flex-direction: column;
