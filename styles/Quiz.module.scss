@@ -18,110 +18,102 @@ $yellow: #ffea47;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   text-align: center;
   height: 50vh;
-  .questionBox {
-    width: 60%;
-    border: 5px solid rgb(0, 0, 0);
-    border-radius: 20px;
-    background-color: #fff;
-    padding: 3rem;
-    animation: showBig 0.5s linear forwards;
 
-    h3 {
-      margin: 0;
-      font-size: 3rem;
-      letter-spacing: 2px;
-      padding: 10px 60px;
-    }
+  h3 {
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    padding: 10px 60px;
+  }
 
-    .quizText {
-      font-size: xx-large;
-    }
+  .quizText {
+    font-size: xx-large;
+  }
 
-    .subContainer {
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      padding: 20px 0;
+  .subContainer {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
 
-      .button {
-        background-color: $orange;
-        color: white;
-        width: 90px;
-        height: 90px;
-        border: none;
-        border-radius: 50%;
-        font-size: 3.5rem;
-        text-decoration: none;
-        font-weight: 700;
-        margin: 0 10px;
-        cursor: pointer;
+    .button {
+      background-color: $orange;
+      color: white;
+      width: 90px;
+      height: 90px;
+      border: none;
+      border-radius: 50%;
+      font-size: 3.5rem;
+      text-decoration: none;
+      font-weight: 700;
+      margin: 0 10px;
+      cursor: pointer;
 
-        &:hover {
-          background-color: $yellow;
-          color: black;
-        }
+      &:hover {
+        background-color: $yellow;
+        color: black;
       }
     }
   }
+}
 
-  .rightModal {
+.rightModal {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  background-color: $blue;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  top: 30%;
+  text-align: center;
+  padding-top: 50px;
+  color: white;
+  border: 2px solid;
+  border-radius: 10%;
+  align-items: center;
+
+  button {
+    border: none;
     font-size: 3rem;
     letter-spacing: 2px;
-    background-color: $blue;
-    width: 50%;
-    margin: 0 auto;
-    position: relative;
-    top: 30%;
-    text-align: center;
-    padding-top: 50px;
+    padding: 5px 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background-color: $orange;
+    font-family: "Bangers", cursive;
     color: white;
-    border: 2px solid;
-    border-radius: 10%;
-    align-items: center;
-
-    button {
-      border: none;
-      font-size: 3rem;
-      letter-spacing: 2px;
-      padding: 5px 25px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-      background-color: $orange;
-      font-family: "Bangers", cursive;
-      color: white;
-    }
-  }
-
-  .wrongModal {
-    font-size: 3rem;
-    letter-spacing: 2px;
-    background-color: red;
-    width: 50%;
-    margin: 0 auto;
-    position: relative;
-    top: 30%;
-    text-align: center;
-    padding-top: 50px;
-    color: white;
-    align-items: center;
-    border: 2px solid;
-
-    button {
-      border: none;
-      font-size: 3rem;
-      letter-spacing: 2px;
-      padding: 5px 25px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-      background-color: $orange;
-      font-family: "Bangers", cursive;
-      color: white;
-    }
   }
 }
+
+.wrongModal {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  background-color: red;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  top: 30%;
+  text-align: center;
+  padding-top: 50px;
+  color: white;
+  align-items: center;
+  border: 2px solid;
+
+  button {
+    border: none;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    padding: 5px 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background-color: $orange;
+    font-family: "Bangers", cursive;
+    color: white;
+  }
+}
+
 .right {
   color: white;
 }
