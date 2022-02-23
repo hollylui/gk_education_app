@@ -1,11 +1,22 @@
-$quizBtn: #ff6832;
-$quizColor: #ffffff;
-$quizBtnHover: #ffea47;
-$quizBtnHoverColor: #000000;
-$modalBg: #00f7ff;
-$closeBtn: #ffff00;
-$closeBtnHover: #ff0000;
-$closeBtnColor: #ffffff;
+@import "./Configure.module.scss";
+
+//variables
+//fonts
+$font_xl: 4rem;
+$font_lg: 2.5rem;
+$font_md: 2rem;
+$font_sm: 1.5rem;
+//colors
+$green: #35805a;
+$blue: #00bbe0;
+$back_blue: #00bbe0d7;
+$orange: #fd8154;
+$lightblue: #c2f5ff;
+$yellow: #ffea47;
+
+
+
+
 
 .container {
   display: flex;
@@ -32,8 +43,8 @@ $closeBtnColor: #ffffff;
     padding: 20px 0;
 
     .button {
-      background-color: $quizBtn;
-      color: $quizColor;
+      background-color: $orange;
+      color: white;
       width: 90px;
       height: 90px;
       border: none;
@@ -45,21 +56,27 @@ $closeBtnColor: #ffffff;
       cursor: pointer;
 
       &:hover {
-        background-color: $quizBtnHover;
-        color: $quizBtnHoverColor;
+        background-color: $yellow;
+        color: black;
       }
     }
   }
 }
 
-.modalContent {
+.rightModal {
   font-size: 3rem;
   letter-spacing: 2px;
-  background-color: $modalBg;
-  border: 1px solid #888;
+  background-color: $blue;
+  width: 50%;
+  margin: 0 auto;
   position: relative;
   top: 30%;
   text-align: center;
+  padding-top: 50px;
+  color:white;
+  border: 2px solid;
+  border-radius: 10%;
+  align-items: center;
 
   button {
     border: none;
@@ -68,12 +85,45 @@ $closeBtnColor: #ffffff;
     padding: 5px 25px;
     border-radius: 20px;
     margin-bottom: 20px;
-    background-color: $closeBtn;
+    background-color: $orange;
     font-family: "Bangers", cursive;
+    color: white;
 
-    &:hover {
-      color: $closeBtnColor;
-      background-color: $closeBtnHover;
-    }
+   
   }
 }
+
+.wrongModal {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  background-color: red;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  top: 30%;
+  text-align: center;
+  padding-top: 50px;
+  color:white;
+  align-items: center;
+  border: 2px solid;
+
+  button {
+    border: none;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    padding: 5px 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background-color: $orange;
+    font-family: "Bangers", cursive;
+    color: white;
+
+   
+  }
+}
+
+
+
+.right {color:white};
+
+.wrong{color: red};

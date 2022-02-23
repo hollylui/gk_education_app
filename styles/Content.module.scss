@@ -16,6 +16,7 @@ $nameColor: #0400ff;
     margin: 10px 50px;
     letter-spacing: 2px;
     border-radius: 20px;
+    background-color: white;
     // background-color: $messageBg;
     // color: $messageColor;
   }
@@ -27,4 +28,10 @@ $nameColor: #0400ff;
   .indexThirteen {
     width: 140px;
   }
+}
+
+.backgroundImage {
+background-image: url(../assets/images/volcano/background_1.png) ;
+width: 100%;
+height: 100%;
 }
