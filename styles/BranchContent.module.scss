@@ -12,7 +12,13 @@
 
   .indexZero {
     // width: 550px;
-    width: 50%;
+    width: 20%;
+    @include breakpointH-sm {
+      width: 30%;
+    }
+    @include breakpointH-md {
+      width: 50%;
+    }
     // .sub_1 {
     //   z-index: -1;
     // }
