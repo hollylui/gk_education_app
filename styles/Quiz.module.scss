@@ -97,6 +97,10 @@ $yellow: #ffea47;
     background-color: $orange;
     font-family: "Bangers", cursive;
     color: black;
+    &:hover {
+      cursor: pointer;
+      color: white;
+    }
   }
 }
 
@@ -126,6 +130,10 @@ $yellow: #ffea47;
     background-color: $yellow;
     font-family: "Bangers", cursive;
     color: black;
+    &:hover {
+      cursor: pointer;
+      color: white;
+    }
   }
 }
 
