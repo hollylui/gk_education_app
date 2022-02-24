@@ -4,7 +4,7 @@ import special from "../lotties/special.js";
 import { useRouter } from "next/router";
 import Styles from "./../styles/animation_styles/cartoon.module.scss";
 import Image from "next/image";
-import TitleImage from "../public/specialEnding";
+import TitleImage from "./../public/specialEnding";
 
 //animation Controlls
 
@@ -13,8 +13,10 @@ const Special = ({ Position }) => {
   const router = useRouter();
 
   useEffect(() => {
+    console.log(TitleImage)
+    console.log(Position)
     setTimeout(() => {
-      router.push("/ending/0");
+      router.push("/volcano/ending/special/0");
     }, 5000);
   }, []);
 

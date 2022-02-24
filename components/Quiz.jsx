@@ -110,7 +110,7 @@ export default function Quiz({ questions }) {
       >
         <p>
           You answered the question
-          {isCorrect ? ` correctly!` : ` incorrectly.`}
+          {isCorrect ? ` correctly!` : ` incorrectly`}
         </p>
         {isCorrect ? <p>great job!👍🏻 You get a {item}!</p> : null}
         <button onClick={closeModal}>Next</button>

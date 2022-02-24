@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Lottie from "react-lottie";
 import Image from "next/image";
 import { useEffect } from "react";
-import ScorpionStyles from "../../../styles/cartoon.module.css";
+import ScorpionStyles from "../../../styles/animation_styles/cartoon.module.scss";
 import TitleImage from "../../../public/timeoutimages";
 
 const EndSequence = ({ animation, id }) => {
@@ -30,10 +30,14 @@ const EndSequence = ({ animation, id }) => {
   }, [id]);
 
   return (
-    <div className={`${ScorpionStyles.controlled} ${ScorpionStyles.hold}`}>
-      <Image src={TitleImage[id]} layout="fill" alt="main" />
-      <div className={ScorpionStyles.lot}>
-        <Lottie options={defaultOptions} height={"100vh"} width={"100vw"} />
+    <div className={ScorpionStyles.bgBlack}>
+      <div
+        className={`${ScorpionStyles.controlledEnding} ${ScorpionStyles.hold}`}
+      >
+        <Image src={TitleImage[id]} layout="fill" alt="main" />
+        <div className={ScorpionStyles.lot}>
+          <Lottie options={defaultOptions} height={"100vh"} width={"100vw"} />
+        </div>
       </div>
     </div>
   );

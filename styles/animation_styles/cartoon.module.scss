@@ -1,21 +1,40 @@
+@import "../Configure.module.scss";
+
+.bgBlack {
+  background-color: black;
+}
+
 .controlled {
   position: relative;
+  // border: 5px solid rgb(0, 0, 0);
+  // width: 955px;
+  // height: 540px;
   border: 5px solid #000000;
   width: 160%;
   left: 50%;
   transform: translate(-50%, 0);
-
-  // height: 180%;
-
   // right: 275px;
   // bottom: 75px;
-  // margin-top: 10px;
 }
 
-// .hold {
-//     position: relative;
+.controlledEnding {
+  position: relative;
+  // border: 5px solid rgb(0, 0, 0);
+  // width: 955px;
+  // height: 540px;
+  border: 5px solid #000000;
+  width: 100vw;
+  height: 100vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+  // animation: fadeIn 1s linear forwards;
+  // right: 275px;
+  // bottom: 75px;
+}
 
-// }
+.hold {
+  position: relative;
+}
 
 .ani {
   position: absolute;

@@ -4,12 +4,12 @@ import styles from "../../../../styles/Special.module.scss";
 
 function Special() {
   const router = useRouter();
-  // useEffect(() => {
-  //   router.push("/volcano/ending/special/0");
-  // }, []);
+  useEffect(() => {
+    router.push("/volcano/ending/special/0");
+  }, []);
   return (
     <div className={styles.container}>
-      <h1>Special Ending</h1>
+      <h1>Please wait moments...</h1>
     </div>
   );
 }

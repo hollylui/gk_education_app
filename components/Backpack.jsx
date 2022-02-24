@@ -6,6 +6,7 @@ import BackpackContext from "../context/BackpackContext";
 import { useRouter } from "next/router";
 import EndingModal from "./EndingModal";
 import mouse from "../assets/images/volcano/animalcounter/mouse.png";
+import GameContext from "../context/GameContext";
 
 const Backpack = () => {
   const {
@@ -18,6 +19,8 @@ const Backpack = () => {
     is5Quizzes,
     animalCount,
   } = useContext(BackpackContext);
+  const { currGameId, gameIds } = useContext(GameContext);
+  const index = gameIds.indexOf(currGameId);
 
   const router = useRouter();
 
@@ -43,7 +46,11 @@ const Backpack = () => {
       <div className={backpackStyles.backpackOuter}>
         <div className={backpackStyles.backpackInner}>
           <Image
-            className={backpackStyles.backpackImg}
+            className={
+              index == 6 || index == 8
+                ? `${backpackStyles.backpackImg} ${backpackStyles.blinking}`
+                : backpackStyles.backpackImg
+            }
             responsive
             src={backpack}
             alt="backpack"
@@ -82,8 +89,14 @@ const Backpack = () => {
           </div>
         </div>
       </div>
-      <div className={backpackStyles.animalCounter}>
-        <Image src={mouse} width={100} height={150} />
+      <div
+        className={
+          index == 6 || index == 9
+            ? `${backpackStyles.animalCounter} ${backpackStyles.blinking}`
+            : backpackStyles.animalCounter
+        }
+      >
+        <Image src={mouse} width={100} height={150} alt="counter" />
         <h1>{animalCount}/5</h1>
       </div>
       {/* </div> */}

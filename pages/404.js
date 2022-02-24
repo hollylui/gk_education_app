@@ -28,10 +28,10 @@ const NotFound = () => {
     },
   };
   return (
-    <div className={`${Styles.controlled} ${Styles.hold}`}>
+    <div className={`${Styles.controlledEnding} ${Styles.hold}`}>
       <Image src={TitleImage} layout="fill" alt="main" />
       <div className={Styles.lot}>
-        <Lottie options={defaultOptions} height={540} width={960} />
+        <Lottie options={defaultOptions} height={"100vh"} width={"100vw"} />
       </div>
     </div>
   );
