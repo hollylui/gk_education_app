@@ -2,6 +2,7 @@
 import { useContext, useEffect } from "react";
 
 //! From local
+import clientPromise from "../../lib/mongodb";
 import Layout from "../../components/Layout";
 import Map from "../../components/Map";
 import Footer from "../../components/Footer";
@@ -64,11 +65,20 @@ export default function GameStart({ game, ids }) {
 
 // Fetch data ------------------------------------------
 export const getStaticProps = async (context) => {
-  const allData = await fetch(`/api/volcanos/`);
-  const games = await allData.json();
+  // const allData = await fetch(`http:/localhost:3000/api/volcanos/`);
+  // const games = await allData.json();
+  const client = await clientPromise;
+  const db = client.db("volcano");
+  const data = await db.collection("main").find({}).toArray();
+  const games = JSON.parse(JSON.stringify(data));
+
   const ids = games.map((game) => game._id);
-  const data = await fetch(`/api/volcanos/${context.params.id}`);
-  const game = await data.json();
+  // const data = await fetch(
+  //   `http:/localhost:3000/api/volcanos/${context.params.id}`
+  // );
+  // const game = await data.json();
+  const filtered = games.filter((game) => game._id === context.params.id);
+  const game = filtered[0];
 
   return {
     props: { game, ids },
@@ -76,8 +86,13 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const data = await fetch(`http://localhost:3000/api/volcanos/`);
-  const games = await data.json();
+  // const data = await fetch(`http:/localhost:3000/api/volcanos/`);
+  // const games = await data.json();
+
+  const client = await clientPromise;
+  const db = client.db("volcano");
+  const data = await db.collection("main").find({}).toArray();
+  const games = JSON.parse(JSON.stringify(data));
 
   const ids = games.map((game) => game._id);
   const paths = ids.map((id) => ({ params: { id: id.toString() } }));
