@@ -10,7 +10,6 @@ import TitleImage from "./../../../../public/specialEnding.js";
 
 const SpecialEndingSequence = ({ animation, id }) => {
   const router = useRouter();
-
   const defaultOptions = {
     loop: false,
     autoplay: true,
@@ -28,10 +27,12 @@ const SpecialEndingSequence = ({ animation, id }) => {
   }, [id]);
 
   return (
-    <div className={`${Styles.controlled} ${Styles.hold}`}>
-      <Image src={TitleImage[id]} layout="fill" alt="main" />
-      <div className={Styles.lot}>
-        <Lottie options={defaultOptions} height={"100vh"} width={"100vw"} />
+    <div className={Styles.bgBlack}>
+      <div className={`${Styles.controlledEnding} ${Styles.hold}`}>
+        <Image src={TitleImage[id]} layout="fill" alt="main" />
+        <div className={Styles.lot}>
+          <Lottie options={defaultOptions} height={"100vh"} width={"100vw"} />
+        </div>
       </div>
     </div>
   );
