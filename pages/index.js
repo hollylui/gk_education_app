@@ -4,9 +4,11 @@ import styles from "../styles/Home.module.scss";
 import { useRouter } from "next/router";
 import NavBarHome from "../components/NavHome";
 import { useEffect, useState } from "react";
-
+import useSound from "use-sound";
+import bubblePop from "../public/sound/bubblepop.mp3";
 export default function Home() {
   const router = useRouter();
+  const [play] = useSound(bubblePop);
   const [show, setShow] = useState({
     bubble1: "block",
     bubble2: "block",
@@ -47,7 +49,7 @@ export default function Home() {
         bubble9: "block",
         bubble10: "block",
       });
-    }, 10000);
+    }, 9000);
     return () => {
       clearInterval(bubbleAgain);
     };
@@ -103,6 +105,7 @@ export default function Home() {
           onClick={() => {
             setShow({ ...show, bubble1: "none" });
             setScore(score + 1);
+            play();
           }}
         ></div>
         <div
@@ -111,6 +114,7 @@ export default function Home() {
           onClick={() => {
             setShow({ ...show, bubble2: "none" });
             setScore(score + 1);
+            play();
           }}
         ></div>
         <div
@@ -119,6 +123,7 @@ export default function Home() {
           onClick={() => {
             setShow({ ...show, bubble3: "none" });
             setScore(score + 1);
+            play();
           }}
         ></div>
         <div
@@ -127,6 +132,7 @@ export default function Home() {
           onClick={() => {
             setShow({ ...show, bubble4: "none" });
             setScore(score + 1);
+            play();
           }}
         ></div>
         <div
@@ -135,6 +141,7 @@ export default function Home() {
           onClick={() => {
             setShow({ ...show, bubble5: "none" });
             setScore(score + 1);
+            play();
           }}
         ></div>
         <div
@@ -143,6 +150,7 @@ export default function Home() {
           onClick={() => {
             setShow({ ...show, bubble6: "none" });
             setScore(score + 1);
+            play();
           }}
         ></div>
         <div
@@ -151,6 +159,7 @@ export default function Home() {
           onClick={() => {
             setShow({ ...show, bubble7: "none" });
             setScore(score + 1);
+            play();
           }}
         ></div>
         <div
@@ -159,6 +168,7 @@ export default function Home() {
           onClick={() => {
             setShow({ ...show, bubble8: "none" });
             setScore(score + 1);
+            play();
           }}
         ></div>
       </div>

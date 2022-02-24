@@ -1,4 +1,4 @@
-@import "../styles//Configure.module.scss";
+@import "../styles/Configure.module.scss";
 
 $messageBg: #35805a;
 $messageColor: #ffffff;
@@ -37,6 +37,7 @@ $nameColor: #0400ff;
     border: 5px solid rgb(0, 0, 0);
     border-radius: 20px;
     background-color: #fff;
+    box-shadow: 2px 2px 20px black;
     animation: showUp 0.5s linear forwards;
     .message {
       font-size: 2.5rem;

@@ -1,79 +1,103 @@
 @import "./Configure.module.scss";
-
-//variables
-//fonts
-$font_xl: 4rem;
-$font_lg: 2.5rem;
-$font_md: 2rem;
-$font_sm: 1.5rem;
-//colors
-$green: #35805a;
-$blue: #00bbe0;
-$back_blue: #00bbe0d7;
-$orange: #fd8154;
-$lightblue: #c2f5ff;
-$yellow: #ffea47;
-
+$quizBtn: #ff6832;
+$quizColor: #ffffff;
+$quizBtnHover: #ffea47;
+$quizBtnHoverColor: #000000;
+$modalBg: #00f7ff;
+$closeBtn: #ffff00;
+$closeBtnHover: #ff0000;
+$closeBtnColor: #ffffff;
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
   height: 50vh;
-
-  h3 {
-    margin: 0;
+  .questionBox {
+    width: 60%;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 3rem;
+    animation: showBig 0.5s linear forwards;
+    h3 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      padding: 10px 60px;
+    }
+    .quizText {
+      font-size: xx-large;
+    }
+    .subContainer {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      .button {
+        background-color: $quizBtn;
+        color: $quizColor;
+        width: 90px;
+        height: 90px;
+        border: none;
+        border-radius: 50%;
+        font-size: 3.5rem;
+        text-decoration: none;
+        font-weight: 700;
+        margin: 0 10px;
+        cursor: pointer;
+        &:hover {
+          background-color: $quizBtnHover;
+          color: $quizBtnHoverColor;
+        }
+      }
+    }
+  }
+}
+.modalContent {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  background-color: $modalBg;
+  border: 1px solid #888;
+  position: relative;
+  top: 30%;
+  text-align: center;
+  button {
+    border: none;
     font-size: 3rem;
     letter-spacing: 2px;
-    padding: 10px 60px;
-  }
-
-  .quizText {
-    font-size: xx-large;
-  }
-
-  .subContainer {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-
-    .button {
-      background-color: $orange;
-      color: white;
-      width: 90px;
-      height: 90px;
-      border: none;
-      border-radius: 50%;
-      font-size: 3.5rem;
-      text-decoration: none;
-      font-weight: 700;
-      margin: 0 10px;
-      cursor: pointer;
-
-      &:hover {
-        background-color: $yellow;
-        color: black;
-      }
+    padding: 5px 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background-color: $closeBtn;
+    font-family: "Bangers", cursive;
+    &:hover {
+      color: $closeBtnColor;
+      background-color: $closeBtnHover;
     }
   }
 }
 
 .rightModal {
-  font-size: 3rem;
+  font-size: 2.5rem;
   letter-spacing: 2px;
   background-color: $blue;
   width: 50%;
   margin: 0 auto;
   position: relative;
-  top: 30%;
+  top: 20%;
   text-align: center;
   padding-top: 50px;
-  color: white;
-  border: 2px solid;
-  border-radius: 10%;
+  color: black;
+  border: 5px solid black;
+  border-radius: 3rem;
   align-items: center;
-
+  padding: 1rem;
+  box-shadow: 2px 2px 20px black;
+  @include breakpointH-md {
+    top: 25%;
+  }
   button {
     border: none;
     font-size: 3rem;
@@ -83,23 +107,33 @@ $yellow: #ffea47;
     margin-bottom: 20px;
     background-color: $orange;
     font-family: "Bangers", cursive;
-    color: white;
+    color: black;
+    &:hover {
+      cursor: pointer;
+      color: white;
+    }
   }
 }
 
 .wrongModal {
-  font-size: 3rem;
+  font-size: 2.5rem;
   letter-spacing: 2px;
-  background-color: red;
+  background-color: $orange;
   width: 50%;
   margin: 0 auto;
   position: relative;
-  top: 30%;
+  top: 20%;
   text-align: center;
   padding-top: 50px;
-  color: white;
+  color: black;
   align-items: center;
-  border: 2px solid;
+  border: 5px solid black;
+  border-radius: 3rem;
+  padding: 1rem;
+  box-shadow: 2px 2px 20px black;
+  @include breakpointH-md {
+    top: 25%;
+  }
 
   button {
     border: none;
@@ -108,16 +142,12 @@ $yellow: #ffea47;
     padding: 5px 25px;
     border-radius: 20px;
     margin-bottom: 20px;
-    background-color: $orange;
+    background-color: $yellow;
     font-family: "Bangers", cursive;
-    color: white;
+    color: black;
+    &:hover {
+      cursor: pointer;
+      color: white;
+    }
   }
-}
-
-.right {
-  color: white;
-}
-
-.wrong {
-  color: red;
 }

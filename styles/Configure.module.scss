@@ -90,6 +90,22 @@ $over: 1600px;
   }
 }
 
+@mixin breakpointH-sm {
+  @media (min-height: $sm) {
+    @content;
+  }
+}
+@mixin breakpointH-md {
+  @media (min-height: $md) {
+    @content;
+  }
+}
+@mixin breakpointH-lg {
+  @media (min-height: $lg) {
+    @content;
+  }
+}
+
 //animation
 @keyframes showUp {
   0% {
