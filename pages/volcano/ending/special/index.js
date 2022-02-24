@@ -9,7 +9,7 @@ function Special() {
   }, []);
   return (
     <div className={styles.container}>
-      <h1>Please wait moments...</h1>
+      <h1>Please wait a moment...</h1>
     </div>
   );
 }
