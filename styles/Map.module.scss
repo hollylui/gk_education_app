@@ -1,0 +1,82 @@
+$mapBg: #00ff80;
+$expandBtn: #ff0000;
+$pathBg: #000000;
+@import "./Configure.module.scss";
+
+.container {
+  width: 200px;
+  margin-top: 70px;
+  margin-left: 20px;
+  padding-bottom: 100vh;
+  padding-top: 20px;
+  padding-right: 10px;
+  height: 100%;
+  position: fixed;
+  z-index: 0;
+  // background-color: $mapBg;
+
+  .expand {
+    position: absolute;
+    top: 241px;
+    right: 43px;
+    width: 22px;
+    height: 22px;
+    background-color: $orange;
+    z-index: 1000;
+    cursor: pointer;
+    animation: blinker 1s step-start infinite;
+  }
+
+  .image {
+    position: relative;
+    .progress {
+      position: absolute;
+      width: 100px;
+      left: 50px;
+      bottom: 60px;
+      background-color: $pathBg;
+      z-index: -1;
+    }
+  }
+
+  #stage1,
+  #stage2,
+  #stage3,
+  #stage4,
+  #stage5 {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1000;
+  }
+
+  #stage1 {
+    top: 202px;
+    left: 89px;
+  }
+
+  #stage2 {
+    top: 174px;
+    left: 71px;
+  }
+
+  #stage3 {
+    top: 141px;
+    left: 76px;
+  }
+
+  #stage4 {
+    top: 110px;
+    left: 70px;
+  }
+
+  #stage5 {
+    top: 90px;
+    left: 87px;
+  }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}

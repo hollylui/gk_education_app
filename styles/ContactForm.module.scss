@@ -1,0 +1,96 @@
+$containerBg: #0000ff;
+$labelColor: #ffffff;
+$sendBtn: #ffff00;
+$sendBtnBg: #ff009d;
+$sendBtnHoverColor: #ffffff;
+
+$modalBg: #00f7ff;
+$modelBorder: #888888;
+$modelBtn: #ffff00;
+$modelColor: #ffffff;
+$modelBtnHover: #ff0000;
+
+// form ----------------------------------------------
+.container {
+  width: fit-content;
+  padding: 20px;
+  margin: auto;
+  background-color: $containerBg;
+  border-radius: 20px;
+
+  .section {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-around;
+
+    label {
+      text-align: left;
+      width: 50%;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      margin-right: 15px;
+      color: $labelColor;
+    }
+
+    input {
+      width: 70%;
+      height: 40px;
+    }
+
+    textarea {
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    }
+
+    input,
+    textarea {
+      font-size: 1.6rem;
+      border: none;
+      border-radius: 10px;
+      text-indent: 8px;
+    }
+  }
+
+  button {
+    font-family: "Bangers", cursive;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    border: none;
+    background-color: $sendBtn;
+    border-radius: 20px;
+    padding: 5px 20px;
+    margin-top: 10px;
+
+    &:hover {
+      color: $sendBtnHoverColor;
+      background-color: $sendBtnBg;
+    }
+  }
+}
+
+// modal ---------------------------------------
+.modalContent {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  background-color: $modalBg;
+  border: 5px solid $modelBorder;
+  position: relative;
+  top: 30%;
+  text-align: center;
+
+  button {
+    border: none;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    padding: 5px 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background-color: $modelBtn;
+    font-family: "Bangers", cursive;
+
+    &:hover {
+      color: $modelColor;
+      background-color: $modelBtnHover;
+    }
+  }
+}

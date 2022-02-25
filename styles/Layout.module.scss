@@ -1,0 +1,15 @@
+$footerBg: #ff0000;
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .footer {
+    background-color: $footerBg;
+    height: 60px;
+    width: 100%;
+  }
+}

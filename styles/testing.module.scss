@@ -1,0 +1,25 @@
+.animation {
+  position: relative;
+  width: 300px;
+  height: 200px;
+
+  .one,
+  .two,
+  .three {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .two {
+    z-index: -1;
+  }
+
+  .three {
+    z-index: -2;
+  }
+}
+
+.hidden {
+  display: none;
+}

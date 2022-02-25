@@ -1,0 +1,62 @@
+$green: #35805a;
+$blue: #00bbe0;
+$back_blue: #00bbe0d7;
+$orange: #fd8154;
+$lightblue: #c2f5ff;
+$yellow: #ffea47;
+
+.bgImage {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 187, 224, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  position: relative;
+
+  .container {
+    width: 100vw;
+    height: 100vh;
+    // padding: 120px 20px 20px 20px;
+    background-image: url("../assets/images/bgs/palms_background.png");
+    background-size: 73%;
+    background-position: center 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .contents {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+
+    .map {
+      width: auto;
+      height: 100%;
+    }
+
+    .content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .controller {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+  }
+  .palmLow {
+    background-image: url("../assets/images/bgs/palms_low_opacity.png");
+  }
+}
+.hurray {
+  background-color: $lightblue;
+  background-image: url("https://i.gifer.com/6ob.gif");
+}

@@ -1,0 +1,39 @@
+$green: #35805a;
+$blue: #00bbe0;
+$back_blue: #00bbe0d7;
+$orange: #fd8154;
+$lightblue: #c2f5ff;
+$yellow: #ffea47;
+$yellowOpacity: #ffea4767;
+$lightblueOpacity: rgba(194, 245, 255, 0.616);
+
+.container {
+  position: fixed;
+  background-color: $lightblueOpacity;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  z-index: 300;
+
+  .soundControl {
+    display: flex;
+    gap: 50px;
+  }
+
+  .icon {
+    width: 35px;
+    cursor: pointer;
+  }
+
+  .music {
+    margin-left: 50px;
+    cursor: pointer;
+  }
+
+  .menu {
+    width: 60px;
+    margin-right: 50px;
+  }
+}

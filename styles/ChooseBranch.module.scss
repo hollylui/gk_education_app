@@ -1,0 +1,23 @@
+@import "./Configure.module.scss";
+
+.container {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  width: 100%;
+  justify-content: space-evenly;
+
+  .branch {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: showBig 0.3s linear forwards;
+    .image {
+      border-radius: 40px;
+      animation: showBig 0.3s linear forwards;
+    }
+    border-radius: 50px;
+    box-shadow: 2px 2px 30px black;
+  }
+}

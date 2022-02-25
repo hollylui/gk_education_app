@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+/* font-family: 'Bangers', cursive; */
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Bangers", cursive, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,49 @@
+@import "./Configure.module.scss";
+
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+
+  .radio {
+    font-size: 3rem;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+    display: grid;
+    grid-template-rows: auto 30px;
+    gap: 10px;
+    text-transform: uppercase;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    color: $yellow;
+    text-shadow: -3px 5px 10px black;
+    padding: 1.5rem;
+
+    input[type="radio"] {
+      -ms-transform: scale(1.7); /* for IE 9 */
+      -webkit-transform: scale(1.7); /* for Chrome, Safari, Opera */
+      transform: scale(1.7); /* default */
+      justify-self: center; /* for centering */
+    }
+  }
+  .math {
+    background-color: $green;
+  }
+
+  .reading {
+    background-color: $orange;
+  }
+
+  .logic {
+    background-color: $blue;
+    // color: rgb(255, 174, 0);
+  }
+  // input[type="radio"] {
+  //   -ms-transform: scale(1.7);
+  //   -webkit-transform: scale(1.7);
+  //   transform: scale(1.7);
+  //   justify-self: center;
+  // }
+}

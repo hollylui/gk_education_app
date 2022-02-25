@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 10%;
+  background-color: rgba(14, 75, 8, 0.637);
+
+  .btn {
+    min-width: 80px;
+    max-width: 100px;
+    cursor: pointer;
+  }
+}

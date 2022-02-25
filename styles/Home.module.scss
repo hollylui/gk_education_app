@@ -1,0 +1,215 @@
+@import "./Configure.module.scss";
+
+.container {
+  height: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 187, 224, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background-position: top;
+  background-size: cover;
+  .main {
+    @include flex-just-al-wrap(space-evenly, center, no-wrap);
+    min-height: 84vh;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+    .titleCon {
+      @include flex-just-al-wrap(center, center, no-wrap);
+      flex-direction: column;
+      margin-bottom: 1rem;
+      @include breakpoint-xxl {
+        margin-bottom: 0;
+      }
+      .title {
+        font-size: $font_lg;
+        background-color: $orange;
+        padding: 1rem 3rem;
+        margin-bottom: 1rem;
+        @include border-shadow-box(0.5rem 4rem, 2rem);
+        @include breakpoint-sm {
+          font-size: $font_xl;
+        }
+      }
+      span {
+        font-size: $font_sm;
+        @include breakpoint-sm {
+          font-size: $font_md;
+        }
+      }
+    }
+    .gameCon {
+      width: 85%;
+      max-width: 57rem;
+      background-color: $back_blue;
+      border-radius: 2rem;
+      box-shadow: 1px 2px 5px #333;
+      @include grid(85%, repeat(3, 1fr), repeat(2, 1fr), 0);
+      @include breakpoint-sm {
+        @include grid(85%, repeat(2, 1fr), repeat(3, 1fr), 0);
+      }
+
+      .gameIcons {
+        cursor: pointer;
+        margin: 1rem;
+        width: 130px;
+        height: 130px;
+        justify-self: center;
+        align-self: center;
+        z-index: 1;
+        @include breakpoint-md {
+          width: 170px;
+          height: 170px;
+        }
+        @include breakpoint-xl {
+          width: 200px;
+          height: 200px;
+        }
+        .gameImage {
+          border-radius: 1.5rem;
+          @include breakpoint-lg {
+            border-radius: 3rem;
+          }
+        }
+      }
+    }
+    .bubble {
+      width: 7rem;
+      height: 7rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-radius: 50%;
+      z-index: 0;
+      animation: balloonMove 9s linear infinite;
+      border: 1px solid rgba(109, 109, 109, 0.24);
+      &:hover {
+        cursor: crosshair;
+      }
+    }
+    .bubble1 {
+      background-color: rgba(253, 129, 84, 0.4);
+      left: 10vw;
+      animation-duration: 7s;
+      // animation: balloonMove 3s linear infinite;
+    }
+    .bubble2 {
+      background-color: rgba(84, 253, 197, 0.4);
+      left: 20vw;
+      bottom: 10%;
+      animation-duration: 5s;
+    }
+    .bubble3 {
+      background-color: rgba(253, 242, 84, 0.4);
+      left: 30vw;
+    }
+    .bubble4 {
+      background-color: rgba(163, 84, 253, 0.4);
+      left: 40vw;
+      bottom: 30%;
+    }
+    .bubble5 {
+      background-color: rgba(84, 191, 253, 0.4);
+      left: 0vw;
+    }
+    .bubble6 {
+      background-color: rgba(253, 84, 163, 0.4);
+      left: 90vw;
+      bottom: 10%;
+      animation-duration: 4s;
+    }
+    .bubble7 {
+      background-color: rgba(253, 84, 84, 0.4);
+      left: 70vw;
+      bottom: 40%;
+      animation-duration: 7s;
+    }
+    .bubble8 {
+      background-color: rgba(174, 253, 84, 0.4);
+      left: 80vw;
+      bottom: 0;
+      animation-duration: 8s;
+    }
+  }
+  .score {
+    position: absolute;
+    bottom: 0;
+    left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    #scoreTitle {
+      font-size: $font_sm;
+      color: #fff;
+      text-shadow: -3px 5px 10px black;
+    }
+    #scoreCounter {
+      font-size: $font_lg;
+      color: $yellow;
+      text-shadow: -3px 5px 10px black;
+    }
+  }
+  .scoreNone {
+    display: none;
+  }
+}
+
+// get navbar styles out of container to adapt to other pages.
+.homeNav {
+  font-size: $font_sm;
+  @include flex-just-al-wrap(space-between, center, no-wrap);
+  padding: 0rem 3rem;
+  background-color: $yellow;
+  box-shadow: 1px 2px 5px #333;
+  margin-bottom: 1rem;
+  height: 3.5rem;
+  @include breakpoint-md {
+    padding: 0rem 5rem;
+    font-size: $font_md;
+    height: 5rem;
+  }
+  .logo {
+    background-color: #fff;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1rem;
+    @include flex-just-al-wrap(center, center, no-wrap);
+    @include breakpoint-md {
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 1.5rem;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .navlist {
+    width: 50%;
+    list-style: none;
+    @include flex-just-al-wrap(space-between, center, no-wrap);
+    @include breakpoint-sm {
+      width: 40%;
+    }
+    @include breakpoint-md {
+      width: 40%;
+    }
+    @include breakpoint-lg {
+      width: 30%;
+    }
+    @include breakpoint-xl {
+      width: 23%;
+    }
+    @include breakpoint-over {
+      width: 16%;
+    }
+    li {
+      &:hover {
+        cursor: pointer;
+        color: blue;
+      }
+    }
+  }
+}

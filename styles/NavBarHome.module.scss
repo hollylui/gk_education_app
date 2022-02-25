@@ -1,0 +1,54 @@
+$font_xl: 4rem;
+$font_lg: 2.5rem;
+$font_md: 2rem;
+
+//colors
+$green: #35805a;
+$blue: #00bbe0;
+$back_blue: #00bbe0d7;
+$orange: #fd8154;
+$lightblue: #c2f5ff;
+$yellow: #ffea47;
+
+@mixin flex-just-al-wrap($just, $align, $wrap) {
+  display: flex;
+  justify-content: $just;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin border-box($width, $height, $radius) {
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+  border: 1px solid #333;
+}
+
+@mixin border-shadow-box($padding, $radius) {
+  padding: $padding;
+  border-radius: $radius;
+  box-shadow: 3px 4px 10px #333;
+}
+
+.container {
+  height: 100vh;
+  background-color: $lightblue;
+  .homeNav {
+    font-size: $font_lg;
+    @include flex-just-al-wrap(space-between, center, no-wrap);
+    padding: 0rem 5rem;
+    background-color: $yellow;
+    // box-shadow: 1px 2px 5px #333;
+    .logo {
+      background-color: #fff;
+      // @include border-box(6rem, 6rem, 2rem);
+      border-radius: 50%;
+      @include flex-just-al-wrap(center, center, no-wrap);
+    }
+    .navlist {
+      width: 23%;
+      list-style: none;
+      @include flex-just-al-wrap(space-between, center, no-wrap);
+    }
+  }
+}
