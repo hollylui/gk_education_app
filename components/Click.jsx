@@ -48,12 +48,7 @@ const Click = ({ Position }) => {
           />
         </div>
         <div className={Styles.lot}>
-          <Lottie
-            options={defaultOptions}
-            // height={540}
-            // width={960}
-            isStopped={isStopped}
-          />
+          <Lottie options={defaultOptions} isStopped={isStopped} />
         </div>
       </div>
     </>

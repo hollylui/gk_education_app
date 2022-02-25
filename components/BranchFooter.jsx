@@ -36,14 +36,9 @@ export default function BranchFooter() {
   const { next, setNext } = useContext(BranchFooterContext);
 
   const nextGameId = gameIds[gameIds.indexOf(currGameId) + 1];
-  // const prevGameId = gameIds[gameIds.indexOf(currGameId)];
 
   const index = gameIds.indexOf(currGameId);
   const { animalCount, setAnimalCount } = useContext(BackpackContext);
-  // const backToCrossRoad = () => {
-  //   setBranchAudioIndex(0);
-  //   if (branchIndex === 0) router.push(`/volcano/${prevGameId}`);
-  // };
 
   const backHandler = () => {
     setNext(false);
@@ -87,12 +82,6 @@ export default function BranchFooter() {
       ) : (
         <div className={styles.btn}></div>
       )}
-
-      {/* {branchIndex === 0 && (
-        <div className={styles.btn} onClick={backToCrossRoad}>
-          <Image src={backBtn} alt="got to previosu page" />
-        </div>
-      )} */}
 
       <div className={backpackStyles.middleFooter}>
         <Backpack />

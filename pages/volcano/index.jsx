@@ -14,7 +14,6 @@ import welcome from "../../assets/audios/volcano/welcome.mp3";
 
 //! Styles
 import styles from "../../styles/GameLanding.module.scss";
-import NavBarHome from "../../components/NavHome";
 
 export default function GameLanding({ games }) {
   const { music } = useContext(MusicContext);

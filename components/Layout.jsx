@@ -4,8 +4,6 @@ import Head from "next/head";
 //! From local
 import Navbar from "../components/Navbar";
 
-//! Images
-
 //! Styles
 import styles from "../styles/Layout.module.scss";
 

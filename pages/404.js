@@ -1,7 +1,5 @@
-import Link from "next/link";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
 import Lottie from "react-lottie";
 import animationData from "./../lotties/page_not_found.json";
 import Styles from "../styles/animation_styles/cartoon.module.scss";

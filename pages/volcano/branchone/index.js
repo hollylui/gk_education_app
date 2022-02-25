@@ -1,6 +1,5 @@
 //! From Library
 import { useContext } from "react";
-import Image from "next/image";
 
 //! From local
 import clientPromise from "../../../lib/mongodb";

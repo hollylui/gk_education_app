@@ -1,9 +1,3 @@
-//! From Library
-
-//! From local
-
-//! Image
-
 //! Styles
 import styles from "../styles/TypeOfQuestion.module.scss";
 

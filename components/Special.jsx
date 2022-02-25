@@ -13,8 +13,8 @@ const Special = ({ Position }) => {
   const router = useRouter();
 
   useEffect(() => {
-    console.log(TitleImage)
-    console.log(Position)
+    console.log(TitleImage);
+    console.log(Position);
     setTimeout(() => {
       router.push("/volcano/ending/special/0");
     }, 5000);
@@ -43,7 +43,7 @@ const Special = ({ Position }) => {
 
 Special.getInitialProps = ({ query: { id } }) => {
   const animation = special[id];
-  // const { data } = await axios.get(`http://localhost:3000/api/notes/${id}`);
+
   return { animation };
 };
 
