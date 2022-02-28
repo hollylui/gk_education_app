@@ -6,7 +6,7 @@ const Endings = () => {
   useEffect(() => {
     router.push("/ending/0");
   }, []);
-  return;
+  return <div></div>;
 };
 
 export default Endings;

@@ -6,7 +6,7 @@ const SpecialEndings = () => {
   useEffect(() => {
     router.push("/special_ending/0");
   }, []);
-  return;
+  return <div></div>;
 };
 
 export default SpecialEndings;
