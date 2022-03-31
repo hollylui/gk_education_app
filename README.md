@@ -11,6 +11,8 @@ We used LottieJS to create animations because we found it convenient to make vec
 We used MongoDB to store collections of story text and a collection of educational questions. MongoDB was included in our course curriculum with DCI. 
 
 In the Volcano Rescue Game, we were able to complete 2 short story lines (with corresponding text, images and animations) and the special and regular endings. If we had more time, we would have completed additional story lines. The quiz component also only currently renders math/counting questions out of one age group. We would add additional features to tailor the game to further age groups if we had more time.
+
+
 ---
 
 ## Published Project 
