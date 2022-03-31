@@ -13,7 +13,11 @@ function EndingModal() {
     useContext(BackpackContext);
 
   const router = useRouter();
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> main
   useEffect(() => {
     if (combine)
       setTimeout(() => {
@@ -23,7 +27,10 @@ function EndingModal() {
 
   return (
     <Modal state={modal} setState={setModal}>
+<<<<<<< HEAD
       {/* if users got 5items and combined them */}
+=======
+>>>>>>> main
       {combine ? (
         <>
           <h1>You got a special item!</h1>

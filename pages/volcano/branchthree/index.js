@@ -60,7 +60,11 @@ export default function BranchOne({ branch3_1, branch3_2 }) {
 }
 
 //Fetch data -------------------------------------------
+<<<<<<< HEAD
 export async function getServerSideProps(context) {
+=======
+export async function getStaticProps(context) {
+>>>>>>> main
   try {
     const client = await clientPromise;
     const db = client.db("volcano");

@@ -1,5 +1,8 @@
 //! From Library
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 import Image from "next/image";
 
 //! From local

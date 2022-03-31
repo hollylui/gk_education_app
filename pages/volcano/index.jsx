@@ -14,7 +14,10 @@ import welcome from "../../assets/audios/volcano/welcome.mp3";
 
 //! Styles
 import styles from "../../styles/GameLanding.module.scss";
+<<<<<<< HEAD
 import NavBarHome from "../../components/NavHome";
+=======
+>>>>>>> main
 
 export default function GameLanding({ games }) {
   const { music } = useContext(MusicContext);
@@ -30,7 +33,10 @@ export default function GameLanding({ games }) {
   }, []);
 
   return (
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     <div className={styles.container}>
       <Head>
         <title>Volcano Rescue</title>
@@ -39,13 +45,20 @@ export default function GameLanding({ games }) {
 
       <audio id="audio" source src={welcome} />
       <Landing games={games} />
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     </div>
   );
 }
 
 // Fetch data ------------------------------------------------
+<<<<<<< HEAD
 export async function getServerSideProps() {
+=======
+export async function getStaticProps() {
+>>>>>>> main
   try {
     const client = await clientPromise;
     const db = client.db("volcano");

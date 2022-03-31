@@ -1,4 +1,5 @@
 //! From Library
+<<<<<<< HEAD
 import Image from "next/image";
 import { useContext } from "react/";
 import { useRouter } from "next/router";
@@ -11,10 +12,18 @@ import GameContext from "../context/GameContext";
 import nextBtn from "../assets/images/volcano/next.png";
 import backBtn from "../assets/images/volcano/back.png";
 import mouse from "../assets/images/volcano/animalcounter/mouse.png";
+=======
+import { useContext } from "react/";
+
+//! From local
+import Backpack from "./Backpack";
+
+>>>>>>> main
 //! Styles
 import styles from "../styles/Footer.module.scss";
 import backpackStyles from "../styles/Backpack.module.scss";
 
+<<<<<<< HEAD
 //! Contexts
 import BackpackContext from "../context/BackpackContext";
 
@@ -39,6 +48,11 @@ export default function QuizFooter() {
         <Image src={backBtn} alt="got to previosu page" />
       </div> */}
 
+=======
+export default function QuizFooter() {
+  return (
+    <div className={styles.container}>
+>>>>>>> main
       <div className={styles.btn}></div>
 
       <div className={backpackStyles.middleFooter}>
