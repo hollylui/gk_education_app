@@ -12,9 +12,6 @@ export default function NavBarHome() {
         </div>
       </Link>
       <ul className={styles.navlist}>
-        <Link className={styles.homeLink} href="/about" passHref={true}>
-          <li>ABOUT</li>
-        </Link>
         <Link href="/contact" passHref={true}>
           <li>CONTACT</li>
         </Link>
