@@ -1,6 +1,10 @@
 //! From Libarary
 import Image from "next/image";
+<<<<<<< HEAD
+import { useContext, useState, useEffect } from "react";
+=======
 import { useContext } from "react";
+>>>>>>> main
 import { useRouter } from "next/router";
 
 //! From local
@@ -13,6 +17,10 @@ import MusicContext from "../context/MusicContext";
 //! Images
 import nextBtn from "../assets/images/volcano/next.png";
 import backBtn from "../assets/images/volcano/back.png";
+<<<<<<< HEAD
+import mouse from "../assets/images/volcano/animalcounter/mouse.png";
+=======
+>>>>>>> main
 
 //! Styles
 import styles from "../styles/Footer.module.scss";
@@ -28,6 +36,10 @@ export default function Footer() {
   const { age } = useContext(AgeContext);
   const { currGameId, gameIds } = useContext(GameContext);
   const { audioIndex, setAudioIndex } = useContext(MusicContext);
+<<<<<<< HEAD
+  const { animalCount } = useContext(BackpackContext);
+=======
+>>>>>>> main
   const nextGameId = gameIds[gameIds.indexOf(currGameId) + 1];
   const prevGameId = gameIds[gameIds.indexOf(currGameId) - 1];
   const index = gameIds.indexOf(currGameId);

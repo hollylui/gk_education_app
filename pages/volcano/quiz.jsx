@@ -40,7 +40,11 @@ export default function Quizpage({ questions }) {
   );
 }
 
+<<<<<<< HEAD
+export async function getServerSideProps() {
+=======
 export async function getStaticProps() {
+>>>>>>> main
   try {
     const client = await clientPromise;
     const db = client.db("volcano");

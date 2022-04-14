@@ -65,13 +65,25 @@ export default function GameStart({ game, ids }) {
 
 // Fetch data ------------------------------------------
 export const getStaticProps = async (context) => {
+<<<<<<< HEAD
+  // const allData = await fetch(`http:/localhost:3000/api/volcanos/`);
+  // const games = await allData.json();
+=======
+>>>>>>> main
   const client = await clientPromise;
   const db = client.db("volcano");
   const data = await db.collection("main").find({}).toArray();
   const games = JSON.parse(JSON.stringify(data));
 
   const ids = games.map((game) => game._id);
+<<<<<<< HEAD
+  // const data = await fetch(
+  //   `http:/localhost:3000/api/volcanos/${context.params.id}`
+  // );
+  // const game = await data.json();
+=======
 
+>>>>>>> main
   const filtered = games.filter((game) => game._id === context.params.id);
   const game = filtered[0];
 
@@ -81,6 +93,12 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
+<<<<<<< HEAD
+  // const data = await fetch(`http:/localhost:3000/api/volcanos/`);
+  // const games = await data.json();
+
+=======
+>>>>>>> main
   const client = await clientPromise;
   const db = client.db("volcano");
   const data = await db.collection("main").find({}).toArray();

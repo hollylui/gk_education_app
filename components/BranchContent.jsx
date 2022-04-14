@@ -1,6 +1,10 @@
 //! From Libarary
 import Image from "next/image";
+<<<<<<< HEAD
+import { useContext, useEffect, useState } from "react";
+=======
 import { useContext, useEffect } from "react";
+>>>>>>> main
 
 //! From Local
 import BranchContext from "../context/BranchContext";
